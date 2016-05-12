@@ -1,0 +1,19 @@
+C:\Users\estrong.THE_DEI_GROUP\Documents\Visual Studio 2012\Projects\DNARunHourTools\DNARunHourTools\bin\Debug\DNARunHourTools.exe.config
+C:\Users\estrong.THE_DEI_GROUP\Documents\Visual Studio 2012\Projects\DNARunHourTools\DNARunHourTools\bin\Debug\DNARunHourTools.exe
+C:\Users\estrong.THE_DEI_GROUP\Documents\Visual Studio 2012\Projects\DNARunHourTools\DNARunHourTools\bin\Debug\DNARunHourTools.pdb
+C:\Users\estrong.THE_DEI_GROUP\Documents\Visual Studio 2012\Projects\DNARunHourTools\DNARunHourTools\bin\Debug\EzDNAApiNet.dll
+C:\Users\estrong.THE_DEI_GROUP\Documents\Visual Studio 2012\Projects\DNARunHourTools\DNARunHourTools\obj\Debug\DNARunHourTools.csprojResolveAssemblyReference.cache
+C:\Users\estrong.THE_DEI_GROUP\Documents\Visual Studio 2012\Projects\DNARunHourTools\DNARunHourTools\obj\Debug\DNARunHourTools.Form1.resources
+C:\Users\estrong.THE_DEI_GROUP\Documents\Visual Studio 2012\Projects\DNARunHourTools\DNARunHourTools\obj\Debug\DNARunHourTools.Properties.Resources.resources
+C:\Users\estrong.THE_DEI_GROUP\Documents\Visual Studio 2012\Projects\DNARunHourTools\DNARunHourTools\obj\Debug\DNARunHourTools.csproj.GenerateResource.Cache
+C:\Users\estrong.THE_DEI_GROUP\Documents\Visual Studio 2012\Projects\DNARunHourTools\DNARunHourTools\obj\Debug\DNARunHourTools.exe
+C:\Users\estrong.THE_DEI_GROUP\Documents\Visual Studio 2012\Projects\DNARunHourTools\DNARunHourTools\obj\Debug\DNARunHourTools.pdb
+C:\Users\estrong.THE_DEI_GROUP\Documents\Visual Studio 2012\Projects\DNARunHourTools\DNARunHourTools\bin\Debug\Excel.4.5.dll
+C:\Users\estrong.THE_DEI_GROUP\Documents\Visual Studio 2012\Projects\DNARunHourTools\DNARunHourTools\bin\Debug\ICSharpCode.SharpZipLib.dll
+X:\Programs\sapiDNA\DNARunHourTools\obj\Debug\DNARunHourTools.csprojResolveAssemblyReference.cache
+X:\Programs\sapiDNA\DNARunHourTools\obj\Debug\DNARunHourTools.Form1.resources
+X:\Programs\sapiDNA\DNARunHourTools\obj\Debug\DNARunHourTools.Properties.Resources.resources
+X:\Programs\sapiDNA\DNARunHourTools\obj\Debug\DNARunHourTools.csproj.GenerateResource.Cache
+X:\Programs\sapiDNA\DNARunHourTools\obj\Debug\DNARunHourTools.exe
+X:\Programs\sapiDNA\DNARunHourTools\obj\Debug\DNARunHourTools.pdb
+X:\Programs\sapiDNA\DNARunHourTools\obj\Debug\DNARunHourTools.frmRunHourTools.resources

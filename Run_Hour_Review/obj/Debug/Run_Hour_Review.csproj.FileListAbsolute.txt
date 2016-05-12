@@ -1,0 +1,15 @@
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNARunHourReview\obj\Debug\Run_Hour_Review.csprojResolveAssemblyReference.cache
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNARunHourReview\obj\Debug\Run_Hour_Review.frmRunHourReview.resources
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNARunHourReview\obj\Debug\Run_Hour_Review.frmSettings.resources
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNARunHourReview\obj\Debug\Run_Hour_Review.csproj.GenerateResource.Cache
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNARunHourReview\bin\Debug\Run_Hour_Review.exe.config
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNARunHourReview\bin\Debug\Run_Hour_Review.exe
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNARunHourReview\bin\Debug\Run_Hour_Review.pdb
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNARunHourReview\bin\Debug\ClosedXML.dll
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNARunHourReview\bin\Debug\EzDNAApiNet.dll
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNARunHourReview\bin\Debug\EzDNAServApiNet.dll
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNARunHourReview\bin\Debug\MathNet.Filtering.dll
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNARunHourReview\bin\Debug\MathNet.Numerics.dll
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNARunHourReview\obj\Debug\Run_Hour_Review.Properties.Resources.resources
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNARunHourReview\obj\Debug\Run_Hour_Review.exe
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNARunHourReview\obj\Debug\Run_Hour_Review.pdb

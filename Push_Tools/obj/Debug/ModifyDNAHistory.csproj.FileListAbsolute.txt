@@ -1,0 +1,14 @@
+X:\Programs\_RunHourTools\ModifyHist_V1.0\ModifyRH\bin\Debug\ModifyRH.exe.config
+X:\Programs\_RunHourTools\ModifyHist_V1.0\ModifyRH\bin\Debug\ModifyRH.exe
+X:\Programs\_RunHourTools\ModifyHist_V1.0\ModifyRH\bin\Debug\ModifyRH.pdb
+X:\Programs\_RunHourTools\ModifyHist_V1.0\ModifyRH\bin\Debug\Excel.4.5.dll
+X:\Programs\_RunHourTools\ModifyHist_V1.0\ModifyRH\bin\Debug\EzDNAApiNet.dll
+X:\Programs\_RunHourTools\ModifyHist_V1.0\ModifyRH\bin\Debug\ICSharpCode.SharpZipLib.dll
+X:\Programs\_RunHourTools\ModifyHist_V1.0\ModifyRH\obj\Debug\ModifyRH.Form1.resources
+X:\Programs\_RunHourTools\ModifyHist_V1.0\ModifyRH\obj\Debug\ModifyRH.Properties.Resources.resources
+X:\Programs\_RunHourTools\ModifyHist_V1.0\ModifyRH\obj\Debug\ModifyDNAHistory.csproj.GenerateResource.Cache
+X:\Programs\_RunHourTools\ModifyHist_V1.0\ModifyRH\obj\Debug\ModifyRH.exe
+X:\Programs\_RunHourTools\ModifyHist_V1.0\ModifyRH\obj\Debug\ModifyRH.pdb
+X:\Programs\_eDNATools\DNAModifyHist\DNAModifyHist_V1.0\ModifyRH\bin\Debug\ModifyRH.exe.config
+X:\Programs\_eDNATools\DNAModifyHist\DNAModifyHist_V1.0\ModifyRH\obj\Debug\ModifyRH.exe
+X:\Programs\_eDNATools\DNAModifyHist\DNAModifyHist_V1.0\ModifyRH\obj\Debug\ModifyRH.pdb

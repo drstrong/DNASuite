@@ -1,0 +1,33 @@
+X:\Scripts and Programs\DNASuiteV3\DNAPull\bin\Debug\DNAPullTools.exe.config
+X:\Scripts and Programs\DNASuiteV3\DNAPull\obj\Debug\DNAPullTools.csprojResolveAssemblyReference.cache
+X:\Scripts and Programs\DNASuiteV3\DNAPull\obj\Debug\DNAPullTools.frmDates.resources
+X:\Scripts and Programs\DNASuiteV3\DNAPull\obj\Debug\DNAPullTools.frmPullTools.resources
+X:\Scripts and Programs\DNASuiteV3\DNAPull\obj\Debug\DNAPullTools.frmSettings.resources
+X:\Scripts and Programs\DNASuiteV3\DNAPull\obj\Debug\DNAPullTools.Properties.Resources.resources
+X:\Scripts and Programs\DNASuiteV3\DNAPull\obj\Debug\DNAPullTools.csproj.GenerateResource.Cache
+X:\Scripts and Programs\DNASuite_3.0.1.1\DNAPullTools\bin\Debug\DNAPullTools.exe.config
+X:\Scripts and Programs\DNASuite_3.0.1.1\DNAPullTools\bin\Debug\DNAPullTools.exe
+X:\Scripts and Programs\DNASuite_3.0.1.1\DNAPullTools\bin\Debug\DNAPullTools.pdb
+X:\Scripts and Programs\DNASuite_3.0.1.1\DNAPullTools\bin\Debug\EzDNAApiNet.dll
+X:\Scripts and Programs\DNASuite_3.0.1.1\DNAPullTools\bin\Debug\EzDNAServApiNet.dll
+X:\Scripts and Programs\DNASuite_3.0.1.1\DNAPullTools\bin\Debug\MathNet.Filtering.dll
+X:\Scripts and Programs\DNASuite_3.0.1.1\DNAPullTools\bin\Debug\MathNet.Numerics.dll
+X:\Scripts and Programs\DNASuite_3.0.1.1\DNAPullTools\obj\Debug\DNAPullTools.csprojResolveAssemblyReference.cache
+X:\Scripts and Programs\DNASuite_3.0.1.1\DNAPullTools\obj\Debug\DNAPullTools.frmDates.resources
+X:\Scripts and Programs\DNASuite_3.0.1.1\DNAPullTools\obj\Debug\DNAPullTools.frmPullTools.resources
+X:\Scripts and Programs\DNASuite_3.0.1.1\DNAPullTools\obj\Debug\DNAPullTools.frmSettings.resources
+X:\Scripts and Programs\DNASuite_3.0.1.1\DNAPullTools\obj\Debug\DNAPullTools.Properties.Resources.resources
+X:\Scripts and Programs\DNASuite_3.0.1.1\DNAPullTools\obj\Debug\DNAPullTools.csproj.GenerateResource.Cache
+X:\Scripts and Programs\DNASuite_3.0.1.1\DNAPullTools\obj\Debug\DNAPullTools.exe
+X:\Scripts and Programs\DNASuite_3.0.1.1\DNAPullTools\obj\Debug\DNAPullTools.pdb
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNAPullTools\bin\Debug\DNAPullTools.exe.config
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNAPullTools\obj\Debug\DNAPullTools.exe
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNAPullTools\obj\Debug\DNAPullTools.pdb
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNAPullTools\bin\Debug\DNAPullTools.exe
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNAPullTools\bin\Debug\DNAPullTools.pdb
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNAPullTools\obj\Debug\DNAPullTools.csprojResolveAssemblyReference.cache
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNAPullTools\obj\Debug\DNAPullTools.frmDates.resources
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNAPullTools\obj\Debug\DNAPullTools.frmPullTools.resources
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNAPullTools\obj\Debug\DNAPullTools.frmSettings.resources
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNAPullTools\obj\Debug\DNAPullTools.Properties.Resources.resources
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNAPullTools\obj\Debug\DNAPullTools.csproj.GenerateResource.Cache

@@ -1,0 +1,179 @@
+X:\Programs\DNAPushTools\DNAPushTools V1.03\DNAPushTools\bin\Debug\DNAPushTools.exe.config
+X:\Programs\DNAPushTools\DNAPushTools V1.03\DNAPushTools\obj\Debug\DNAPushTools.csprojResolveAssemblyReference.cache
+X:\Programs\DNAPushTools\DNAPushTools V1.03\DNAPushTools\obj\Debug\ModifyRH.Form1.resources
+X:\Programs\DNAPushTools\DNAPushTools V1.03\DNAPushTools\obj\Debug\DNAPushTools.Properties.Resources.resources
+X:\Programs\DNAPushTools\DNAPushTools V1.03\DNAPushTools\obj\Debug\DNAPushTools.csproj.GenerateResource.Cache
+X:\Programs\DNAPushTools\DNAPushTools V1.03\DNAPushTools\bin\Debug\DNAPushTools.exe
+X:\Programs\DNAPushTools\DNAPushTools V1.03\DNAPushTools\bin\Debug\DNAPushTools.pdb
+X:\Programs\DNAPushTools\DNAPushTools V1.03\DNAPushTools\bin\Debug\EzDNAApiNet.dll
+X:\Programs\DNAPushTools\DNAPushTools V1.03\DNAPushTools\obj\Debug\DNAPushTools.exe
+X:\Programs\DNAPushTools\DNAPushTools V1.03\DNAPushTools\obj\Debug\DNAPushTools.pdb
+X:\Programs\DNAPushTools\DNAPushTools V1.04\DNAPushTools\bin\Debug\DNAPushTools.exe.config
+X:\Programs\DNAPushTools\DNAPushTools V1.04\DNAPushTools\obj\Debug\DNAPushTools.exe
+X:\Programs\DNAPushTools\DNAPushTools V1.04\DNAPushTools\obj\Debug\DNAPushTools.pdb
+X:\Programs\DNAPushTools\DNAPushTools V1.05\DNAPushTools\bin\Debug\DNAPushTools.exe.config
+X:\Programs\DNAPushTools\DNAPushTools V1.05\DNAPushTools\obj\Debug\DNAPushTools.exe
+X:\Programs\DNAPushTools\DNAPushTools V1.05\DNAPushTools\obj\Debug\DNAPushTools.pdb
+X:\Programs\DNAPushTools\DNAPushTools V1.05\DNAPushTools\bin\Debug\DNAPushTools.exe
+X:\Programs\DNAPushTools\DNAPushTools V1.05\DNAPushTools\bin\Debug\DNAPushTools.pdb
+X:\Programs\DNAPushTools\DNAPushTools V1.05\DNAPushTools\bin\Debug\EzDNAApiNet.dll
+X:\Programs\DNAPushTools\DNAPushTools V1.05\DNAPushTools\bin\Debug\EzDNAServApiNet.dll
+X:\Programs\DNAPushTools\DNAPushTools V1.05\DNAPushTools\bin\Debug\MathNet.Numerics.dll
+X:\Programs\DNAPushTools\DNAPushTools V1.05\DNAPushTools\obj\Debug\DNAPushTools.csprojResolveAssemblyReference.cache
+X:\Programs\DNAPushTools\DNAPushTools V1.05\DNAPushTools\obj\Debug\ModifyRH.Form1.resources
+X:\Programs\DNAPushTools\DNAPushTools V1.05\DNAPushTools\obj\Debug\DNAPushTools.Properties.Resources.resources
+X:\Programs\DNAPushTools\DNAPushTools V1.05\DNAPushTools\obj\Debug\DNAPushTools.csproj.GenerateResource.Cache
+X:\Programs\DNAPushTools\DNAPushTools V1.06\DNAPushTools\bin\Debug\DNAPushTools.exe.config
+X:\Programs\DNAPushTools\DNAPushTools V1.06\DNAPushTools\obj\Debug\DNAPushTools.exe
+X:\Programs\DNAPushTools\DNAPushTools V1.06\DNAPushTools\obj\Debug\DNAPushTools.pdb
+X:\Programs\DNAPushTools\DNAPushTools V1.06\DNAPushTools\bin\Debug\DNAPushTools.exe
+X:\Programs\DNAPushTools\DNAPushTools V1.06\DNAPushTools\bin\Debug\DNAPushTools.pdb
+X:\Programs\DNAPushTools\DNAPushTools V1.06\DNAPushTools\bin\Debug\EzDNAApiNet.dll
+X:\Programs\DNAPushTools\DNAPushTools V1.06\DNAPushTools\bin\Debug\EzDNAServApiNet.dll
+X:\Programs\DNAPushTools\DNAPushTools V1.06\DNAPushTools\bin\Debug\MathNet.Numerics.dll
+X:\Programs\DNAPushTools\DNAPushTools V1.06\DNAPushTools\obj\Debug\DNAPushTools.csprojResolveAssemblyReference.cache
+X:\Programs\DNAPushTools\DNAPushTools V1.06\DNAPushTools\obj\Debug\ModifyRH.Form1.resources
+X:\Programs\DNAPushTools\DNAPushTools V1.06\DNAPushTools\obj\Debug\DNAPushTools.Properties.Resources.resources
+X:\Programs\DNAPushTools\DNAPushTools V1.06\DNAPushTools\obj\Debug\DNAPushTools.csproj.GenerateResource.Cache
+X:\Programs\DNAPushTools\DNAPushTools V1.06b\DNAPushTools\bin\Debug\DNAPushTools.exe.config
+X:\Programs\DNAPushTools\DNAPushTools V1.06b\DNAPushTools\obj\Debug\DNAPushTools.exe
+X:\Programs\DNAPushTools\DNAPushTools V1.06b\DNAPushTools\obj\Debug\DNAPushTools.pdb
+X:\Programs\DNAPushTools\DNAPushTools V1.06b\DNAPushTools\bin\Debug\DNAPushTools.exe
+X:\Programs\DNAPushTools\DNAPushTools V1.06b\DNAPushTools\bin\Debug\DNAPushTools.pdb
+X:\Programs\DNAPushTools\DNAPushTools V1.06b\DNAPushTools\bin\Debug\EzDNAApiNet.dll
+X:\Programs\DNAPushTools\DNAPushTools V1.06b\DNAPushTools\bin\Debug\EzDNAServApiNet.dll
+X:\Programs\DNAPushTools\DNAPushTools V1.06b\DNAPushTools\bin\Debug\MathNet.Numerics.dll
+X:\Programs\DNAPushTools\DNAPushTools V1.06b\DNAPushTools\obj\Debug\DNAPushTools.Properties.Resources.resources
+X:\Programs\DNAPushTools\DNAPushTools V1.06b\DNAPushTools\obj\Debug\DNAPushTools.csproj.GenerateResource.Cache
+X:\Programs\DNAPushTools\DNAPushTools V1.06b\DNAPushTools\obj\Debug\DNAPushTools.frmMiniGame.resources
+X:\Programs\DNAPushTools\DNAPushTools V1.06b\DNAPushTools\obj\Debug\DNAPushTools.frmPushTools.resources
+X:\Programs\DNAPushTools\DNAPushTools\DNAPushTools V1.07\DNAPushTools\bin\Debug\DNAPushTools.exe.config
+X:\Programs\DNAPushTools\DNAPushTools\DNAPushTools V1.07\DNAPushTools\obj\Debug\DNAPushTools.exe
+X:\Programs\DNAPushTools\DNAPushTools\DNAPushTools V1.07\DNAPushTools\obj\Debug\DNAPushTools.pdb
+X:\Programs\DNAPushTools\DNAPushTools\DNAPushTools V1.07\DNAPushTools\bin\Debug\DNAPushTools.exe
+X:\Programs\DNAPushTools\DNAPushTools\DNAPushTools V1.07\DNAPushTools\bin\Debug\DNAPushTools.pdb
+X:\Programs\DNAPushTools\DNAPushTools\DNAPushTools V1.07\DNAPushTools\bin\Debug\EzDNAApiNet.dll
+X:\Programs\DNAPushTools\DNAPushTools\DNAPushTools V1.07\DNAPushTools\bin\Debug\EzDNAServApiNet.dll
+X:\Programs\DNAPushTools\DNAPushTools\DNAPushTools V1.07\DNAPushTools\bin\Debug\MathNet.Numerics.dll
+X:\Programs\DNAPushTools\DNAPushTools\DNAPushTools V1.07\DNAPushTools\obj\Debug\DNAPushTools.csprojResolveAssemblyReference.cache
+X:\Programs\DNAPushTools\DNAPushTools\DNAPushTools V1.07\DNAPushTools\obj\Debug\DNAPushTools.frmMiniGame.resources
+X:\Programs\DNAPushTools\DNAPushTools\DNAPushTools V1.07\DNAPushTools\obj\Debug\DNAPushTools.frmPushTools.resources
+X:\Programs\DNAPushTools\DNAPushTools\DNAPushTools V1.07\DNAPushTools\obj\Debug\DNAPushTools.Properties.Resources.resources
+X:\Programs\DNAPushTools\DNAPushTools\DNAPushTools V1.07\DNAPushTools\obj\Debug\DNAPushTools.csproj.GenerateResource.Cache
+X:\Programs\DNAPushTools\DNAPushTools V2.01\DNAPushTools\bin\Debug\DNAPushTools.exe.config
+X:\Programs\DNAPushTools\DNAPushTools V2.01\DNAPushTools\obj\Debug\DNAPushTools.exe
+X:\Programs\DNAPushTools\DNAPushTools V2.01\DNAPushTools\obj\Debug\DNAPushTools.pdb
+X:\Programs\DNAPushTools\DNAPushTools V2.01\DNAPushTools\bin\Debug\DNAPushTools.exe
+X:\Programs\DNAPushTools\DNAPushTools V2.01\DNAPushTools\bin\Debug\DNAPushTools.pdb
+X:\Programs\DNAPushTools\DNAPushTools V2.01\DNAPushTools\obj\Debug\DNAPushTools.csprojResolveAssemblyReference.cache
+X:\Programs\DNAPushTools\DNAPushTools V2.01\DNAPushTools\obj\Debug\DNAPushTools.frmMiniGame.resources
+X:\Programs\DNAPushTools\DNAPushTools V2.01\DNAPushTools\obj\Debug\DNAPushTools.frmPushTools.resources
+X:\Programs\DNAPushTools\DNAPushTools V2.01\DNAPushTools\obj\Debug\DNAPushTools.Properties.Resources.resources
+X:\Programs\DNAPushTools\DNAPushTools V2.01\DNAPushTools\obj\Debug\DNAPushTools.csproj.GenerateResource.Cache
+X:\Programs\sapiDNA\DNAPushTools\bin\Debug\DNAPushTools.exe.config
+X:\Programs\sapiDNA\DNAPushTools\bin\Debug\DNAPushTools.exe
+X:\Programs\sapiDNA\DNAPushTools\bin\Debug\DNAPushTools.pdb
+X:\Programs\sapiDNA\DNAPushTools\bin\Debug\EzDNAApiNet.dll
+X:\Programs\sapiDNA\DNAPushTools\bin\Debug\EzDNAServApiNet.dll
+X:\Programs\sapiDNA\DNAPushTools\obj\Debug\DNAPushTools.csprojResolveAssemblyReference.cache
+X:\Programs\sapiDNA\DNAPushTools\obj\Debug\DNAPushTools.frmMiniGame.resources
+X:\Programs\sapiDNA\DNAPushTools\obj\Debug\DNAPushTools.frmPushTools.resources
+X:\Programs\sapiDNA\DNAPushTools\obj\Debug\DNAPushTools.Properties.Resources.resources
+X:\Programs\sapiDNA\DNAPushTools\obj\Debug\DNAPushTools.csproj.GenerateResource.Cache
+X:\Programs\sapiDNA\DNAPushTools\obj\Debug\DNAPushTools.exe
+X:\Programs\sapiDNA\DNAPushTools\obj\Debug\DNAPushTools.pdb
+X:\Programs\DNASuite\DNAPushTools\obj\Debug\DNAPushTools.csprojResolveAssemblyReference.cache
+X:\Programs\DNASuite\DNAPushTools\obj\Debug\DNAPushTools.frmMiniGame.resources
+X:\Programs\DNASuite\DNAPushTools\obj\Debug\DNAPushTools.frmPushTools.resources
+X:\Programs\DNASuite\DNAPushTools\obj\Debug\DNAPushTools.Properties.Resources.resources
+X:\Programs\DNASuite\DNAPushTools\obj\Debug\DNAPushTools.csproj.GenerateResource.Cache
+X:\Programs\DNASuite\DNAPushTools\obj\Debug\DNAPushTools.exe
+X:\Programs\DNASuite\DNAPushTools\obj\Debug\DNAPushTools.pdb
+X:\Programs\DNASuite\DNAPushTools\bin\Debug\DNAPushTools.exe.config
+X:\Programs\DNASuite\DNAPushTools\bin\Debug\DNAPushTools.exe
+X:\Programs\DNASuite\DNAPushTools\bin\Debug\DNAPushTools.pdb
+X:\Programs\DNASuite\DNAPushTools\bin\Debug\ClosedXML.dll
+X:\Programs\DNASuite\DNAPushTools\bin\Debug\EzDNAApiNet.dll
+X:\Programs\DNASuite\DNAPushTools\bin\Debug\EzDNAServApiNet.dll
+X:\Programs\DNASuite\DNAPushTools\bin\Debug\MathNet.Filtering.dll
+X:\Programs\DNASuite\DNAPushTools\bin\Debug\MathNet.Numerics.dll
+X:\Programs\DNASuite\DNAPushTools\bin\Debug\sDNA.dll
+X:\Programs\DNASuite\DNAPushTools\bin\Debug\sDNA.pdb
+X:\Programs\DNASuite\DNAPushTools\bin\Debug\sDNA.xml
+X:\Programs\DNASuite\DNASuite\DNAPushTools\bin\Debug\DNAPushTools.exe.config
+X:\Programs\DNASuite\DNASuite\DNAPushTools\bin\Debug\DNAPushTools.exe
+X:\Programs\DNASuite\DNASuite\DNAPushTools\bin\Debug\DNAPushTools.pdb
+X:\Programs\DNASuite\DNASuite\DNAPushTools\bin\Debug\ClosedXML.dll
+X:\Programs\DNASuite\DNASuite\DNAPushTools\bin\Debug\EzDNAApiNet.dll
+X:\Programs\DNASuite\DNASuite\DNAPushTools\bin\Debug\EzDNAServApiNet.dll
+X:\Programs\DNASuite\DNASuite\DNAPushTools\bin\Debug\MathNet.Filtering.dll
+X:\Programs\DNASuite\DNASuite\DNAPushTools\bin\Debug\MathNet.Numerics.dll
+X:\Programs\DNASuite\DNASuite\DNAPushTools\bin\Debug\sDNA.dll
+X:\Programs\DNASuite\DNASuite\DNAPushTools\bin\Debug\sDNA.pdb
+X:\Programs\DNASuite\DNASuite\DNAPushTools\bin\Debug\sDNA.xml
+X:\Programs\DNASuite\DNASuite\DNAPushTools\obj\Debug\DNAPushTools.csprojResolveAssemblyReference.cache
+X:\Programs\DNASuite\DNASuite\DNAPushTools\obj\Debug\DNAPushTools.frmMiniGame.resources
+X:\Programs\DNASuite\DNASuite\DNAPushTools\obj\Debug\DNAPushTools.frmPushTools.resources
+X:\Programs\DNASuite\DNASuite\DNAPushTools\obj\Debug\DNAPushTools.Properties.Resources.resources
+X:\Programs\DNASuite\DNASuite\DNAPushTools\obj\Debug\DNAPushTools.csproj.GenerateResource.Cache
+X:\Programs\DNASuite\DNASuite\DNAPushTools\obj\Debug\DNAPushTools.exe
+X:\Programs\DNASuite\DNASuite\DNAPushTools\obj\Debug\DNAPushTools.pdb
+X:\Programs\DNASuite_2.02.03\DNASuite\DNAPushTools\bin\Debug\DNAPushTools.exe.config
+X:\Programs\DNASuite_2.02.03\DNASuite\DNAPushTools\bin\Debug\DNAPushTools.exe
+X:\Programs\DNASuite_2.02.03\DNASuite\DNAPushTools\bin\Debug\DNAPushTools.pdb
+X:\Programs\DNASuite_2.02.03\DNASuite\DNAPushTools\bin\Debug\ClosedXML.dll
+X:\Programs\DNASuite_2.02.03\DNASuite\DNAPushTools\bin\Debug\EzDNAApiNet.dll
+X:\Programs\DNASuite_2.02.03\DNASuite\DNAPushTools\bin\Debug\EzDNAServApiNet.dll
+X:\Programs\DNASuite_2.02.03\DNASuite\DNAPushTools\bin\Debug\MathNet.Filtering.dll
+X:\Programs\DNASuite_2.02.03\DNASuite\DNAPushTools\bin\Debug\MathNet.Numerics.dll
+X:\Programs\DNASuite_2.02.03\DNASuite\DNAPushTools\bin\Debug\sDNA.dll
+X:\Programs\DNASuite_2.02.03\DNASuite\DNAPushTools\bin\Debug\sDNA.pdb
+X:\Programs\DNASuite_2.02.03\DNASuite\DNAPushTools\bin\Debug\sDNA.xml
+X:\Programs\DNASuite_2.02.03\DNASuite\DNAPushTools\obj\Debug\DNAPushTools.csprojResolveAssemblyReference.cache
+X:\Programs\DNASuite_2.02.03\DNASuite\DNAPushTools\obj\Debug\DNAPushTools.frmMiniGame.resources
+X:\Programs\DNASuite_2.02.03\DNASuite\DNAPushTools\obj\Debug\DNAPushTools.frmPushTools.resources
+X:\Programs\DNASuite_2.02.03\DNASuite\DNAPushTools\obj\Debug\DNAPushTools.Properties.Resources.resources
+X:\Programs\DNASuite_2.02.03\DNASuite\DNAPushTools\obj\Debug\DNAPushTools.csproj.GenerateResource.Cache
+X:\Programs\DNASuite_2.02.03\DNASuite\DNAPushTools\obj\Debug\DNAPushTools.exe
+X:\Programs\DNASuite_2.02.03\DNASuite\DNAPushTools\obj\Debug\DNAPushTools.pdb
+X:\Scripts and Programs\DNASuiteV3\DNAPushTools\bin\Debug\DNAPushTools.exe.config
+X:\Scripts and Programs\DNASuiteV3\DNAPushTools\obj\Debug\DNAPushTools.exe
+X:\Scripts and Programs\DNASuiteV3\DNAPushTools\obj\Debug\DNAPushTools.pdb
+X:\Scripts and Programs\DNASuiteV3\DNAPushTools\bin\Debug\DNAPushTools.exe
+X:\Scripts and Programs\DNASuiteV3\DNAPushTools\bin\Debug\DNAPushTools.pdb
+X:\Scripts and Programs\DNASuiteV3\DNAPushTools\obj\Debug\DNAPushTools.csprojResolveAssemblyReference.cache
+X:\Scripts and Programs\DNASuiteV3\DNAPushTools\obj\Debug\DNAPushTools.frmDates.resources
+X:\Scripts and Programs\DNASuiteV3\DNAPushTools\obj\Debug\DNAPushTools.frmMiniGame.resources
+X:\Scripts and Programs\DNASuiteV3\DNAPushTools\obj\Debug\DNAPushTools.frmPushTools.resources
+X:\Scripts and Programs\DNASuiteV3\DNAPushTools\obj\Debug\DNAPushTools.frmSettings.resources
+X:\Scripts and Programs\DNASuiteV3\DNAPushTools\obj\Debug\DNAPushTools.Properties.Resources.resources
+X:\Scripts and Programs\DNASuiteV3\DNAPushTools\obj\Debug\DNAPushTools.csproj.GenerateResource.Cache
+X:\Scripts and Programs\DNASuite_3.0.1.1\DNAPushTools\bin\Debug\DNAPushTools.exe.config
+X:\Scripts and Programs\DNASuite_3.0.1.1\DNAPushTools\bin\Debug\DNAPushTools.exe
+X:\Scripts and Programs\DNASuite_3.0.1.1\DNAPushTools\bin\Debug\DNAPushTools.pdb
+X:\Scripts and Programs\DNASuite_3.0.1.1\DNAPushTools\obj\Debug\DNAPushTools.csprojResolveAssemblyReference.cache
+X:\Scripts and Programs\DNASuite_3.0.1.1\DNAPushTools\obj\Debug\DNAPushTools.frmDates.resources
+X:\Scripts and Programs\DNASuite_3.0.1.1\DNAPushTools\obj\Debug\DNAPushTools.frmMiniGame.resources
+X:\Scripts and Programs\DNASuite_3.0.1.1\DNAPushTools\obj\Debug\DNAPushTools.frmPushTools.resources
+X:\Scripts and Programs\DNASuite_3.0.1.1\DNAPushTools\obj\Debug\DNAPushTools.frmSettings.resources
+X:\Scripts and Programs\DNASuite_3.0.1.1\DNAPushTools\obj\Debug\DNAPushTools.Properties.Resources.resources
+X:\Scripts and Programs\DNASuite_3.0.1.1\DNAPushTools\obj\Debug\DNAPushTools.csproj.GenerateResource.Cache
+X:\Scripts and Programs\DNASuite_3.0.1.1\DNAPushTools\obj\Debug\DNAPushTools.exe
+X:\Scripts and Programs\DNASuite_3.0.1.1\DNAPushTools\obj\Debug\DNAPushTools.pdb
+X:\Scripts and Programs\DNASuite_3.0.1.1\DNAPushTools\bin\Debug\ClosedXML.dll
+X:\Scripts and Programs\DNASuite_3.0.1.1\DNAPushTools\bin\Debug\EzDNAApiNet.dll
+X:\Scripts and Programs\DNASuite_3.0.1.1\DNAPushTools\bin\Debug\EzDNAServApiNet.dll
+X:\Scripts and Programs\DNASuite_3.0.1.1\DNAPushTools\bin\Debug\MathNet.Filtering.dll
+X:\Scripts and Programs\DNASuite_3.0.1.1\DNAPushTools\bin\Debug\MathNet.Numerics.dll
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNAPushTools\bin\Debug\DNAPushTools.exe.config
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNAPushTools\bin\Debug\DNAPushTools.exe
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNAPushTools\bin\Debug\DNAPushTools.pdb
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNAPushTools\obj\Debug\DNAPushTools.csprojResolveAssemblyReference.cache
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNAPushTools\obj\Debug\DNAPushTools.frmDates.resources
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNAPushTools\obj\Debug\DNAPushTools.frmMiniGame.resources
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNAPushTools\obj\Debug\DNAPushTools.frmPushTools.resources
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNAPushTools\obj\Debug\DNAPushTools.frmSettings.resources
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNAPushTools\obj\Debug\DNAPushTools.Properties.Resources.resources
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNAPushTools\obj\Debug\DNAPushTools.csproj.GenerateResource.Cache
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNAPushTools\obj\Debug\DNAPushTools.exe
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNAPushTools\obj\Debug\DNAPushTools.pdb

@@ -1,0 +1,1014 @@
+MDSS01.LC03PRMA.AC01008,Condenser 1A FouledClogged (SW side),,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC01016,Condenser 1B FouledClogged (SW side),,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC01018,CW Pump 1 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC01021,Pump Motor Misalignment,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC01022,Pump Power Supply Problem,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC01023,Pump Electrical imbalance,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC01024,Pump Rotor Bars crackedloose,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC01025,Pump Motor DE Bearing worndamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC01026,Pump Motor ODE Bearing worndamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC01027,Pump Lamination wornloose,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC01028,Pump Stator Windings openshorted,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC01030,Pump Motor Foundation Foot brokenwarped,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC01031,Comp 1A Motor Misalignment,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC01032,Comp 1A Power Supply Problem,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC01033,Comp 1A Electrical imbalance,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC01034,Comp 1A Rotor Bars crackedloose,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC01035,Comp 1A Motor DE Bearing worndamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC01036,Comp 1A Motor ODE Bearing worndamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC01037,Comp 1A Lamination wornloose,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC01038,Comp 1A Stator Windings openshorted,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC01040,Comp 1A Motor Foundation Foot brokenwarped,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC01041,Comp 1B Motor Misalignment,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC01042,Comp 1B Power Supply Problem,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC01043,Comp 1B Electrical imbalance,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC01044,Comp 1B Rotor Bars crackedloose,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC01045,Comp 1B Motor DE Bearing worndamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC01046,Comp 1B Motor ODE Bearing worndamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC01047,Comp 1B Lamination wornloose,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC01048,Comp 1B Stator Windings openshorted,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC01050,Comp 1B Motor Foundation Foot brokenwarped,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC02008,Condenser 2A FouledClogged (SW side),,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC02016,Condenser 2B FouledClogged (SW side),,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC02018,CW Pump 2 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC02021,Pump Motor Misalignment,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC02022,Pump Power Supply Problem,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC02023,Pump Electrical imbalance,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC02024,Pump Rotor Bars crackedloose,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC02025,Pump Motor DE Bearing worndamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC02026,Pump Motor ODE Bearing worndamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC02027,Pump Lamination wornloose,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC02028,Pump Stator Windings openshorted,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC02030,Pump Motor Foundation Foot brokenwarped,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC02031,Comp 2A Motor Misalignment,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC02032,Comp 2A Power Supply Problem,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC02033,Comp 2A Electrical imbalance,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC02034,Comp 2A Rotor Bars crackedloose,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC02035,Comp 2A Motor DE Bearing worndamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC02036,Comp 2A Motor ODE Bearing worndamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC02037,Comp 2A Lamination wornloose,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC02038,Comp 2A Stator Windings openshorted,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC02040,Comp 2A Motor Foundation Foot brokenwarped,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC02041,Comp 2B Motor Misalignment,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC02042,Comp 2B Power Supply Problem,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC02043,Comp 2B Electrical imbalance,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC02044,Comp 2B Rotor Bars crackedloose,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC02045,Comp 2B Motor DE Bearing worndamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC02046,Comp 2B Motor ODE Bearing worndamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC02047,Comp 2B Lamination wornloose,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC02048,Comp 2B Stator Windings openshorted,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.AC02050,Comp 2B Motor Foundation Foot brokenwarped,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG01001,CG Oil Cooler Reduced Performance,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG01002,CG Temp Reg Valve Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG01003,CG Elec Lube Oil Pump WornFaulty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG01004,CG Mech Lube Oil Pump WornFaulty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG01010,PD LS Pinion Gear Aft (1) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG01011,PD LS Pinion Gear Fwd (2) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG01012,PD HS Pinion Gear Aft (3) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG01013,PD Input Shaft Fwd (4) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG01014,GT Pinion Gear Aft (11) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG01015,GT Pinion Gear Aft (11) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG01016,Idler Gear Aft (7) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG01017,Idler Gear Fwd (8) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG01018,Idler Shaft HS Gear Aft (9) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG01019,Idler Shaft HS Gear Fwd (10) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG01020,GT Pinion Gear Aft (11) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG01021,GT Pinion Gear Fwd (12) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG01022,SSC Fwd (13) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG01023,GT Pinion Gear Aft (11) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG01024,PD Input Shaft Aft (15) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG01025,Output Shaft Fwd Thrust (17F) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG01026,Output Shaft Aft Thrust (17A) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG01027,SCC Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG01028,MDC-HS (Idler) WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG01029,MDC-LS (diesel) WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG01030,Line Shaft Bearing 1 Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG01031,Line Shaft Bearing 3 Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG01032,GT Pinion Gear Worndamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG01033,PD Pinion Gear Worndamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG01036,Idle Gear Worndamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG01037,CG Output Gear WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG01038,Propulsion Diesel Flex Coupling worndamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG01039,High Speed Coupling worndamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG01040,Motor Misalignment,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG01041,GT Pinion Gear Aft (11) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG01042,Electrical Imbalance,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG01043,Rotor Bars CrackedLoose,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG01044,Motor DE Bearing WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG01045,Motor ODE Bearing WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG01046,Stator Laminations WornLoose,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG01047,Stator Windings openshorted,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG01049,Foundation WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG02001,CG Oil Cooler Reduced Performance,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG02002,CG Temp Reg Valve Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG02003,CG Elec Lube Oil Pump WornFaulty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG02004,CG Mech Lube Oil Pump WornFaulty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG02010,PD LS Pinion Gear Aft (1) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG02011,PD LS Pinion Gear Fwd (2) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG02012,PD HS Pinion Gear Aft (3) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG02013,PD Input Shaft Fwd (4) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG02014,GT Pinion Gear Aft (11) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG02015,GT Pinion Gear Aft (11) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG02016,Idler Gear Aft (7) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG02017,Idler Gear Fwd (8) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG02018,Idler Shaft HS Gear Aft (9) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG02019,Idler Shaft HS Gear Fwd (10) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG02020,GT Pinion Gear Aft (11) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG02021,GT Pinion Gear Fwd (12) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG02022,SSC Fwd (13) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG02023,GT Pinion Gear Aft (11) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG02024,PD Input Shaft Aft (15) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG02025,Output Shaft Fwd Thrust (17F) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG02026,Output Shaft Aft Thrust (17A) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG02027,SCC Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG02028,MDC-HS (Idler) WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG02029,MDC-LS (diesel) WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG02030,Line Shaft Bearing 1 Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG02031,Line Shaft Bearing 3 Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG02032,GT Pinion Gear Worndamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG02033,PD Pinion Gear Worndamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG02036,Idle Gear Worndamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG02037,CG Output Gear WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG02038,Propulsion Diesel Flex Coupling worndamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG02039,High Speed Coupling worndamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG02040,Motor Misalignment,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG02041,GT Pinion Gear Aft (11) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG02042,Electrical Imbalance,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG02043,Rotor Bars CrackedLoose,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG02044,Motor DE Bearing WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG02045,Motor ODE Bearing WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG02046,Stator Laminations WornLoose,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG02047,Stator Windings openshorted,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CG02049,Foundation WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CGLO001,Heating Elements Failed to Heat,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CGLO009,LOWP Worn Internals,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.CGLO033,ST Heating Elements Failed to Heat,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01001,L Turbocharger WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01002,R Turbocharger WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01003,L Intercooler SW Side Fouled,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01004,R Intercooler SW Side Fouled,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01005,L Intercooler Air Path Blocked,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01006,R Intercooler Air Path Blocked,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01007,L1 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01008,L2 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01009,L3 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01010,L4 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01011,R1 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01012,R2 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01013,R3 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01014,R4 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01015,L1 LinerRing WornScored,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01016,L2 LinerRing WornScored,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01017,L3 LinerRing WornScored,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01018,L4 LinerRing WornScored,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01019,R1 LinerRing WornScored,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01020,R2 LinerRing WornScored,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01021,R3 LinerRing WornScored,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01022,R4 LinerRing WornScored,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01031,L1 Exhaust Valve Stems  Seats BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01032,L2 Exhaust Valve Stems  Seats BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01033,L3 Exhaust Valve Stems  Seats BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01034,L4 Exhaust Valve Stems  Seats BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01035,R1 Exhaust Valve Stems  Seats BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01036,R2 Exhaust Valve Stems  Seats BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01037,R3 Exhaust Valve Stems  Seats BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01038,R4 Exhaust Valve Stems  Seats BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01039,L1 Intake Valve Stems  Seats Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01040,L2 Intake Valve Stems  Seats Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01041,L3 Intake Valve Stems  Seats Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01042,L4 Intake Valve Stems  Seats Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01043,R1 Intake Valve Stems  Seats Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01044,R2 Intake Valve Stems  Seats Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01045,R3 Intake Valve Stems  Seats Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01046,R4 Intake Valve Stems  Seats Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01047,L1 Fuel Injector Nozzle BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01048,L2 Fuel Injector Nozzle BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01049,L3 Fuel Injector Nozzle BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01050,L4 Fuel Injector Nozzle BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01051,R1 Fuel Injector Nozzle BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01052,R2 Fuel Injector Nozzle BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01053,R3 Fuel Injector Nozzle BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01054,R4 Fuel Injector Nozzle BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01055,L Side Improper Timing,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01056,R Side Improper Timing,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01057,JW Cooler FouledClogged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01058,DE Bearing Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01059,NDE Bearing Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01060,Stator Winding Electrical Failure,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01061,Generator Overheating,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01062,JW Pump Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01063,SW Pump Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01064,FO Pump Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01065,Generator Air Cooler Fouled,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01066,Main Bearing 1 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01067,Main Bearing 2 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01068,Main Bearing 3 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01069,Main Bearing 4 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01070,Main Bearing 5 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01071,LO Cooling Pump Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01072,LO Gallery Pump Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01073,Rotor ImbalanceEccentric,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01074,LOOSE FOUNDATION,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01075,Rotor Bars Broken,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01076,POWER CABLES DAMAGED,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01077,ELECTRICAL PROBLEM,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01078,HARMONIC DISTORTION,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01079,FO Pump Mistimed,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01080,CCV FILTER CLOGGEDDIRTY,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01081,LO CONDITION UNSATISFACTORY,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01082,PARTICLE CONTAMINATION,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01083,INSUFFICIENT OIL VISCOSITY,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01084,OIL OVERHEATED,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01085,H2O CONTENT HIGH,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01086,ADDITIVE PACKAGE DEPLETED,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG01GPI1,GOVERNOR CONTROL FAILURE,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02001,L Turbocharger WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02002,R Turbocharger WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02003,L Intercooler SW Side Fouled,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02004,R Intercooler SW Side Fouled,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02005,L Intercooler Air Path Blocked,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02006,R Intercooler Air Path Blocked,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02007,L1 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02008,L2 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02009,L3 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02010,L4 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02011,R1 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02012,R2 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02013,R3 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02014,R4 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02015,L1 LinerRing WornScored,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02016,L2 LinerRing WornScored,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02017,L3 LinerRing WornScored,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02018,L4 LinerRing WornScored,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02019,R1 LinerRing WornScored,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02020,R2 LinerRing WornScored,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02021,R3 LinerRing WornScored,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02022,R4 LinerRing WornScored,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02031,L1 Exhaust Valve Stems  Seats BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02032,L2 Exhaust Valve Stems  Seats BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02033,L3 Exhaust Valve Stems  Seats BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02034,L4 Exhaust Valve Stems  Seats BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02035,R1 Exhaust Valve Stems  Seats BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02036,R2 Exhaust Valve Stems  Seats BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02037,R3 Exhaust Valve Stems  Seats BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02038,R4 Exhaust Valve Stems  Seats BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02039,L1 Intake Valve Stems  Seats Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02040,L2 Intake Valve Stems  Seats Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02041,L3 Intake Valve Stems  Seats Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02042,L4 Intake Valve Stems  Seats Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02043,R1 Intake Valve Stems  Seats Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02044,R2 Intake Valve Stems  Seats Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02045,R3 Intake Valve Stems  Seats Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02046,R4 Intake Valve Stems  Seats Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02047,L1 Fuel Injector Nozzle BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02048,L2 Fuel Injector Nozzle BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02049,L3 Fuel Injector Nozzle BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02050,L4 Fuel Injector Nozzle BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02051,R1 Fuel Injector Nozzle BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02052,R2 Fuel Injector Nozzle BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02053,R3 Fuel Injector Nozzle BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02054,R4 Fuel Injector Nozzle BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02055,L Side Improper Timing,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02056,R Side Improper Timing,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02057,JW Cooler FouledClogged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02058,DE Bearing Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02059,NDE Bearing Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02060,Stator Winding Electrical Failure,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02061,Generator Overheating,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02062,JW Pump Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02063,SW Pump Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02064,FO Pump Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02065,Generator Air Cooler Fouled,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02066,Main Bearing 1 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02067,Main Bearing 2 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02068,Main Bearing 3 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02069,Main Bearing 4 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02070,Main Bearing 5 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02071,LO Cooling Pump Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02072,LO Gallery Pump Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02073,Rotor ImbalanceEccentric,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02074,LOOSE FOUNDATION,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02075,Rotor Bars Broken,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02076,POWER CABLES DAMAGED,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02077,ELECTRICAL PROBLEM,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02078,HARMONIC DISTORTION,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02079,FO Pump Mistimed,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02080,CCV FILTER CLOGGEDDIRTY,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02081,LO CONDITION UNSATISFACTORY,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02082,PARTICLE CONTAMINATION,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02083,INSUFFICIENT OIL VISCOSITY,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02084,OIL OVERHEATED,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02085,H2O CONTENT HIGH,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02086,ADDITIVE PACKAGE DEPLETED,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG02GPI1,GOVERNOR CONTROL FAILURE,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03001,L Turbocharger WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03002,R Turbocharger WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03003,L Intercooler SW Side Fouled,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03004,R Intercooler SW Side Fouled,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03005,L Intercooler Air Path Blocked,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03006,R Intercooler Air Path Blocked,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03007,L1 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03008,L2 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03009,L3 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03010,L4 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03011,R1 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03012,R2 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03013,R3 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03014,R4 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03015,L1 LinerRing WornScored,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03016,L2 LinerRing WornScored,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03017,L3 LinerRing WornScored,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03018,L4 LinerRing WornScored,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03019,R1 LinerRing WornScored,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03020,R2 LinerRing WornScored,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03021,R3 LinerRing WornScored,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03022,R4 LinerRing WornScored,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03031,L1 Exhaust Valve Stems  Seats BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03032,L2 Exhaust Valve Stems  Seats BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03033,L3 Exhaust Valve Stems  Seats BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03034,L4 Exhaust Valve Stems  Seats BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03035,R1 Exhaust Valve Stems  Seats BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03036,R2 Exhaust Valve Stems  Seats BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03037,R3 Exhaust Valve Stems  Seats BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03038,R4 Exhaust Valve Stems  Seats BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03039,L1 Intake Valve Stems  Seats Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03040,L2 Intake Valve Stems  Seats Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03041,L3 Intake Valve Stems  Seats Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03042,L4 Intake Valve Stems  Seats Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03043,R1 Intake Valve Stems  Seats Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03044,R2 Intake Valve Stems  Seats Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03045,R3 Intake Valve Stems  Seats Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03046,R4 Intake Valve Stems  Seats Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03047,L1 Fuel Injector Nozzle BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03048,L2 Fuel Injector Nozzle BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03049,L3 Fuel Injector Nozzle BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03050,L4 Fuel Injector Nozzle BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03051,R1 Fuel Injector Nozzle BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03052,R2 Fuel Injector Nozzle BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03053,R3 Fuel Injector Nozzle BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03054,R4 Fuel Injector Nozzle BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03055,L Side Improper Timing,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03056,R Side Improper Timing,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03057,JW Cooler FouledClogged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03058,DE Bearing Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03059,NDE Bearing Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03060,Stator Winding Electrical Failure,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03061,Generator Overheating,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03062,JW Pump Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03063,SW Pump Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03064,FO Pump Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03065,Generator Air Cooler Fouled,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03066,Main Bearing 1 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03067,Main Bearing 2 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03068,Main Bearing 3 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03069,Main Bearing 4 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03070,Main Bearing 5 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03071,LO Cooling Pump Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03072,LO Gallery Pump Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03073,Rotor ImbalanceEccentric,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03074,LOOSE FOUNDATION,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03075,Rotor Bars Broken,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03076,POWER CABLES DAMAGED,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03077,ELECTRICAL PROBLEM,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03078,HARMONIC DISTORTION,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03079,FO Pump Mistimed,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03080,CCV FILTER CLOGGEDDIRTY,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03081,LO CONDITION UNSATISFACTORY,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03082,PARTICLE CONTAMINATION,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03083,INSUFFICIENT OIL VISCOSITY,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03084,OIL OVERHEATED,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03085,H2O CONTENT HIGH,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03086,ADDITIVE PACKAGE DEPLETED,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG03GPI1,GOVERNOR CONTROL FAILURE,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04001,L Turbocharger WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04002,R Turbocharger WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04003,L Intercooler SW Side Fouled,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04004,R Intercooler SW Side Fouled,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04005,L Intercooler Air Path Blocked,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04006,R Intercooler Air Path Blocked,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04007,L1 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04008,L2 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04009,L3 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04010,L4 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04011,R1 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04012,R2 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04013,R3 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04014,R4 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04015,L1 LinerRing WornScored,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04016,L2 LinerRing WornScored,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04017,L3 LinerRing WornScored,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04018,L4 LinerRing WornScored,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04019,R1 LinerRing WornScored,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04020,R2 LinerRing WornScored,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04021,R3 LinerRing WornScored,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04022,R4 LinerRing WornScored,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04031,L1 Exhaust Valve Stems  Seats BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04032,L2 Exhaust Valve Stems  Seats BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04033,L3 Exhaust Valve Stems  Seats BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04034,L4 Exhaust Valve Stems  Seats BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04035,R1 Exhaust Valve Stems  Seats BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04036,R2 Exhaust Valve Stems  Seats BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04037,R3 Exhaust Valve Stems  Seats BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04038,R4 Exhaust Valve Stems  Seats BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04039,L1 Intake Valve Stems  Seats Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04040,L2 Intake Valve Stems  Seats Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04041,L3 Intake Valve Stems  Seats Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04042,L4 Intake Valve Stems  Seats Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04043,R1 Intake Valve Stems  Seats Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04044,R2 Intake Valve Stems  Seats Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04045,R3 Intake Valve Stems  Seats Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04046,R4 Intake Valve Stems  Seats Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04047,L1 Fuel Injector Nozzle BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04048,L2 Fuel Injector Nozzle BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04049,L3 Fuel Injector Nozzle BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04050,L4 Fuel Injector Nozzle BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04051,R1 Fuel Injector Nozzle BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04052,R2 Fuel Injector Nozzle BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04053,R3 Fuel Injector Nozzle BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04054,R4 Fuel Injector Nozzle BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04055,L Side Improper Timing,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04056,R Side Improper Timing,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04057,JW Cooler FouledClogged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04058,DE Bearing Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04059,NDE Bearing Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04060,Stator Winding Electrical Failure,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04061,Generator Overheating,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04062,JW Pump Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04063,SW Pump Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04064,FO Pump Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04065,Generator Air Cooler Fouled,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04066,Main Bearing 1 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04067,Main Bearing 2 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04068,Main Bearing 3 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04069,Main Bearing 4 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04070,Main Bearing 5 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04071,LO Cooling Pump Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04072,LO Gallery Pump Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04073,Rotor ImbalanceEccentric,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04074,LOOSE FOUNDATION,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04075,Rotor Bars Broken,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04076,POWER CABLES DAMAGED,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04077,ELECTRICAL PROBLEM,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04078,HARMONIC DISTORTION,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04079,FO Pump Mistimed,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04080,CCV FILTER CLOGGEDDIRTY,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04081,LO CONDITION UNSATISFACTORY,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04082,PARTICLE CONTAMINATION,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04083,INSUFFICIENT OIL VISCOSITY,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04084,OIL OVERHEATED,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04085,H2O CONTENT HIGH,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04086,ADDITIVE PACKAGE DEPLETED,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.DG04GPI1,GOVERNOR CONTROL FAILURE,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOS1015,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOS1017,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOS1019,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOS1021,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOS1023,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOS1025,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOS1027,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOS1029,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOS1031,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOS2015,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOS2017,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOS2019,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOS2021,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOS2023,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOS2025,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOS2027,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOS2029,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOS2031,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1004,FOP1A Purifier Clutch WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1005,FOP1A Purifier Top Bearing WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1007,FOP1A Purifier Bottom Bearing WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1008,FOP1A Purifier Bowl Discs Dirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1019,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1021,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1023,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1025,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1027,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1029,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1031,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1033,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1035,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1037,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1039,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1041,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1043,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1045,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1047,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1049,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1051,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1053,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1055,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1057,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1059,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1061,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1063,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1065,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1067,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1069,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1071,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1073,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1075,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1077,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1079,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1081,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1083,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1085,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1087,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1089,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1091,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1093,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1095,FO Water Contamination,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1096,FO Viscosity Change,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1097,FO SAE Contamination,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1098,FO ISO Contamination,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT1099,FO NAS Contamination,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT2004,FOP1B Purifier Clutch WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT2005,FOP1B Purifier Top Bearing WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT2007,FOP1B Purifier Bottom Bearing WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT2008,FOP1B Purifier Bowl Discs Dirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT2019,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT2021,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT2023,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.FOT2025,MOV Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT01007,IP Compressor Roller Bearing WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT01008,IP Compressor Rotor Blade Damage,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT01009,IP Compressor Stator Blade Damage,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT01010,IP Compressor Stub Shaft Bearing WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT01011,HP Compressor Forward Bearing WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT01013,Internal Gearbox WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT01014,Radial Driveshaft from IGB WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT01015,Transfer (Bevel) Gearbox WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT01016,External Gearbox WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT01017,HP Compressor Rotor Blade Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT01018,HP Compressor Stator Blade Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT01047,HP Turbine Rotor Blade Damage,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT01048,HP Nozzle Guide Vanes BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT01049,IP Turbine Rotor Blade Damage,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT01050,IP Nozzle Guide Vanes BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT01051,IP Turbine Roller Bearing WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT01052,HP Turbine Roller Bearing WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT01053,LP Turbine Roller Bearing WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT01054,PTO Thrust Bearing WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT01055,Power Turbine Rotor Blade Damage,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT01056,Power Turbine Nozzle Guive Vane BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT01057,WCOC FouledClogged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT01058,Worn Lube Oil Pump  Low LO Supply Pres,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT01059,Fuel Metering Valve Internals Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT01060,Fuel Metering Valve Clogged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT01061,Worn Fuel Pump,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT01062,WCAC FouledClogged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT01066,AirLabyrinth Seals  LP Front Bearing WornLeaking,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT01067,AirLabyrinth Seals  LP Tail Bearing WornLeaking,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT01068,Front Vibration Sensor Error,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT01069,Middle Vibration Sensor Error,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT01070,Rear Vibration Sensor Error,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT01071,P25 Pressure Sensor Calibration,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT01072,T25 Temp Sensor Calibration,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT02007,IP Compressor Roller Bearing WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT02008,IP Compressor Rotor Blade Damage,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT02009,IP Compressor Stator Blade Damage,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT02010,IP Compressor Stub Shaft Bearing WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT02011,HP Compressor Forward Bearing WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT02013,Internal Gearbox WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT02014,Radial Driveshaft from IGB WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT02015,Transfer (Bevel) Gearbox WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT02016,External Gearbox WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT02017,HP Compressor Rotor Blade Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT02018,HP Compressor Stator Blade Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT02047,HP Turbine Rotor Blade Damage,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT02048,HP Nozzle Guide Vanes BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT02049,IP Turbine Rotor Blade Damage,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT02050,IP Nozzle Guide Vanes BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT02051,IP Turbine Roller Bearing WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT02052,HP Turbine Roller Bearing WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT02053,LP Turbine Roller Bearing WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT02054,PTO Thrust Bearing WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT02055,Power Turbine Rotor Blade Damage,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT02056,Power Turbine Nozzle Guive Vane BurntWorn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT02057,WCOC FouledClogged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT02058,Worn Lube Oil Pump  Low LO Supply Pres,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT02059,Fuel Metering Valve Internals Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT02060,Fuel Metering Valve Clogged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT02061,Worn Fuel Pump,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT02062,WCAC FouledClogged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT02066,AirLabyrinth Seals  LP Front Bearing WornLeaking,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT02067,AirLabyrinth Seals  LP Tail Bearing WornLeaking,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT02068,Front Vibration Sensor Error,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT02069,Middle Vibration Sensor Error,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT02070,Rear Vibration Sensor Error,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT02071,P25 Pressure Sensor Calibration,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.GT02072,T25 Temp Sensor Calibration,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MP01004,1st Stage Compressor Rings Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MP01005,2nd Stage Compressor Rings Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MP01006,3rd Stage Compressor Rings Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MP01010,1st Stage Concentric Valve Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MP01011,2nd Stage Lamellar Valve Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MP01012,3rd Stage Lamellar Valves Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MP01013,1st and 2nd Stage Intercooler CloggedFouled,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MP01014,3rd Stage Re-cooler Tube Clogged Fouled,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MP01015,Worn LO Pump  Low Oil Pressure,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MP01016,Power Supply Problem,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MP01017,Electrical imbalance,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MP01018,Rotor Bars crackedloose,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MP01019,Motor DE Bearing worndamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MP01020,Motor ODE Bearing worndamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MP01021,Stator Windings openshorted,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MP01022,Motor Foundation Foot brokenwarped,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MP02004,1st Stage Compressor Rings Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MP02005,2nd Stage Compressor Rings Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MP02006,3rd Stage Compressor Rings Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MP02010,1st Stage Concentric Valve Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MP02011,2nd Stage Lamellar Valve Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MP02012,3rd Stage Lamellar Valves Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MP02013,1st and 2nd Stage Intercooler CloggedFouled,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MP02014,3rd Stage Re-cooler Tube Clogged Fouled,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MP02015,Worn LO Pump  Low Oil Pressure,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MP02016,Power Supply Problem,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MP02017,Electrical imbalance,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MP02018,Rotor Bars crackedloose,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MP02019,Motor DE Bearing worndamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MP02020,Motor ODE Bearing worndamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MP02021,Stator Windings openshorted,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MP02022,Motor Foundation Foot brokenwarped,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MSWP023,AC Plant Inlet Strainer Clogged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MSWP024,Port WJ Inlet Strainer Clogged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MSWP025,Stbd WJ Inlet Strainer Clogged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MSWP026,Nr 3 SSDG Wye Inlet Strainer Clogged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MSWP027,Nr 4 SSDG Wye Inlet Strainer Clogged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MSWP028,SSDG Cooling Loop F4 Inlet Strainer Clogged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MSWP029,GT Cooling Loop Inlet Strainer Clogged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MSWP030,Nr 1 SSDG Wye Inlet Inlet Strainer Clogged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MSWP031,Nr 2 SSDG Wye Inlet Inlet Strainer Clogged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MSWP032,SSDG Cooling Loop F1 Inlet Strainer Clogged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MSWP033,Mission Zone Inlet Strainer Clogged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MSWP034,MMR UL Inlet Strainer Clogged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MSWP035,Nr 2 Firemain Inlet Strainer Clogged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MSWP036,Nr 1 Firemain Inlet Strainer Clogged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MSWP037,Seawater Pump Inlet Strainer Clogged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MSWP038,Fin Stabilizer HPU Inlet Strainer Clogged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MSWP039,GT HPU Inlet Strainer Clogged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MSWP040,VCHT System Inlet Strainer Clogged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MSWP041,Shaft Seal Inlet Strainer Clogged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.MSWP042,Splitting Gear Inlet Strainer Clogged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01017,L1 Intake Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01018,L2 Intake Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01019,L3 Intake Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01020,L4 Intake Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01021,L5 Intake Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01022,L6 Intake Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01023,L7 Intake Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01024,L8 Intake Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01025,R1 Intake Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01026,R2 Intake Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01027,R3 Intake Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01028,R4 Intake Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01029,R5 Intake Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01030,R6 Intake Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01031,R7 Intake Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01032,R8 Intake Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01033,L1 Exhaust Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01034,L2 Exhaust Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01035,L3 Exhaust Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01036,L4 Exhaust Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01037,L5 Exhaust Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01038,L6 Exhaust Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01039,L7 Exhaust Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01040,L8 Exhaust Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01041,R1 Exhaust Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01042,R2 Exhaust Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01043,R3 Exhaust Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01044,R4 Exhaust Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01045,R5 Exhaust Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01046,R6 Exhaust Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01047,R7 Exhaust Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01048,R8 Exhaust Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01049,L1 Fuel Injector Nozzle Degraded,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01050,L2 Fuel Injector Nozzle Degraded,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01051,L3 Fuel Injector Nozzle Degraded,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01052,L4 Fuel Injector Nozzle Degraded,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01053,L5 Fuel Injector Nozzle Degraded,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01054,L6 Fuel Injector Nozzle Degraded,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01055,L7 Fuel Injector Nozzle Degraded,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01056,L8 Fuel Injector Nozzle Degraded,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01057,R1 Fuel Injector Nozzle Degraded,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01058,R2 Fuel Injector Nozzle Degraded,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01059,R3 Fuel Injector Nozzle Degraded,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01060,R4 Fuel Injector Nozzle Degraded,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01061,R5 Fuel Injector Nozzle Degraded,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01062,R6 Fuel Injector Nozzle Degraded,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01063,R7 Fuel Injector Nozzle Degraded,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01064,R8 Fuel Injector Nozzle Degraded,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01065,L1 Piston RingsCylinder Liners Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01066,L2 Piston RingsCylinder Liners Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01067,L3 Piston RingsCylinder Liners Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01068,L4 Piston RingsCylinder Liners Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01069,L5 Piston RingsCylinder Liners Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01070,L6 Piston RingsCylinder Liners Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01071,L7 Piston RingsCylinder Liners Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01072,L8 Piston RingsCylinder Liners Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01073,R1 Piston RingsCylinder Liners Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01074,R2 Piston RingsCylinder Liners Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01075,R3 Piston RingsCylinder Liners Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01076,R4 Piston RingsCylinder Liners Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01077,R5 Piston RingsCylinder Liners Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01078,R6 Piston RingsCylinder Liners Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01079,R7 Piston RingsCylinder Liners Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01080,R8 Piston RingsCylinder Liners Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01081,MAIN BEARING 1 WORN,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01082,MAIN BEARING 2 WORN,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01083,Main Bearing 3 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01084,Main Bearing 4 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01085,Main Bearing 5 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01086,Main Bearing 6 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01087,Main Bearing 7 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01088,Main Bearing 8 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01089,Main Bearing 9 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01090,L Side Improper Timing,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01091,R Side Improper Timing,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01092,Rod Bearing 1 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01093,Rod Bearing 2 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01094,Rod Bearing 3 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01095,Rod Bearing 4 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01096,Rod Bearing 5 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01097,Rod Bearing 6 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01098,Rod Bearing 7 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01099,Rod Bearing 8 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01100,Crankshaft Misalignment,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01101,Lubricating Oil Pump  Main Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01102,LO combicooler TCV Misadjust,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01103,LO Condition Unsatisfactory,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01104,FO Pump Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01105,L1 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01106,L2 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01107,L3 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01108,L4 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01109,L5 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01110,L6 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01111,L7 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01112,L8 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01113,R1 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01114,R2 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01115,R3 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01116,R4 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01117,R5 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01118,R6 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01119,R7 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01120,R8 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01121,JW Pump Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01122,JW Cooler (combi-cooler) SW Side FoulingClog,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01123,JW Thermostatic Valve Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01124,SW Pump Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01125,L Turbocharger WornDirty Turbine,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01126,R Turbocharger WornDirty Turbine,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01127,L Turbocharger WornDirty Compressor,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01128,R Turbocharger WornDirty Compressor,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01129,Air Cooler HX Fouled JW Side,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01130,Air Cooler ObstructionFouled (air side),,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01131,L Turbocharger Bearing Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01132,R Turbocharger Bearing Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01133,PARTICLE CONTAMINATION,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01134,INSUFFICIENT OIL VISCOSITY,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01135,OIL OVERHEATED,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01136,H2O CONTENT HIGH,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD01137,ADDITIVE PACKAGE DEPLETED,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02017,L1 Intake Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02018,L2 Intake Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02019,L3 Intake Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02020,L4 Intake Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02021,L5 Intake Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02022,L6 Intake Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02023,L7 Intake Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02024,L8 Intake Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02025,R1 Intake Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02026,R2 Intake Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02027,R3 Intake Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02028,R4 Intake Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02029,R5 Intake Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02030,R6 Intake Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02031,R7 Intake Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02032,R8 Intake Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02033,L1 Exhaust Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02034,L2 Exhaust Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02035,L3 Exhaust Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02036,L4 Exhaust Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02037,L5 Exhaust Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02038,L6 Exhaust Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02039,L7 Exhaust Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02040,L8 Exhaust Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02041,R1 Exhaust Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02042,R2 Exhaust Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02043,R3 Exhaust Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02044,R4 Exhaust Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02045,R5 Exhaust Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02046,R6 Exhaust Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02047,R7 Exhaust Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02048,R8 Exhaust Valve Stems  Seats WornDirty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02049,L1 Fuel Injector Nozzle Degraded,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02050,L2 Fuel Injector Nozzle Degraded,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02051,L3 Fuel Injector Nozzle Degraded,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02052,L4 Fuel Injector Nozzle Degraded,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02053,L5 Fuel Injector Nozzle Degraded,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02054,L6 Fuel Injector Nozzle Degraded,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02055,L7 Fuel Injector Nozzle Degraded,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02056,L8 Fuel Injector Nozzle Degraded,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02057,R1 Fuel Injector Nozzle Degraded,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02058,R2 Fuel Injector Nozzle Degraded,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02059,R3 Fuel Injector Nozzle Degraded,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02060,R4 Fuel Injector Nozzle Degraded,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02061,R5 Fuel Injector Nozzle Degraded,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02062,R6 Fuel Injector Nozzle Degraded,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02063,R7 Fuel Injector Nozzle Degraded,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02064,R8 Fuel Injector Nozzle Degraded,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02065,L1 Piston RingsCylinder Liners Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02066,L2 Piston RingsCylinder Liners Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02067,L3 Piston RingsCylinder Liners Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02068,L4 Piston RingsCylinder Liners Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02069,L5 Piston RingsCylinder Liners Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02070,L6 Piston RingsCylinder Liners Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02071,L7 Piston RingsCylinder Liners Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02072,L8 Piston RingsCylinder Liners Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02073,R1 Piston RingsCylinder Liners Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02074,R2 Piston RingsCylinder Liners Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02075,R3 Piston RingsCylinder Liners Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02076,R4 Piston RingsCylinder Liners Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02077,R5 Piston RingsCylinder Liners Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02078,R6 Piston RingsCylinder Liners Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02079,R7 Piston RingsCylinder Liners Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02080,R8 Piston RingsCylinder Liners Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02081,MAIN BEARING 1 WORN,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02082,MAIN BEARING 2 WORN,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02083,Main Bearing 3 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02084,Main Bearing 4 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02085,Main Bearing 5 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02086,Main Bearing 6 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02087,Main Bearing 7 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02088,Main Bearing 8 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02089,Main Bearing 9 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02090,L Side Improper Timing,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02091,R Side Improper Timing,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02092,Rod Bearing 1 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02093,Rod Bearing 2 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02094,Rod Bearing 3 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02095,Rod Bearing 4 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02096,Rod Bearing 5 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02097,Rod Bearing 6 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02098,Rod Bearing 7 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02099,Rod Bearing 8 Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02100,Crankshaft Misalignment,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02101,Lubricating Oil Pump  Main Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02102,LO combicooler TCV Misadjust,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02103,LO Condition Unsatisfactory,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02104,FO Pump Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02105,L1 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02106,L2 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02107,L3 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02108,L4 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02109,L5 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02110,L6 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02111,L7 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02112,L8 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02113,R1 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02114,R2 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02115,R3 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02116,R4 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02117,R5 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02118,R6 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02119,R7 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02120,R8 Fuel Injection Pump PlungerBarrel Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02121,JW Pump Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02122,JW Cooler (combi-cooler) SW Side FoulingClog,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02123,JW Thermostatic Valve Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02124,SW Pump Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02125,L Turbocharger WornDirty Turbine,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02126,R Turbocharger WornDirty Turbine,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02127,L Turbocharger WornDirty Compressor,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02128,R Turbocharger WornDirty Compressor,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02129,Air Cooler HX Fouled JW Side,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02130,Air Cooler ObstructionFouled (air side),,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02131,L Turbocharger Bearing Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02132,R Turbocharger Bearing Worn,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02133,PARTICLE CONTAMINATION,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02134,INSUFFICIENT OIL VISCOSITY,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02135,OIL OVERHEATED,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02136,H2O CONTENT HIGH,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.PD02137,ADDITIVE PACKAGE DEPLETED,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG01001,SG Oil Cooler Reduced Performance,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG01002,SG Elec Lube Oil Pump WornFaulty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG01003,SG Mech Lube Oil Pump WornFaulty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG01004,High Pressure MHPP Pump WornFaulty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG01005,High Pressure EHPP Pump WornFaulty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG01006,SG Temp Reg Valve Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG01012,Booster Clutch MDC-WJ WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG01013,Power Input Fwd Thrust (30F) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG01014,Power Input Aft Thrust (30A) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG01015,Power Input Shaft Fwd (31) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG01016,Power Input Shaft Aft (32) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG01017,Inboard Idler Fwd (33) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG01018,Inboard Idler Aft (34) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG01019,Outboard Idler Fwd (35) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG01020,Outboard Idler Aft (36) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG01021,Inboard Gear Fwd (37) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG01022,Inboard Gear Aft (38) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG01023,Outboard Gear Fwd (39) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG01024,Outboard Gear Aft (40) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG01025,Inboard Output Shaft (42) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG01026,Line Shaft Bearing 5 Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG01027,Line Shaft Bearing 7 Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG01028,Line Shaft Bearing 9 Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG01029,Line Shaft Bearing 11S Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG01030,Line Shaft Bearing 11B Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG01031,Line Shaft Bearing 13S Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG01032,Line Shaft Bearing 13B Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG01033,Line Shaft Bearing 15S Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG01034,Outboard Gear WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG01035,Outboard Idler Gear WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG01036,Input Shaft Gear WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG01037,Inboard Idler Gear WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG01038,Inboard Gear WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG01039,Splitter Gear Flex Coupling worndamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG01040,Motor Misalignment,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG01041,GT Pinion Gear Aft (11) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG01042,Electrical Imbalance,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG01043,Rotor Bars CrackedLoose,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG01044,Motor DE Bearing WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG01045,Motor ODE Bearing WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG01046,Stator Laminations WornLoose,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG01047,Stator Windings openshorted,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG01049,Foundation WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG02001,SG Oil Cooler Reduced Performance,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG02002,SG Elec Lube Oil Pump WornFaulty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG02003,SG Mech Lube Oil Pump WornFaulty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG02004,High Pressure MHPP Pump WornFaulty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG02005,High Pressure EHPP Pump WornFaulty,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG02006,SG Temp Reg Valve Malfunction,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG02012,Booster Clutch MDC-WJ WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG02013,Power Input Fwd Thrust (30F) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG02014,Power Input Aft Thrust (30A) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG02015,Power Input Shaft Fwd (31) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG02016,Power Input Shaft Aft (32) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG02017,Inboard Idler Fwd (33) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG02018,Inboard Idler Aft (34) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG02019,Outboard Idler Fwd (35) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG02020,Outboard Idler Aft (36) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG02021,Inboard Gear Fwd (37) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG02022,Inboard Gear Aft (38) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG02023,Outboard Gear Fwd (39) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG02024,Outboard Gear Aft (40) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG02025,Inboard Output Shaft (42) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG02026,Line Shaft Bearing 5 Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG02027,Line Shaft Bearing 7 Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG02028,Line Shaft Bearing 9 Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG02029,Line Shaft Bearing 11S Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG02030,Line Shaft Bearing 11B Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG02031,Line Shaft Bearing 13S Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG02032,Line Shaft Bearing 13B Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG02033,Line Shaft Bearing 15S Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG02034,Outboard Gear WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG02035,Outboard Idler Gear WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG02036,Input Shaft Gear WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG02037,Inboard Idler Gear WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG02038,Inboard Gear WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG02039,Splitter Gear Flex Coupling worndamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG02040,Motor Misalignment,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG02041,GT Pinion Gear Aft (11) Brg Wear,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG02042,Electrical Imbalance,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG02043,Rotor Bars CrackedLoose,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG02044,Motor DE Bearing WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG02045,Motor ODE Bearing WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG02046,Stator Laminations WornLoose,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG02047,Stator Windings openshorted,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SG02049,Foundation WornDamaged,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SGLO001,Heating Elements Failed to Heat,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.SGLO009,LOWP Worn Internals,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.WJPB009,WJ Steerable Line Shaft Bearing Failure 18S,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.WJPB010,WJ Steerable Line Shaft Bearing Failure 20S,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.WJPB012,LO Water Contamination,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.WJPB013,LO Viscosity Change,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.WJPB014,LO SAE Contamination,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.WJPB015,LO ISO Contamination,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.WJPB016,LO NAS Contamination,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.WJPS009,WJ Steerable Line Shaft Bearing Failure 18S,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.WJPS010,WJ Steerable Line Shaft Bearing Failure 20S,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.WJPS011,WJ Steerable Line Shaft Flexible Coupling Failure,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.WJPS012,LO Water Contamination,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.WJPS013,LO Viscosity Change,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.WJPS014,LO SAE Contamination,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.WJPS015,LO ISO Contamination,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.WJPS016,LO NAS Contamination,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.WJSB009,WJ Steerable Line Shaft Bearing Failure 18S,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.WJSB010,WJ Steerable Line Shaft Bearing Failure 20S,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.WJSB012,LO Water Contamination,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.WJSB013,LO Viscosity Change,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.WJSB014,LO SAE Contamination,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.WJSB015,LO ISO Contamination,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.WJSB016,LO NAS Contamination,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.WJSS009,WJ Steerable Line Shaft Bearing Failure 17S,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.WJSS010,WJ Steerable Line Shaft Bearing Failure 19S,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.WJSS011,WJ Steerable Line Shaft Flexible Coupling Failure,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.WJSS012,LO Water Contamination,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.WJSS013,LO Viscosity Change,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.WJSS014,LO SAE Contamination,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.WJSS015,LO ISO Contamination,,,,,Shipboard BBNs
+MDSS01.LC03PRMA.WJSS016,LO NAS Contamination,,,,,Shipboard BBNs

@@ -1,0 +1,13 @@
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNAPullTools\bin\Debug\Pull_Tools.exe.config
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNAPullTools\bin\Debug\Pull_Tools.exe
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNAPullTools\bin\Debug\Pull_Tools.pdb
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNAPullTools\bin\Debug\EzDNAApiNet.dll
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNAPullTools\bin\Debug\MathNet.Numerics.dll
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNAPullTools\obj\Debug\Pull_Tools.csprojResolveAssemblyReference.cache
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNAPullTools\obj\Debug\Pull_Tools.frmDates.resources
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNAPullTools\obj\Debug\Pull_Tools.frmPullTools.resources
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNAPullTools\obj\Debug\Pull_Tools.frmSettings.resources
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNAPullTools\obj\Debug\Pull_Tools.Properties.Resources.resources
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNAPullTools\obj\Debug\Pull_Tools.csproj.GenerateResource.Cache
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNAPullTools\obj\Debug\Pull_Tools.exe
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNAPullTools\obj\Debug\Pull_Tools.pdb

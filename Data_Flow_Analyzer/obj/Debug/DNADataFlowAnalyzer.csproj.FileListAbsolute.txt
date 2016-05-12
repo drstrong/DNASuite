@@ -1,0 +1,38 @@
+X:\Scripts and Programs\DNASuiteV3\DNADataFlowAnalyzer\bin\Debug\SharpCompress.Unsigned.dll
+X:\Scripts and Programs\DNASuiteV3\DNADataFlowAnalyzer\obj\Debug\DNADataFlowAnalyzer.csprojResolveAssemblyReference.cache
+X:\Scripts and Programs\DNASuiteV3\DNADataFlowAnalyzer\obj\Debug\DNADataFlowAnalyzer.csproj.GenerateResource.Cache
+X:\Scripts and Programs\DNASuiteV3\DNADataFlowAnalyzer\bin\Debug\DNADataFlowAnalyzer.exe.config
+X:\Scripts and Programs\DNASuiteV3\DNADataFlowAnalyzer\obj\Debug\DNADataFlowAnalyzer.Properties.Resources.resources
+X:\Scripts and Programs\DNASuiteV3\DNADataFlowAnalyzer\obj\Debug\DNADataFlowAnalyzer.frmDataFlow.resources
+X:\Scripts and Programs\DNASuiteV3\DNADataFlowAnalyzer\bin\Debug\DNADataFlowAnalyzer.exe
+X:\Scripts and Programs\DNASuiteV3\DNADataFlowAnalyzer\bin\Debug\DNADataFlowAnalyzer.pdb
+X:\Scripts and Programs\DNASuiteV3\DNADataFlowAnalyzer\obj\Debug\DNADataFlowAnalyzer.frmSettings.resources
+X:\Scripts and Programs\DNASuiteV3\DNADataFlowAnalyzer\obj\Debug\DNADataFlowAnalyzer.exe
+X:\Scripts and Programs\DNASuiteV3\DNADataFlowAnalyzer\obj\Debug\DNADataFlowAnalyzer.pdb
+X:\Scripts and Programs\DNASuite_3.0.1.1\DNADataFlowAnalyzer\bin\Debug\DNADataFlowAnalyzer.exe.config
+X:\Scripts and Programs\DNASuite_3.0.1.1\DNADataFlowAnalyzer\bin\Debug\DNADataFlowAnalyzer.exe
+X:\Scripts and Programs\DNASuite_3.0.1.1\DNADataFlowAnalyzer\bin\Debug\DNADataFlowAnalyzer.pdb
+X:\Scripts and Programs\DNASuite_3.0.1.1\DNADataFlowAnalyzer\bin\Debug\SharpCompress.Unsigned.dll
+X:\Scripts and Programs\DNASuite_3.0.1.1\DNADataFlowAnalyzer\obj\Debug\DNADataFlowAnalyzer.csprojResolveAssemblyReference.cache
+X:\Scripts and Programs\DNASuite_3.0.1.1\DNADataFlowAnalyzer\obj\Debug\DNADataFlowAnalyzer.frmDataFlow.resources
+X:\Scripts and Programs\DNASuite_3.0.1.1\DNADataFlowAnalyzer\obj\Debug\DNADataFlowAnalyzer.frmSettings.resources
+X:\Scripts and Programs\DNASuite_3.0.1.1\DNADataFlowAnalyzer\obj\Debug\DNADataFlowAnalyzer.Properties.Resources.resources
+X:\Scripts and Programs\DNASuite_3.0.1.1\DNADataFlowAnalyzer\obj\Debug\DNADataFlowAnalyzer.csproj.GenerateResource.Cache
+X:\Scripts and Programs\DNASuite_3.0.1.1\DNADataFlowAnalyzer\obj\Debug\DNADataFlowAnalyzer.exe
+X:\Scripts and Programs\DNASuite_3.0.1.1\DNADataFlowAnalyzer\obj\Debug\DNADataFlowAnalyzer.pdb
+X:\Scripts and Programs\DNASuite_3.0.1.2\DNADataFlowAnalyzer\bin\Debug\DNADataFlowAnalyzer.exe.config
+X:\Scripts and Programs\DNASuite_3.0.1.2\DNADataFlowAnalyzer\obj\Debug\DNADataFlowAnalyzer.exe
+X:\Scripts and Programs\DNASuite_3.0.1.2\DNADataFlowAnalyzer\obj\Debug\DNADataFlowAnalyzer.pdb
+C:\Users\estrong.THE_DEI_GROUP\Documents\Visual Studio 2012\Projects\DNA_DataFlowAnalyzer\DNADataFlowAnalyzer\bin\Debug\DNADataFlowAnalyzer.exe.config
+C:\Users\estrong.THE_DEI_GROUP\Documents\Visual Studio 2012\Projects\DNA_DataFlowAnalyzer\DNADataFlowAnalyzer\obj\Debug\DNADataFlowAnalyzer.exe
+C:\Users\estrong.THE_DEI_GROUP\Documents\Visual Studio 2012\Projects\DNA_DataFlowAnalyzer\DNADataFlowAnalyzer\obj\Debug\DNADataFlowAnalyzer.pdb
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNA_DataFlowAnalyzer\DNADataFlowAnalyzer\bin\Debug\DNADataFlowAnalyzer.exe.config
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNA_DataFlowAnalyzer\DNADataFlowAnalyzer\obj\Debug\DNADataFlowAnalyzer.exe
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNA_DataFlowAnalyzer\DNADataFlowAnalyzer\obj\Debug\DNADataFlowAnalyzer.pdb
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNA_DataFlowAnalyzer\DNADataFlowAnalyzer\bin\Debug\DNADataFlowAnalyzer.exe
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNA_DataFlowAnalyzer\DNADataFlowAnalyzer\bin\Debug\DNADataFlowAnalyzer.pdb
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNA_DataFlowAnalyzer\DNADataFlowAnalyzer\obj\Debug\DNADataFlowAnalyzer.csprojResolveAssemblyReference.cache
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNA_DataFlowAnalyzer\DNADataFlowAnalyzer\obj\Debug\DNADataFlowAnalyzer.frmDataFlow.resources
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNA_DataFlowAnalyzer\DNADataFlowAnalyzer\obj\Debug\DNADataFlowAnalyzer.frmSettings.resources
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNA_DataFlowAnalyzer\DNADataFlowAnalyzer\obj\Debug\DNADataFlowAnalyzer.Properties.Resources.resources
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNA_DataFlowAnalyzer\DNADataFlowAnalyzer\obj\Debug\DNADataFlowAnalyzer.csproj.GenerateResource.Cache

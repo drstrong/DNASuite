@@ -1,0 +1,17 @@
+X:\Programs\DNASuite\DNARunHourReview\bin\x64\Debug\DNARunHourReview.exe.config
+X:\Programs\DNASuite\DNARunHourReview\bin\x64\Debug\DNARunHourReview.exe
+X:\Programs\DNASuite\DNARunHourReview\bin\x64\Debug\DNARunHourReview.pdb
+X:\Programs\DNASuite\DNARunHourReview\bin\x64\Debug\ClosedXML.dll
+X:\Programs\DNASuite\DNARunHourReview\bin\x64\Debug\EzDNAApiNet64.dll
+X:\Programs\DNASuite\DNARunHourReview\bin\x64\Debug\MathNet.Filtering.dll
+X:\Programs\DNASuite\DNARunHourReview\bin\x64\Debug\MathNet.Numerics.dll
+X:\Programs\DNASuite\DNARunHourReview\bin\x64\Debug\sDNA.dll
+X:\Programs\DNASuite\DNARunHourReview\bin\x64\Debug\sDNA.pdb
+X:\Programs\DNASuite\DNARunHourReview\bin\x64\Debug\sDNA.xml
+X:\Programs\DNASuite\DNARunHourReview\obj\x64\Debug\DNARunHourReview.frmRunHourReview.resources
+X:\Programs\DNASuite\DNARunHourReview\obj\x64\Debug\DNARunHourReview.Properties.Resources.resources
+X:\Programs\DNASuite\DNARunHourReview\obj\x64\Debug\DNARunHourReview.csproj.GenerateResource.Cache
+X:\Programs\DNASuite\DNARunHourReview\obj\x64\Debug\DNARunHourReview.exe
+X:\Programs\DNASuite\DNARunHourReview\obj\x64\Debug\DNARunHourReview.pdb
+X:\Programs\DNASuite\DNARunHourReview\obj\x64\Debug\DNARunHourReview.csprojResolveAssemblyReference.cache
+X:\Programs\DNASuite\DNARunHourReview\bin\x64\Debug\EzDNAServApiNet64.dll

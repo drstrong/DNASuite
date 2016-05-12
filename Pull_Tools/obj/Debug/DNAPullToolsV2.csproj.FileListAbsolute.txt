@@ -1,0 +1,12 @@
+X:\Scripts and Programs\DNASuiteV3\DNAPull\bin\Debug\DNAPull.exe.config
+X:\Scripts and Programs\DNASuiteV3\DNAPull\bin\Debug\DNAPull.exe
+X:\Scripts and Programs\DNASuiteV3\DNAPull\bin\Debug\DNAPull.pdb
+X:\Scripts and Programs\DNASuiteV3\DNAPull\bin\Debug\EzDNAApiNet.dll
+X:\Scripts and Programs\DNASuiteV3\DNAPull\obj\Debug\DNAPullToolsV2.csprojResolveAssemblyReference.cache
+X:\Scripts and Programs\DNASuiteV3\DNAPull\obj\Debug\DNAPull.frmDates.resources
+X:\Scripts and Programs\DNASuiteV3\DNAPull\obj\Debug\DNAPull.frmPull.resources
+X:\Scripts and Programs\DNASuiteV3\DNAPull\obj\Debug\DNAPull.frmSettings.resources
+X:\Scripts and Programs\DNASuiteV3\DNAPull\obj\Debug\DNAPull.Properties.Resources.resources
+X:\Scripts and Programs\DNASuiteV3\DNAPull\obj\Debug\DNAPullToolsV2.csproj.GenerateResource.Cache
+X:\Scripts and Programs\DNASuiteV3\DNAPull\obj\Debug\DNAPull.exe
+X:\Scripts and Programs\DNASuiteV3\DNAPull\obj\Debug\DNAPull.pdb
