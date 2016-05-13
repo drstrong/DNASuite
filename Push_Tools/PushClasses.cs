@@ -17,334 +17,128 @@ using Push_Tools.Properties;
 
 namespace Push_Tools
 {
-    /// <summary>Miscellaneous methods which are useful across all namespaces.</summary>
-    public static class MiscMethods
+    public class PushToDNAService
     {
-        /// <summary> This method checks if an eDNA point has been configured within a selected service.</summary>
-        /// <param name="fullTag">The fully-qualified (Site.Service.Point) eDNA tag.</param>
-        public static bool CheckPointExists(string fullTag)
-        {
-            //Find service and point ID
-            string service = MiscMethods.FindService(fullTag);
-            string pointID = MiscMethods.FindPointID(fullTag);
-            //Find point list from the service
-            string[] idList;
-            ushort numTags;
-            Configuration.DNAGetRTIds(service, out idList, out numTags);
-            return idList.Contains(pointID);
-        }
-        /// <summary>Returns only the point ID from a fully-qualified eDNA tag.</summary>
-        /// <param name="fullTag">The fully-qualified (Site.Service.Point) eDNA tag.</param>
-        public static string FindPointID(string fullTag)
-        {
-            return fullTag.Split('.')[2];
-        }
-        /// <summary>Returns only the Site.Service from a fully-qualified eDNA tag.</summary>
-        /// <param name="fullTag">The fully-qualified (Site.Service.Point) eDNA tag.</param>
-        public static string FindService(string fullTag)
-        {
-            string[] splitPoint = fullTag.Split('.');
-            return String.Join(".", splitPoint[0], splitPoint[1]);
-        }
-        /// <summary>Returns a description of an eDNA tag.</summary>
-        /// <param name="fullTag">The fully-qualified (Site.Service.Point) eDNA tag.</param>
-        public static string GetPointDescription(string fullTag)
-        {
-            //eDNA Initialization
-            double value;
-            string valueString;
-            DateTime time;
-            ushort status;
-            string statusString;
-            string description;
-            string units;
-
-            //Pull the real-time data point
-            RealTime.DNAGetRTFull(fullTag, out value, out valueString, out time, out status, out statusString, out description, out units);
-
-            return description;
-        }
-        /// <summary>Uses regex to find substrings.</summary>
-        public static IEnumerable<string> GetSubStrings(string input, string start, string end)
-        {
-            Regex r = new Regex(Regex.Escape(start) + "(.*?)" + Regex.Escape(end));
-            MatchCollection matches = r.Matches(input);
-            foreach (Match match in matches)
-                yield return match.Groups[1].Value;
-        }
-        /// <summary>Pulls the current real-time value of the output tag.</summary>
-        /// <param name="fullTag">The fully-qualified (Site.Service.Point) eDNA tag.</param>
-        public static Tuple<DateTime, double> PullRealTimeValue(string fullTag)
-        {
-            //eDNA Initialization
-            double value;
-            string valueString;
-            DateTime time;
-            ushort status;
-            string statusString;
-            string description;
-            string units;
-
-            //Pull the real-time data point
-            RealTime.DNAGetRTFull(fullTag, out value, out valueString, out time, out status, out statusString, out description, out units);
-
-            return new Tuple<DateTime, double>(time, value);
-        }
-    }
-    /// <summary>This class is used to initialize a data push with points grouped together by the same service being pushed
-    /// to. It will save time especially when pushing in "RealTime" mode.</summary>
-    public class PushService
-    {
-        /// <summary>The fully-qualified eDNA history service (Site.Service) to push values to. Note- this is the history 
-        /// service, not the real-time service.</summary>
         public string Service { get; private set; }
-        /// <summary>The eDNA status to use for each point. A value of "3" indicates that the status is "OK". Ideally, the
-        /// user should be able to select the status individually for each point. However, it seems unlikely that this
-        /// functionality is necessary, and it would add complexity to the user experience. Since 99% of the time, the
-        /// user will want the status to be "OK", I just left this as a global value that applies to all values defined
-        /// in this.TagValues.</summary>
-        public ushort GlobalStatus { get; private set; }
-        /// <summary>A list of PushTag instances that will be pushed.</summary>
-        public List<PushTag> PushTags { get; private set; }
-        /// <summary>This class is used to initialize a data push with points grouped together by the same service being pushed
-        /// to. It will save time especially when pushing in "RealTime" mode.</summary>
-        /// <param name="service">The fully-qualified eDNA history service (Site.Service) to push values to. Note- this is the history 
-        /// service, not the real-time service.</param>
-        /// <param name="globalStatus">The eDNA status to use for each point. A value of "3" indicates that the status is "OK". Ideally, the
-        /// user should be able to select the status individually for each point. However, it seems unlikely that this
-        /// functionality is necessary, and it would add complexity to the user experience. Since 99% of the time, the
-        /// user will want the status to be "OK", I just left this as a global value that applies to all values defined
-        /// in this.TagValues.</param>
-        public PushService(string service, ushort globalStatus = 3)
+        public List<Tuple<string, List<PushValue>>> TagsToPush { get; private set; }
+        public PushToDNAService(string service)
         {
             this.Service = service;
-            this.PushTags = new List<PushTag>();
-            this.GlobalStatus = globalStatus;
+            this.TagsToPush = new List<Tuple<string, List<PushValue>>>();
         }
-        /// <summary>Adds a list of PushTags to the stored list inside the class.</summary>
-        public void AddPushTag(List<PushTag> pushTagList) { this.PushTags.AddRange(pushTagList); }
-        /// <summary>Adds a PushTag to the stored list inside the class.</summary>
-        public void AddPushTag(PushTag pushTag) { this.PushTags.Add(pushTag); }
-        /// <summary>Clears the list of PushTags.</summary>
-        public void ClearPushTags() { this.PushTags.Clear(); }
-        /// <summary>This method will push the values in this.TagValues to eDNA history using "RealTime" mode. For more information
-        /// about "RealTime" mode, please refer to eDNA documentation. The output of this method is a StringBuilder containing the 
-        /// errors encountered during the data push. Warning- this method is very slow and is not recommended to be used. As the name
-        /// suggests, pushing to real-time seems to work inconsistently unless you are pushing values to the actual current time, although
-        /// you can push "RealTime" to any DateTime later than the current DateTime in the eDNA CVT.</summary>
-        /// <param name="realTimeService">The real-time service to push the values to. Technically, this could easily be found by calling DNAMiscMethods.FindService. 
-        /// However, the whole point of using "PushService" to push real-time values instead of calling each "PushTag" individually is 
-        /// to save time with the initialization of the service connection. By forcing the user to declare explicitly which RealTime service
-        /// they wish to write to, I believe that user error will be reduced.</param>
-        public StringBuilder PushRealTimeAllTags(string realTimeService, int roundDec = 6, int sleepmSec = 100)
+        //The point of this function is to see if the tag has already been defined in the list of tags of push. If it hasn't been, that means the
+        //index is less than 0, and it needs to be added to the overall list. If the tag already exists, I want to add it to the correct index,
+        //and then sort the list (because the times will not necessarily be in order anymore).
+        public void AddTagToPush(string tag, List<PushValue> values)
+        {            
+            int index = TagsToPush.FindIndex(f => f.Item1 == tag);
+            if (index<0) TagsToPush.Add(new Tuple<string,List<PushValue>(tag,values));
+            else
+            {
+                TagsToPush[index].Item2.AddRange(values);
+                TagsToPush[index].Item2.OrderBy(f => f.UTCTime);
+            }
+        }
+        public StringBuilder PushTagInsert(Tuple<string,List<PushValue>> tagAndValues, int roundDec = 6, ushort status = 3)
         {
-            //Initialize values
-            int nRet = 1;
-            uint uiKey1 = 0;
+            return PushToDNAService.PushTagInsert(this.Service, tagAndValues, roundDec, status);
+        }
+        public StringBuilder PushTagAppend(Tuple<string, List<PushValue>> tagAndValues, int roundDec = 6, ushort status = 3)
+        {
+            return PushToDNAService.PushTagAppend(this.Service, tagAndValues, roundDec, status);
+        }
+        public StringBuilder PushTagsRealtime(List<Tuple<string, List<PushValue>>> listTagsAndValues, int roundDec = 6, short status = 3, int sleepmSec = 100)
+        {
+            return PushToDNAService.PushTagsRealtime(this.Service, listTagsAndValues, roundDec, status, sleepmSec);
+        }
+        //Why do I separate out the static methods? It makes it easier to unit test
+        public static StringBuilder PushTagInsert(string service, Tuple<string,List<PushValue>> tagAndValues, int roundDec = 6, ushort status = 3)
+        {
+            string historyService = String.Empty;        
+            string tag = tagAndValues.Item1;
+            History.DnaHistResolveHistoryName(tag, out historyService);
+            //Initialization, these lines can be skipped
+            int nRet = 0;
             string errorString = String.Empty;
             var progressString = new StringBuilder();
-            string cacheFilename = "cache_" + this.Service;
-
+            var startWrite = DateTime.Now;
+            //First, we are going to add all the points to the queue
+            foreach(PushValue pv in tagAndValues.Item2)
+            {
+                nRet = History.DnaHistQueueUpdateInsertValue(historyService, tag, pv.UTCTime, status, Math.Round(pv.Value,roundDec).ToString(), out errorString);
+                if (!String.IsNullOrEmpty(errorString)) progressString.AppendLine(String.Format("ERROR- {0}"));
+            }
+            //eDNA requires the queue to be flushed after all the points have been added to the queue
+            nRet = History.DnaHistFlushUpdateInsertValues(historyService, tag, out errorString);
+            if (!String.IsNullOrEmpty(errorString)) progressString.AppendLine(String.Format("ERROR- {0}"));
+            progressString.Append(String.Format("Values for {0} appended in {1} seconds", tag, (DateTime.Now - startWrite).TotalSeconds.ToString()));
+            return progressString;
+        }      
+        public static StringBuilder PushTagAppend(string service, Tuple<string,List<PushValue>> tagAndValues, int roundDec = 6, ushort status = 3)
+        {
+            string historyService = String.Empty;
+            string tag = tagAndValues.Item1;
+            History.DnaHistResolveHistoryName(tag, out historyService);
+            //Initialization, these lines can be skipped
+            int nRet = 0;
+            string errorString = String.Empty;
+            var progressString = new StringBuilder();
+            var startWrite = DateTime.Now;
+            //First, we are going to add all the points to the queue
+            foreach(PushValue pv in tagAndValues.Item2)
+            {
+                nRet = History.DnaHistQueueAppendValue(historyService, tag, pv.UTCTime, status, Math.Round(pv.Value,roundDec).ToString(), out errorString);
+                if (!String.IsNullOrEmpty(errorString)) progressString.AppendLine(String.Format("ERROR- {0}"));
+            }
+            //eDNA requires the queue to be flushed after all the points have been added to the queue
+            nRet = History.DnaHistFlushAppendValues(historyService, tag, out errorString);
+            if (!String.IsNullOrEmpty(errorString)) progressString.AppendLine(String.Format("ERROR- {0}"));
+            progressString.Append(String.Format("Values for {0} inserted in {1} seconds", tag, (DateTime.Now - startWrite).TotalSeconds.ToString()));
+            return progressString;
+        }       
+        public static StringBuilder PushTagsRealtime(string service, List<Tuple<string,List<PushValue>>> listTagsAndValues, 
+            int roundDec = 6, short status = 3, int sleepmSec = 100)
+        {
+            //Initialization
+            int nRet = 0;
+            uint uiKey1 = 0;
+            var progressString = new StringBuilder();
+            string cacheFilename = "cache_" + service;           
             //Grab the defined "_INPADDR" point
-            string inpAddr = String.Join(".", realTimeService, "_INPADDR");
+            string inpAddr = String.Join(".", service, "_INPADDR");
             string description = MiscMethods.GetPointDescription(inpAddr);
             string ipAddress = description.Split(',')[0];
             ushort port = (ushort)Convert.ToInt32(description.Split(',')[1]);
-
             //If the "_INPADDR" point doesn't exist, this mode cannot be performed
             if (!String.IsNullOrEmpty(description))
             {
-                //Initialize rt push
                 nRet = LinkMX.eDnaMxUniversalInitialize(out uiKey1, true, true, true, (int)50000, cacheFilename, "C:\\ProgramData\\InStep\\");
-                progressString.AppendLine("Initializing connection status= " + nRet);
-                //Connect to the service
+                progressString.AppendLine(String.Format("Initializing connection, status= {0}",nRet));
                 nRet = LinkMX.eDnaMxUniversalDataConnect(uiKey1, ipAddress, port, "", (ushort)0);
-                progressString.AppendLine("Connection result= " + nRet);
-
-                //Iterate over each point
-                foreach (PushTag currentPushTag in this.PushTags)
+                progressString.AppendLine(String.Format("Connecting, results= {0}",nRet));
+                foreach (Tuple<string,List<PushValue>> tagAndValue in listTagsAndValues)
                 {
                     DateTime startWrite = DateTime.Now;
-                    string pointID = MiscMethods.FindPointID(currentPushTag.Tag);
-                    int numErrors = 0;
-
-                    //Iterate over all the values and push to the queue
-                    foreach (PushValue valueWrite in currentPushTag.TagValues)
+                    string tag = tagAndValue.Item1;
+                    foreach(PushValue pv in tagAndValue.Item2)
                     {
-                        nRet = LinkMX.eDnaMxAddRec(uiKey1, pointID, valueWrite.UTCTime, (ushort)0, (int)-1,
-                            Math.Round(valueWrite.Value,roundDec));
-                        if (nRet != 0) { numErrors++; }
+                        string tagSite, tagService, tagID;
+                        Configuration.SplitPointName(tag, out tagSite, out tagService, out tagID);
+                        nRet = LinkMX.eDnaMxAddRec(uiKey1, tagID, pv.UTCTime, (ushort) 0, status, Math.Round(pv.Value, roundDec));
                         Thread.Sleep(sleepmSec);
                     }
-
-                    //Flush the values
                     nRet = LinkMX.eDnaMxFlushUniversalRecord(uiKey1, (int)1);
                     Thread.Sleep(sleepmSec);
-
-                    //Update the errorstring
                     string timeElapsed = (DateTime.Now - startWrite).TotalSeconds.ToString();
-                    progressString.AppendLine("Values for " + currentPushTag.Tag + " pushed in " + timeElapsed + " seconds with " + numErrors.ToString() + " errors");
+                    progressString.Append(String.Format("Values for {0} inserted in {1} seconds", tag, (DateTime.Now - startWrite).TotalSeconds.ToString()));
                 }
-
-                //Close the connection
                 LinkMX.eDnaMxUniversalCloseSocket(uiKey1);
-
-                //Delete the cache file
                 LinkMX.eDnaMxDeleteCacheFiles(uiKey1);
             }
-            else
-            {
-                progressString.AppendLine("-ERROR- Service " + realTimeService + " does not have an '_INPADDR' point defined.");
-            }
-
-            //Return the errors and progress
-            return progressString;
-        }
-        /// <summary>This method will push all the values initialized in this.PushTags to eDNA history using "Insert" mode. For more information
-        /// about "Insert" mode, please refer to eDNA documentation. The output of this method is a StringBuilder containing the 
-        /// errors encountered during the data push.</summary>
-        public StringBuilder PushInsertAllTags()
-        {
-            var progressString = new StringBuilder();
-
-            //Iterate over each point
-            foreach (PushTag pointWrite in this.PushTags)
-            {
-                progressString.Append(pointWrite.PushInsertAllValues());
-            }
-
-            //Return the errors and progress
-            return progressString;
-        }
-        /// <summary>This method will push all the values initialized in this.PushTags to eDNA history using "Append" mode. For more information
-        /// about "Append" mode, please refer to eDNA documentation. The output of this method is a StringBuilder containing the 
-        /// errors encountered during the data push.</summary>
-        public StringBuilder PushAppendAllTags()
-        {
-            var progressString = new StringBuilder();
-
-            //Iterate over each point
-            foreach (PushTag pointWrite in this.PushTags)
-            {
-                progressString.Append(pointWrite.PushAppendAllValues());
-            }
-
-            //Return the errors and progress
+            else { progressString.AppendLine(String.Format("ERROR- Service {0} does not have an '_INPADDR' point defined.", service)); }
             return progressString;
         }
     }
-    /// <summary>This class contains a list of values to push for a particular eDNA tag.</summary>
-    public class PushTag
-    {
-        /// <summary>The fully-qualified (Site.Service.Point) tag name for the eDNA point associated with the data push.</summary>
-        public string Tag { get; private set; }
-        /// <summary>The fully-qualified eDNA service (Site.Service) to push values to.</summary>
-        public string PushService { get; private set; }
-        /// <summary>The eDNA status to use for each point. A value of "3" indicates that the status is "OK". Ideally, the
-        /// user should be able to select the status individually for each point. However, it seems unlikely that this
-        /// functionality is necessary, and it would add complexity to the user experience. Since 99% of the time, the
-        /// user will want the status to be "OK", I just left this as a global value that applies to all values defined
-        /// in this.TagValues.</summary>
-        public ushort GlobalStatus { get; private set; }
-        /// <summary>A list of eDNA values which will be pushed.</summary>
-        public List<PushValue> TagValues { get; private set; }
-        /// <summary>This class contains a list of values to push for a particular eDNA tag.</summary>
-        /// <param name="tag">The fully-qualified (Site.Service.Point) tag name for the eDNA point associated with the data push.</param>
-        /// <param name="pushService">The fully-qualified eDNA history service (Site.Service) to push values to. Note- this is the history 
-        /// service, not the real-time service.</param>
-        /// <param name="globalStatus">The eDNA status to use for each point. A value of "3" indicates that the status is "OK". Ideally, the
-        /// user should be able to select the status individually for each point. However, it seems unlikely that this
-        /// functionality is necessary, and it would add complexity to the user experience. Since 99% of the time, the
-        /// user will want the status to be "OK", I just left this as a global value that applies to all values defined
-        /// in this.TagValues.</param>
-        public PushTag(string tag, string pushService, ushort globalStatus = 3)
-        {
-            this.Tag = tag.Trim();
-            this.PushService = pushService.Trim();
-            this.GlobalStatus = globalStatus;
-            this.TagValues = new List<PushValue>();
-        }
-        /// <summary>Add a list of PushValues to the stored list, ready to be pushed.</summary>
-        public void AddTagValues(List<PushValue> pushValueList) { this.TagValues.AddRange(pushValueList); }
-        /// <summary>Add a PushValue to the stored list, ready to be pushed.</summary>
-        public void AddTagValues(PushValue pushValue) { this.TagValues.Add(pushValue); }
-        /// <summary>Clears the stored list of values to push.</summary>
-        public void ClearValues() { this.TagValues.Clear(); }
-        /// <summary>Returns the total amount of values to be pushed.</summary>
-        public int GetTotalValues() { return this.TagValues.Count; }
-        /// <summary>This method will push the values in this.TagValues to eDNA history using "Insert" mode. For more information
-        /// about "Insert" mode, please refer to eDNA documentation. The output of this method is a StringBuilder containing the 
-        /// errors encountered during the data push.</summary>
-        public StringBuilder PushInsertAllValues(int roundDec = 6)
-        {
-            //Initialization
-            int nRet = 1;
-            var progressString = new StringBuilder();
-            string errorString = String.Empty;
-            int numErrors = 0;
-            var startWrite = DateTime.Now;
-
-            //Iterate over all the values and push to the queue
-            foreach (PushValue valueWrite in this.TagValues)
-            {
-                string value = Math.Round(valueWrite.Value, roundDec).ToString();
-                //Try to append the point to history
-                nRet = History.DnaHistQueueUpdateInsertValue(this.PushService, this.Tag, valueWrite.UTCTime, this.GlobalStatus,
-                    value, out errorString);
-                //Check for errors
-                if (nRet != 0) numErrors++;
-                if (!String.IsNullOrEmpty(errorString)) progressString.Append("-ERROR- " + errorString + "\n:");
-            }
-
-            //Flush the queue
-            nRet = History.DnaHistFlushAppendValues(this.PushService, this.Tag, out errorString);
-            if (!String.IsNullOrEmpty(errorString)) progressString.Append("-ERROR- " + errorString + "\n:");
-
-            //Update the errorstring
-            string timeElapsed = (DateTime.Now - startWrite).TotalSeconds.ToString();
-            progressString.Append("Values for " + this.Tag + " pushed in " + timeElapsed + " seconds with " + numErrors.ToString() + " errors.\n");
-
-            //Return the errors and progress
-            return progressString;
-        }
-        /// <summary>This method will push the values in this.TagValues to eDNA history using "Append" mode. For more information
-        /// about "Append" mode, please refer to eDNA documentation. The output of this method is a StringBuilder containing the 
-        /// errors encountered during the data push.</summary>
-        public StringBuilder PushAppendAllValues(int roundDec = 6)
-        {
-            //Initialization
-            int nRet = 1;
-            var progressString = new StringBuilder();
-            string errorString = String.Empty;
-            int numErrors = 0;
-            var startWrite = DateTime.Now;
-
-            //Iterate over all the values and push to the queue
-            foreach (PushValue valueWrite in this.TagValues)
-            {
-                //Try to append the point to history
-                string value = Math.Round(valueWrite.Value, roundDec).ToString();
-                nRet = History.DnaHistQueueAppendValue(this.PushService, this.Tag, valueWrite.UTCTime, this.GlobalStatus,
-                    value, out errorString);
-
-                //Check for errors
-                if (nRet != 0) numErrors++;
-                if (!String.IsNullOrEmpty(errorString)) progressString.Append("-ERROR- " + errorString + "\n:");
-            }
-
-            //Flush the queue
-            nRet = History.DnaHistFlushAppendValues(this.PushService, this.Tag, out errorString);
-            if (!String.IsNullOrEmpty(errorString)) progressString.Append("-ERROR- " + errorString + "\n:");
-
-            //Update the errorstring
-            string timeElapsed = (DateTime.Now - startWrite).TotalSeconds.ToString();
-            progressString.Append("Values for " + this.Tag + " pushed in " + timeElapsed + " seconds with " + numErrors.ToString() + " errors.\n");
-
-            //Return the errors and progress
-            return progressString;
-        }
-    }
-    //Data structures
     /// <summary> A list of potential data writing types. Refer to eDNA documentation for more information.</summary>
     public enum WriteType
     {
@@ -393,26 +187,45 @@ namespace Push_Tools
         /// <summary>This data structure is used to store an eDNA value which will be pushed.</summary>
         /// <param name="utcTime">The DateTime (in UTC format) to push the eDNA value.</param>
         /// <param name="value">The value to be pushed.</param>
-        public PushValue(DateTime utcTime, double value)
+        public PushValue(int utcTime, double value)
             : this()
         {
             this.Value = value;
-            this.UTCTime = Utility.GetUTCTime(utcTime);
+            this.UTCTime = utcTime;
         }
     }
-    //Static methods
     /// <summary>A class that contains method which are used to create simulated data.</summary>
     public static class SimulationMethods
     {
+        public const double TimeOffset = -5.0;
+        private static double[] FindTimes(TimeSpan period, DateTime startDate, DateTime endDate, out int totalPoints)
+        {
+            //Setup- convert the dates to ints, find the total number of expected points
+            int intStartDate = Utility.GetUTCTime(startDate.AddHours(TimeOffset));
+            int intEndDate = Utility.GetUTCTime(endDate.AddHours(TimeOffset));
+            int intPeriod = Convert.ToInt32(period.TotalSeconds);
+            totalPoints = (int)Math.Floor(((decimal)intEndDate - (decimal)intStartDate) / (decimal)intPeriod);
+            //Generate the times and values
+            double[] times = Generate.LinearSpaced(totalPoints, intStartDate, intEndDate);
+            //Return the results
+            return times;
+        }
+        private static List<PushValue> ConstructPushValues(double[] times, double[] values)
+        {
+            var pushList = new List<PushValue>();
+            for (int ii = 0; ii < times.Length; ii++) pushList.Add(new PushValue(Convert.ToInt32(times[ii]), values[ii]));
+            return pushList;
+        }
         /// <summary>This input setting is useful when pushing one data point at a time. It would typically be used to correct 
         /// erroneous values, not for simulation purposes.</summary>
         /// <param name="time">Date/Time (in correct format)</param>
         /// <param name="value">Value to be pushed</param>
         public static List<PushValue> SimulateRaw(DateTime time, double value)
         {
-            //Only one time/value needs to be added
+            //Need to adjust from local time to UTC time
+            int newTime = Utility.GetUTCTime(time.AddHours(TimeOffset));
             var list = new List<PushValue>();
-            list.Add(new PushValue(time, value));
+            list.Add(new PushValue(newTime, value));
             return list;
         }
         /// <summary> This input setting is useful to simulate data over a more extended time period, when relative change is
@@ -425,18 +238,10 @@ namespace Push_Tools
         /// <param name="stopVal">Ending Value</param>
         public static List<PushValue> SimulateRamp(TimeSpan period, DateTime startDate, DateTime endDate, double startVal, double stopVal)
         {
-            double totalDays = period.TotalDays;
-            //Generate the dates and values
-            double[] times = Generate.LinearRange(startDate.ToOADate(), totalDays, endDate.ToOADate());
-            double[] values = new double[times.Length];
-            values = Generate.LinearSpaced(times.Length, startVal, stopVal);
-            //Output results
-            var pushList = new List<PushValue>();
-            for (int ii = 0; ii < times.Length; ii++)
-            {
-                pushList.Add(new PushValue(DateTime.FromOADate(times[ii]), values[ii]));
-            }
-            return pushList;
+            int totalPoints = 0;
+            double[] times = SimulationMethods.FindTimes(period, startDate, endDate, out totalPoints);
+            double[] values = Generate.LinearSpaced(totalPoints,startVal,stopVal);
+            return ConstructPushValues(times, values);
         }
         /// <summary>A uniform random distribution generates values uniformly along the interval [low value, high value].</summary>
         /// <param name="period">Data Update Frequency</param>
@@ -446,18 +251,11 @@ namespace Push_Tools
         /// <param name="highVal">High value</param>
         public static List<PushValue> SimulateRand(TimeSpan period, DateTime startDate, DateTime endDate, double lowVal, double highVal)
         {
-            //Initialize parameters
-            double totalDays = period.TotalDays;
-            double[] times = Generate.LinearRange(startDate.ToOADate(), totalDays, endDate.ToOADate());
-            //Output results
-            var pushList = new List<PushValue>();
-            var rnd = new Random((int)DateTime.Now.Ticks);
-            for (int ii = 0; ii < times.Length; ii++)
-            {
-                double rand = rnd.NextDouble() * (highVal - lowVal) + lowVal;
-                pushList.Add(new PushValue(DateTime.FromOADate(times[ii]), rand));
-            }
-            return pushList;
+            int totalPoints = 0;
+            double[] times = SimulationMethods.FindTimes(period, startDate, endDate, out totalPoints);
+            var randDist = new MathNet.Numerics.Distributions.ContinuousUniform(lowVal,highVal);
+            double[] values = Generate.Random(totalPoints, randDist);
+            return ConstructPushValues(times, values);
         }
         /// <summary>A normal random distribution generates values using a mean and standard deviation.</summary>
         /// <param name="period">Data Update Frequency</param>
@@ -467,18 +265,11 @@ namespace Push_Tools
         /// <param name="std">Standard deviation</param>
         public static List<PushValue> SimulateRandn(TimeSpan period, DateTime startDate, DateTime endDate, double mean, double std)
         {
-            //Initialize parameters
-            double totalDays = period.TotalDays;
-            double[] times = Generate.LinearRange(startDate.ToOADate(), totalDays, endDate.ToOADate());
-            //Generate the dates and values
-            var pushList = new List<PushValue>();
-            var rnd = new Random((int)DateTime.Now.Ticks);
-            for (int ii = 0; ii < times.Length; ii++)
-            {
-                double randN = Math.Sqrt(-2.0 * Math.Log(rnd.NextDouble())) * Math.Sin(2.0 * Math.PI * rnd.NextDouble());
-                pushList.Add(new PushValue(DateTime.FromOADate(times[ii]), randN));
-            }
-            return pushList;
+            int totalPoints = 0;
+            double[] times = SimulationMethods.FindTimes(period, startDate, endDate, out totalPoints);
+            var randDist = new MathNet.Numerics.Distributions.Normal(mean, std);
+            double[] values = Generate.Random(totalPoints, randDist);
+            return ConstructPushValues(times, values);
         }
         /// <summary>An exponential random distribution generates values using a rate.</summary>
         /// <param name="period">Data Update Frequency</param>
@@ -487,18 +278,11 @@ namespace Push_Tools
         /// <param name="rate">The rate for the exponential distribution.</param>
         public static List<PushValue> SimulateRande(TimeSpan period, DateTime startDate, DateTime endDate, double rate)
         {
-            //Initialize parameters
-            double totalDays = period.TotalDays;
-            double[] times = Generate.LinearRange(startDate.ToOADate(), totalDays, endDate.ToOADate());
-            //Generate the dates and values
-            var pushList = new List<PushValue>();
-            var rnd = new Random((int)DateTime.Now.Ticks);
-            for (int ii = 0; ii < times.Length; ii++)
-            {
-                double randE = Math.Log(1 - rnd.NextDouble()) / (-rate);
-                pushList.Add(new PushValue(DateTime.FromOADate(times[ii]), randE));
-            }
-            return pushList;
+            int totalPoints = 0;
+            double[] times = SimulationMethods.FindTimes(period, startDate, endDate, out totalPoints);
+            var randDist = new MathNet.Numerics.Distributions.Exponential(rate);
+            double[] values = Generate.Random(totalPoints, randDist);
+            return ConstructPushValues(times, values);
         }
         /// <summary>Generates eDNA values to push using a sine function.</summary>
         /// <param name="period">Data Update Frequency</param>
@@ -508,21 +292,12 @@ namespace Push_Tools
         /// <param name="amplitude">The amplitude of the sine wave (default value is 1).</param>
         /// <param name="mean">The mean of the sine wave (default value is 1).</param>
         /// <param name="phase">The phase of the sine wave (default value is 0).</param>
-        public static List<PushValue> SimulateSine(TimeSpan period, DateTime startDate, DateTime endDate, double frequency, double amplitude = 1, double mean = 1, double phase = 0)
+        public static List<PushValue> SimulateSine(TimeSpan period, DateTime startDate, DateTime endDate, double frequency, double amplitude = 1, double mean = 0, double phase = 0, int delay = 0)
         {
-            //Initialize parameters
-            double totalDays = period.TotalDays;
-            double totalSeconds = period.TotalSeconds;
-            double[] times = Generate.LinearRange(startDate.ToOADate(), totalDays, endDate.ToOADate());
-            double[] values = new double[times.Length];
-            //Generate the dates and values
-            values = Generate.Sinusoidal(times.Length, totalSeconds, frequency, amplitude, mean, phase);
-            var pushList = new List<PushValue>();
-            for (int ii = 0; ii < times.Length; ii++)
-            {
-                pushList.Add(new PushValue(DateTime.FromOADate(times[ii]), values[ii]));
-            }
-            return pushList;
+            int totalPoints = 0;
+            double[] times = SimulationMethods.FindTimes(period, startDate, endDate, out totalPoints);
+            double[] values = Generate.Sinusoidal(totalPoints, period.TotalSeconds, frequency, amplitude, mean, phase, delay);
+            return ConstructPushValues(times, values);
         }
         /// <summary>Generates an impulse in the data relative to the start date.</summary>
         /// <param name="period">Data Update Frequency</param>
@@ -530,20 +305,12 @@ namespace Push_Tools
         /// <param name="endDate">Ending Date/Time</param>
         /// <param name="amplitude">The amplitude of the impulse.</param>
         /// <param name="delay">The time period after which the impulse occurs, relative to the starting date, with units equal to the data update frequency selected.</param>
-        public static List<PushValue> SimulateImpulse(TimeSpan period, DateTime startDate, DateTime endDate, double amplitude, double delay)
+        public static List<PushValue> SimulateImpulse(TimeSpan period, DateTime startDate, DateTime endDate, double amplitude, int delay)
         {
-            //Initialize parameters
-            double totalDays = period.TotalDays;
-            double[] times = Generate.LinearRange(startDate.ToOADate(), totalDays, endDate.ToOADate());
-            double[] values = new double[times.Length];
-            //Generate the dates and values
-            values = Generate.Impulse(times.Length, amplitude, Convert.ToInt32(delay));
-            var pushList = new List<PushValue>();
-            for (int ii = 0; ii < times.Length; ii++)
-            {
-                pushList.Add(new PushValue(DateTime.FromOADate(times[ii]), values[ii]));
-            }
-            return pushList;
+            int totalPoints = 0;
+            double[] times = SimulationMethods.FindTimes(period, startDate, endDate, out totalPoints);
+            double[] values = Generate.Impulse(totalPoints, amplitude, delay);
+            return ConstructPushValues(times, values);
         }
         /// <summary>Generates a step function.</summary>
         /// <param name="period">Data Update Frequency</param>
@@ -551,20 +318,12 @@ namespace Push_Tools
         /// <param name="endDate">Ending Date/Time</param>
         /// <param name="amplitude">The amplitude of the step function.</param>
         /// <param name="delay">The amount of time after which the step occurs, with units equal to the data update frequency selected.</param>
-        public static List<PushValue> SimulateStep(TimeSpan period, DateTime startDate, DateTime endDate, double amplitude, double delay)
+        public static List<PushValue> SimulateStep(TimeSpan period, DateTime startDate, DateTime endDate, double amplitude, int delay)
         {
-            //Initialize parameters
-            double totalDays = period.TotalDays;
-            double[] times = Generate.LinearRange(startDate.ToOADate(), totalDays, endDate.ToOADate());
-            double[] values = new double[times.Length];
-            //Generate the dates and values
-            values = Generate.Step(times.Length, amplitude, Convert.ToInt32(delay));
-            var pushList = new List<PushValue>();
-            for (int ii = 0; ii < times.Length; ii++)
-            {
-                pushList.Add(new PushValue(DateTime.FromOADate(times[ii]), values[ii]));
-            }
-            return pushList;
+            int totalPoints = 0;
+            double[] times = SimulationMethods.FindTimes(period, startDate, endDate, out totalPoints);
+            double[] values = Generate.Step(totalPoints, amplitude, delay);
+            return ConstructPushValues(times, values);
         }
         /// <summary>Generates a periodic function.</summary>
         /// <param name="period">Data Update Frequency</param>
@@ -574,21 +333,12 @@ namespace Push_Tools
         /// <param name="amplitude">The amplitude of the periodic function.</param>
         /// <param name="phase">The phase of the periodic function.</param>
         /// <param name="delay">The delay of the periodic function.</param>
-        public static List<PushValue> SimulatePeriodic(TimeSpan period, DateTime startDate, DateTime endDate, double frequency, double amplitude, double phase, double delay)
+        public static List<PushValue> SimulatePeriodic(TimeSpan period, DateTime startDate, DateTime endDate, double frequency, double amplitude, double phase, int delay)
         {
-            //Initialize parameters
-            double totalDays = period.TotalDays;
-            double totalSeconds = period.TotalSeconds;
-            double[] times = Generate.LinearRange(startDate.ToOADate(), totalDays, endDate.ToOADate());
-            double[] values = new double[times.Length];
-            //Generate the dates and values
-            values = Generate.Periodic(times.Length, totalSeconds, frequency, amplitude, phase, Convert.ToInt32(delay));
-            var pushList = new List<PushValue>();
-            for (int ii = 0; ii < times.Length; ii++)
-            {
-                pushList.Add(new PushValue(DateTime.FromOADate(times[ii]), values[ii]));
-            }
-            return pushList;
+            int totalPoints = 0;
+            double[] times = SimulationMethods.FindTimes(period, startDate, endDate, out totalPoints);
+            double[] values = Generate.Periodic(totalPoints, period.TotalSeconds, frequency, amplitude, phase, delay);
+            return ConstructPushValues(times, values);
         }
         /// <summary>Generates a periodic impulse.</summary>
         /// <param name="period">Data Update Frequency</param>
@@ -597,20 +347,46 @@ namespace Push_Tools
         /// <param name="impulsePeriod">The period of the impulse, with units equal to the data update frequency selected.</param>
         /// <param name="amplitude">The amplitude of the impulse.</param>
         /// <param name="delay">The delay of the impulse, with units equal to the data update frequency selected.</param>
-        public static List<PushValue> SimulatePeriodicImpulse(TimeSpan period, DateTime startDate, DateTime endDate, double impulsePeriod, double amplitude, double delay)
+        public static List<PushValue> SimulatePeriodicImpulse(TimeSpan period, DateTime startDate, DateTime endDate, int impulsePeriod, double amplitude, int delay)
         {
-            //Initialize parameters
-            double totalDays = period.TotalDays;
-            double[] times = Generate.LinearRange(startDate.ToOADate(), totalDays, endDate.ToOADate());
-            double[] values = new double[times.Length];
-            //Generate the dates and values
-            values = Generate.PeriodicImpulse(times.Length, Convert.ToInt32(impulsePeriod), amplitude, Convert.ToInt32(delay));
-            var pushList = new List<PushValue>();
-            for (int ii = 0; ii < times.Length; ii++)
-            {
-                pushList.Add(new PushValue(DateTime.FromOADate(times[ii]), values[ii]));
-            }
-            return pushList;
+            int totalPoints = 0;
+            double[] times = SimulationMethods.FindTimes(period, startDate, endDate, out totalPoints);
+            double[] values = Generate.PeriodicImpulse(totalPoints, impulsePeriod, amplitude, delay);
+            return ConstructPushValues(times, values);
+        }
+    }
+    /// <summary>Miscellaneous methods which are useful across all namespaces.</summary>
+    public static class MiscMethods
+    {
+        /// <summary>Returns a description of an eDNA tag.</summary>
+        /// <param name="fullTag">The fully-qualified (Site.Service.Point) eDNA tag.</param>
+        public static string GetPointDescription(string fullTag)
+        {
+            double value;
+            string valueString, statusString, description, units;
+            DateTime time;
+            ushort status;
+            RealTime.DNAGetRTFull(fullTag, out value, out valueString, out time, out status, out statusString, out description, out units);
+            return description;
+        }
+        /// <summary>Uses regex to find substrings.</summary>
+        public static IEnumerable<string> GetSubStrings(string input, string start, string end)
+        {
+            Regex r = new Regex(Regex.Escape(start) + "(.*?)" + Regex.Escape(end));
+            MatchCollection matches = r.Matches(input);
+            foreach (Match match in matches)
+                yield return match.Groups[1].Value;
+        }
+        /// <summary>Pulls the current real-time value of the output tag.</summary>
+        /// <param name="fullTag">The fully-qualified (Site.Service.Point) eDNA tag.</param>
+        public static Tuple<DateTime, double> PullRealTimeValue(string fullTag)
+        {
+            double value;
+            string valueString, statusString, description, units;
+            DateTime time;
+            ushort status;
+            RealTime.DNAGetRTFull(fullTag, out value, out valueString, out time, out status, out statusString, out description, out units);
+            return new Tuple<DateTime, double>(time, value);
         }
     }
 }

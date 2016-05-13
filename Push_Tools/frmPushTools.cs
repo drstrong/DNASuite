@@ -19,73 +19,215 @@ namespace Push_Tools
 {
     public partial class frmPushTools : Form
     {
-        //Properties
-        public int TotalPoints { get; private set; }
-        public List<PushService> HistoryDataPush { get; private set; }
-        public List<PushService> RealTimeDataPush { get; private set; }
-        //Initialization and general methods
+        //This is all just initialization, buttons, controls, etc., it's really boring, and trust me, you can skip it all unless you are REALLY interested
         public frmPushTools()
         {
             InitializeComponent();
             Properties.Settings.Default.OutDirectory = Application.StartupPath;
-            this.HistoryDataPush = new List<PushService>();
-            this.RealTimeDataPush = new List<PushService>();
         }
-        private void WriteToLogger(string log)
-        {
-            this.textBoxLogger.AppendText(DateTime.Now.ToString() + ": " + log + "\n");
-        }  
-        private void frmPushTools_HelpButtonClicked(object sender, CancelEventArgs e)
+        internal void WriteToLogger(string log) { this.textBoxLogger.AppendText(DateTime.Now.ToString() + ": " + log + "\n");}
+        internal void frmPushTools_HelpButtonClicked(object sender, CancelEventArgs e)
         {
             MessageBox.Show("eDNA Push Tools Version " + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString() +
-            ". Please see Eric Strong for any suggestions, comments, or bugs.",
-            "Help", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                ". Please see Eric Strong for any suggestions, comments, or bugs.",
+                "Help", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
         }
-        //Data Loading
-        private void toolStripButtonLoadFromCSV_Click(object sender, EventArgs e)
+        internal void buttonOutDir_Click(object sender, EventArgs e)
+        {
+            textBoxOutDir.Text = Application.StartupPath;
+            if (folderBrowserOutDir.ShowDialog() == DialogResult.OK) textBoxOutDir.Text = folderBrowserOutDir.SelectedPath;
+        }
+        internal void toolStripButtonLoadFromCSV_Click(object sender, EventArgs e)
         {
             //If the user selects "ok" in the dialog, try to load the points from the file
             if (openFileCSVInput.ShowDialog() == DialogResult.OK) this.LoadFromCSV(openFileCSVInput.FileName);
             dataGridView1.AutoResizeColumns();
+        }     
+        internal void toolStripButtonLoadFromDNA_Click(object sender, EventArgs e)
+        {
+            //Pop up an eDNA dialog to select multiple points
+            this.WriteToLogger("*Loading points from eDNA...");
+            string[] selectedPoints;
+            int err = Configuration.DnaSelectPoints(out selectedPoints);
+            //If err is 0, then points were actually selected
+            if (err == 0)
+            {
+                foreach (string point in selectedPoints)
+                {
+                    //Iterate over each selected point to find the description
+                    string outDesc = "";
+                    int err2 = RealTime.DNAGetRTDesc(point, out outDesc);
+                    //Add the row to the dataSet
+                    dataSet1.Tables[0].Rows.Add(point, outDesc, DateTime.Now, DateTime.Now, 60, String.Empty, String.Empty);
+                }
+                this.WriteToLogger("Points successfully loaded from eDNA.");
+            }
+            else { this.WriteToLogger("No points selected."); }
         }
-        private void LoadFromCSV(string filename)
+        internal void toolStripButtonAdjustSettings_Click(object sender, EventArgs e)
+        {
+            //Open the settings dialog. All options are bound to program properties.
+            Form frmset = new frmSettings();
+            frmset.ShowDialog();
+        }
+        internal void toolStripButtonAdjustDates_Click(object sender, EventArgs e)
+        {
+            //Open a new dialog to adjust all dates
+            var frmdate = new frmDates();
+            if (frmdate.ShowDialog() == DialogResult.OK)
+            {
+                //Iterate through each data row and replace the start and end dates with the ones selected in the form
+                foreach (DataRow row in dataSet1.Tables[0].Rows)
+                {
+                    row[2] = frmdate.startDate;
+                    row[3] = frmdate.endDate;
+                }
+            }
+            //Report what you just did in the logger
+            dataGridView1.AutoResizeColumns();
+            this.WriteToLogger("All dates adjusted from " + frmdate.startDate.ToString() + " to " + frmdate.endDate);
+        }
+        internal void toolStripButtonClear_Click(object sender, EventArgs e)
+        {
+            dataSet1.Clear();
+            this.WriteToLogger("Configuration cleared.");
+        }
+        internal void toolStripButtonExportCSV_Click(object sender, EventArgs e)
+        {
+            //Build the directory (create if necessary) and file path names
+            string directory = textBoxOutDir.Text;
+            Directory.CreateDirectory(textBoxOutDir.Text);
+            string filenameFormat = string.Format("Push_Tools_Config_{0:yyyy-MM-dd_hh-mm-ss-tt}.csv", DateTime.Now);
+            string fullFilename = Path.Combine(directory, filenameFormat);
+            //Use a stringbuilder to create CSV rows for every row in the dataSet
+            StringBuilder sb = new StringBuilder();
+            foreach (DataRow row in dataSet1.Tables[0].Rows)
+            {
+                IEnumerable<string> fields = row.ItemArray.Select(field => field.ToString());
+                sb.AppendLine(string.Join(",", fields));
+            }
+            //Write all of the configuration to text
+            File.WriteAllText(fullFilename, sb.ToString());
+            //Update the logger with what you did
+            this.WriteToLogger("Config file exported to " + fullFilename);
+        }
+        internal void toolStripButtonClearLog_Click(object sender, EventArgs e)
+        {
+            textBoxLogger.Clear();
+        }
+        internal void toolStripButtonExportLog_Click(object sender, EventArgs e)
+        {
+            //Build the directory (create if necessary) and file path names
+            string directory = textBoxOutDir.Text;
+            Directory.CreateDirectory(textBoxOutDir.Text);
+            string filenameFormat = string.Format("Push_Tools_Log_{0:yyyy-MM-dd_hh-mm-ss-tt}.txt", DateTime.Now);
+            string fullFilename = Path.Combine(directory, filenameFormat);
+            //Write all of the logger text to the file
+            File.WriteAllText(fullFilename, textBoxLogger.Text);
+            //Update the logger with what you did
+            this.WriteToLogger("Log file exported to " + fullFilename);
+        }
+        internal void toolStripButtonRunProgram_Click(object sender, EventArgs e)
+        {
+            this.DisableButtonsWhileRunning();
+            try { backgroundWorkerRunPush.RunWorkerAsync(); }
+            catch
+            {
+                this.WriteToLogger("ERROR- unspecified error. Program failed. Please ask Eric Strong for help.");
+                this.EnableButtonsWhileNotRunning();
+            }
+        }
+        internal void toolStripButtonCancel_Click(object sender, EventArgs e){backgroundWorkerRunPush.CancelAsync();}   
+        internal void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            this.WriteToLogger("Data push complete.");
+            this.EnableButtonsWhileNotRunning();
+        }
+        internal void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            //Okay, so I use this function differently in my programs.
+            int progPerc = e.ProgressPercentage;
+            string progressstring = e.UserState.ToString();
+            //If the first character is a $, then the progress update is for a particular point
+            if (!string.IsNullOrEmpty(progressstring)) this.WriteToLogger(progressstring);
+            //Update the overall progress bar
+            if (progPerc > 0 && progPerc <= 100) this.toolStripProgress.Value = progPerc;
+        }
+        internal void DisableButtonsWhileRunning()
+        {
+            this.toolStripProgress.Value = 0;
+            this.toolStripProgressLabel.Text = "Running...";
+            this.toolStripButtonRunProgram.Enabled = false;
+            this.toolStripButtonCancel.Enabled = true;
+            this.toolStripButtonAdjustDates.Enabled = false;
+            this.toolStripButtonLoadFromCSV.Enabled = false;
+            this.toolStripButtonAdjustSettings.Enabled = false;
+            this.toolStripButtonClear.Enabled = false;
+            this.toolStripButtonExportCSV.Enabled = false;
+            this.toolStripButtonLoadFromDNA.Enabled = false;
+            this.dataGridView1.Enabled = false;
+            this.textBoxOutDir.Enabled = false;
+            this.buttonOutDir.Enabled = false;
+        }
+        internal void EnableButtonsWhileNotRunning()
+        {
+            this.toolStripProgress.Value = 0;
+            this.toolStripProgressLabel.Text = "Not Running";
+            this.toolStripButtonRunProgram.Enabled = true;
+            this.toolStripButtonCancel.Enabled = false;
+            this.toolStripButtonAdjustDates.Enabled = true;
+            this.toolStripButtonLoadFromCSV.Enabled = true;
+            this.toolStripButtonAdjustSettings.Enabled = true;
+            this.toolStripButtonClear.Enabled = true;
+            this.toolStripButtonExportCSV.Enabled = true;
+            this.toolStripButtonLoadFromDNA.Enabled = true;
+            this.dataGridView1.Enabled = true;
+            this.textBoxOutDir.Enabled = true;
+            this.buttonOutDir.Enabled = true;
+        }       
+        //This is the first important part of the program- loading a configuration from CSV, which can involve complicated checks
+        internal void LoadFromCSV(string filename)
         {
             string extension = new FileInfo(filename).Extension;
             if (extension == ".csv")
             {
                 this.WriteToLogger("*Loading data from specified CSV input file...");
-                //Open a Stream Reader and catch all the possible errors
                 try
                 {
                     using (var reader = new StreamReader(File.OpenRead(filename)))
                     {
-                        //Read each line of the csv file
                         int lineNum = 0;
                         while (!reader.EndOfStream)
                         {
                             lineNum++;
-                            //Read the line and check that something exists
                             var line = reader.ReadLine();
                             if (String.IsNullOrWhiteSpace(line))
                             {
-                                this.WriteToLogger("Line " + lineNum.ToString() + " is empty");
+                                this.WriteToLogger(String.Format("Line {0} is empty", lineNum.ToString()));
                                 continue;
                             }
-                            //Add the line to the dataSet
-                            this.CSVLineToDataSet(line, lineNum);
+                            string error = this.ValidateCSVLine(line);
+                            if (!String.IsNullOrWhiteSpace(error)) { this.WriteToLogger(String.Format("ERROR on line {0}- {1}", lineNum.ToString(), error)); }
                         }
                     }
-                    //Success!
                     this.WriteToLogger("Tags successfully loaded from CSV input file. WARNING- No automatic validation performed on column 7 (parameters).");
                 }
+                //Why do I catch all these exceptions instead of letting C# do it? For the purposes of this company, it's more user-friendly to give
+                //an explanation about what to check/fix.
                 catch (FileNotFoundException) { this.WriteToLogger("ERROR- CSV input file does not exist."); }
                 catch (UnauthorizedAccessException) { this.WriteToLogger("ERROR- access to CSV input file is denied. Check that it isn't currently open."); }
-                catch (IOException) { this.WriteToLogger("ERROR- access to CSV input file is denied. Check that it isn't currently open."); }
-                catch { this.WriteToLogger("ERROR- unspecified error. Please ask Eric Strong for help."); }
-            }
+                catch (IOException) { this.WriteToLogger("ERROR- access to CSV input file is denied. Check that it isn't currently open."); }}
             else { this.WriteToLogger("ERROR- Input file is not in CSV format."); }
         }
-        private void CSVLineToDataSet(string line, int lineNum)
+
+        internal string ValidatePushType(string value)
+        {
+            string[] possibleTypes = { "raw", "ramp", "sine", "impulse", "step", "periodic", "periodicimpulse", "rand", "randn", "rande" };
+            return possibleTypes.Contains(typeString.ToLower());
+
+        }
+
+        internal string ValidateCSVLine(string line)
         {
             var values = line.Split(',');
             //Load the parameters (column 7)
@@ -158,138 +300,6 @@ namespace Push_Tools
             //valid data pull.
             dataSet1.Tables[0].Rows.Add(tag, description, startdate, enddate, updateRate, pushType, parameters);
         }
-        private bool ValidateType(string typeString)
-        {
-            string[] possibleTypes = { "raw", "ramp", "sine", "impulse", "step", "periodic", "periodicimpulse", "rand", "randn", "rande" };
-            return possibleTypes.Contains(typeString.ToLower());
-        }
-        private void toolStripButtonLoadFromDNA_Click(object sender, EventArgs e)
-        {
-            this.LoadFromDNA();
-        }
-        private void LoadFromDNA()
-        {
-            //Pop up an eDNA dialog to select multiple points
-            this.WriteToLogger("*Loading points from eDNA...");
-            string[] selectedPoints;
-            int err = Configuration.DnaSelectPoints(out selectedPoints);
-            //If err is 0, then points were actually selected
-            if (err == 0)
-            {
-                foreach (string point in selectedPoints)
-                {
-                    //Iterate over each selected point to find the description
-                    string outDesc = "";
-                    int err2 = RealTime.DNAGetRTDesc(point, out outDesc);
-                    //Add the row to the dataSet
-                    dataSet1.Tables[0].Rows.Add(point, outDesc, DateTime.Now, DateTime.Now, 60, String.Empty, String.Empty);
-                }
-                this.WriteToLogger("Points successfully loaded from eDNA.");
-            }
-            else { this.WriteToLogger("No points selected."); }
-        }
-        //Misc toolbar buttons
-        private void toolStripButtonAdjustSettings_Click(object sender, EventArgs e)
-        {
-            //Open the settings dialog. All options are bound to program properties.
-            Form frmset = new frmSettings();
-            frmset.ShowDialog();
-        }
-        private void toolStripButtonAdjustDates_Click(object sender, EventArgs e)
-        {
-            //Open a new dialog to adjust all dates
-            var frmdate = new frmDates();
-            if (frmdate.ShowDialog() == DialogResult.OK)
-            {
-                //Iterate through each data row and replace the start and end dates with the ones selected in the form
-                foreach (DataRow row in dataSet1.Tables[0].Rows)
-                {
-                    row[2] = frmdate.startDate;
-                    row[3] = frmdate.endDate;
-                }
-            }
-            //Report what you just did in the logger
-            dataGridView1.AutoResizeColumns();
-            this.WriteToLogger("All dates adjusted from " + frmdate.startDate.ToString() + " to " + frmdate.endDate);
-        }
-        private void buttonOutDir_Click(object sender, EventArgs e)
-        {
-            textBoxOutDir.Text = Application.StartupPath;
-            if (folderBrowserOutDir.ShowDialog() == DialogResult.OK) textBoxOutDir.Text = folderBrowserOutDir.SelectedPath;
-        }
-        private void toolStripButtonClear_Click(object sender, EventArgs e)
-        {
-            dataSet1.Clear();
-            this.WriteToLogger("Configuration cleared.");
-        }
-        private void toolStripButtonExportCSV_Click(object sender, EventArgs e)
-        {
-            //Build the directory (create if necessary) and file path names
-            string directory = textBoxOutDir.Text;
-            Directory.CreateDirectory(textBoxOutDir.Text);
-            string filenameFormat = string.Format("Push_Tools_Config_{0:yyyy-MM-dd_hh-mm-ss-tt}.csv", DateTime.Now);
-            string fullFilename = Path.Combine(directory, filenameFormat);
-            //Use a stringbuilder to create CSV rows for every row in the dataSet
-            StringBuilder sb = new StringBuilder();
-            foreach (DataRow row in dataSet1.Tables[0].Rows)
-            {
-                IEnumerable<string> fields = row.ItemArray.Select(field => field.ToString());
-                sb.AppendLine(string.Join(",", fields));
-            }
-            //Write all of the configuration to text
-            File.WriteAllText(fullFilename, sb.ToString());
-            //Update the logger with what you did
-            this.WriteToLogger("Config file exported to " + fullFilename);
-        }
-        private void toolStripButtonClearLog_Click(object sender, EventArgs e)
-        {
-            textBoxLogger.Clear();
-        }
-        private void toolStripButtonExportLog_Click(object sender, EventArgs e)
-        {
-            //Build the directory (create if necessary) and file path names
-            string directory = textBoxOutDir.Text;
-            Directory.CreateDirectory(textBoxOutDir.Text);
-            string filenameFormat = string.Format("Push_Tools_Log_{0:yyyy-MM-dd_hh-mm-ss-tt}.txt", DateTime.Now);
-            string fullFilename = Path.Combine(directory, filenameFormat);
-            //Write all of the logger text to the file
-            File.WriteAllText(fullFilename, textBoxLogger.Text);
-            //Update the logger with what you did
-            this.WriteToLogger("Log file exported to " + fullFilename);
-        }
-        //Intermediate functions
-        public void DisableButtonsWhileRunning()
-        {
-            this.toolStripProgress.Value = 0;
-            this.toolStripProgressLabel.Text = "Running...";
-            this.toolStripButtonRunProgram.Enabled = false;
-            this.toolStripButtonCancel.Enabled = true;
-            this.toolStripButtonAdjustDates.Enabled = false;
-            this.toolStripButtonLoadFromCSV.Enabled = false;
-            this.toolStripButtonAdjustSettings.Enabled = false;
-            this.toolStripButtonClear.Enabled = false;
-            this.toolStripButtonExportCSV.Enabled = false;
-            this.toolStripButtonLoadFromDNA.Enabled = false;
-            this.dataGridView1.Enabled = false;
-            this.textBoxOutDir.Enabled = false;
-            this.buttonOutDir.Enabled = false;
-        }
-        public void EnableButtonsWhileNotRunning()
-        {
-            this.toolStripProgress.Value = 0;
-            this.toolStripProgressLabel.Text = "Not Running";
-            this.toolStripButtonRunProgram.Enabled = true;
-            this.toolStripButtonCancel.Enabled = false;
-            this.toolStripButtonAdjustDates.Enabled = true;
-            this.toolStripButtonLoadFromCSV.Enabled = true;
-            this.toolStripButtonAdjustSettings.Enabled = true;
-            this.toolStripButtonClear.Enabled = true;
-            this.toolStripButtonExportCSV.Enabled = true;
-            this.toolStripButtonLoadFromDNA.Enabled = true;
-            this.dataGridView1.Enabled = true;
-            this.textBoxOutDir.Enabled = true;
-            this.buttonOutDir.Enabled = true;
-        }   
         //Constructing the push     
         private void ConstructHistoryPush(DataTable pushDataTable)
         {
@@ -463,27 +473,7 @@ namespace Push_Tools
             this.RealTimeDataPush = realTimeDataPush;
         }
         //Running the program
-        private void toolStripButtonRunProgram_Click(object sender, EventArgs e)
-        {
-            this.HistoryDataPush = new List<PushService>();
-            this.RealTimeDataPush = new List<PushService>();
-            this.DisableButtonsWhileRunning();
-            try { backgroundWorkerRunPush.RunWorkerAsync(); }
-            catch
-            {
-                this.WriteToLogger("ERROR- unspecified error. Program failed. Please ask Eric Strong for help.");
-                this.EnableButtonsWhileNotRunning();
-            }
-        }
-        private void toolStripButtonCancel_Click(object sender, EventArgs e)
-        {
-            backgroundWorkerRunPush.CancelAsync();
-        }
-        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            this.WriteToLogger("Data push complete.");
-            this.EnableButtonsWhileNotRunning();
-        }
+        
         private void PushToHistory(WriteType outType)
         {
             foreach (PushService currentServ in this.HistoryDataPush)
@@ -566,19 +556,6 @@ namespace Push_Tools
             string elapsedtime = (DateTime.Now - startPush).TotalSeconds.ToString();
             backgroundWorkerRunPush.ReportProgress(0, "*Data push finished in " + elapsedtime + " seconds.\n");
         }
-        private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        {
-            //Update the progress bar
-            if (e.ProgressPercentage > 0 && e.ProgressPercentage <= 100)
-            {
-                toolStripProgress.Value = e.ProgressPercentage;
-            }
-            //Update the logger
-            string progressstring = e.UserState.ToString();
-            if (!string.IsNullOrEmpty(progressstring))
-            {
-                this.WriteToLogger(progressstring);
-            }
-        }      
+         
     }  
 }

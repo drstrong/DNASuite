@@ -25,11 +25,7 @@ namespace Data_Flow_Analyzer
             //Again, the current time is not known at compile time
             Properties.Settings.Default.OutFilename = String.Format("{0:yyyy-MM-dd}_DataFlowHeaders.csv", DateTime.Now);
         }
-        internal void WriteToLogger(string log)
-        {
-            //This is a standardized way of writing to the textBox logger. I want it to display the current time before the passed string
-            this.textBoxLogger.AppendText(DateTime.Now.ToString() + ": " + log + "\n");
-        }
+        internal void WriteToLogger(string log) { this.textBoxLogger.AppendText(DateTime.Now.ToString() + ": " + log + "\n"); }
         internal void frmDataFlow_HelpButtonClicked(object sender, CancelEventArgs e)
         {
             //Boring, boring popup
@@ -112,7 +108,7 @@ namespace Data_Flow_Analyzer
         }
         internal void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            //Okay, so I use this function differently in my programs. There is probably a better way to 
+            //Okay, so I use this function differently in my programs.
             int progPerc = e.ProgressPercentage;
             string progressstring = e.UserState.ToString();
             //If the first character is a $, then the progress update is for a particular point
