@@ -17,3 +17,6 @@ C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\DNAPushTools\obj\De
 C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\DNASuite\Push_Tools\bin\Debug\Push_Tools.exe.config
 C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\DNASuite\Push_Tools\obj\Debug\Push_Tools.exe
 C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\DNASuite\Push_Tools\obj\Debug\Push_Tools.pdb
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\Push_Tools\bin\Debug\Push_Tools.exe.config
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\Push_Tools\obj\Debug\Push_Tools.exe
+C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\Push_Tools\obj\Debug\Push_Tools.pdb

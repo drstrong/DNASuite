@@ -1,16 +1,56 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.ComponentModel;
+using System.Drawing;
+using System.Diagnostics;
 using System.IO;
+using System.IO.Compression;
+using System.Linq;
 using System.Reflection;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading;
+using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Convert_eDNA_To_CSV;
 using Data_Flow_Analyzer;
+using Push_Tools;
 
 namespace Tests
 {
     [TestClass]
-    public class DataFlowAnalyzerTests
+    public class PushToolsTests
+    {
+        //VERY IMPORTANT NOTE
+        //Due to time zone changes, the dates are off by exactly five hours. For example, when I pull data from this program at midnight (00:00:00),
+        //it will match data pulled from my eDNA Trend at 5 am (05:00:00)
+        [TestMethod]
+        public void PT_Simulate_Raw()
+        {
+            List<PushValue> pushValues = SimulationMethods.SimulateRaw(new DateTime(2015, 01, 01, 01, 01, 01), 1.0);
+            Assert.AreEqual(pushValues[0].UTCTime, 1420092061);
+            Assert.AreEqual(pushValues[0].Value, 1);
+        }
+        [TestMethod]
+        public void PT_Simulate_Ramp()
+        {
+            List<PushValue> pushValues = SimulationMethods.SimulateRamp(
+                new TimeSpan(0, 0, 60),
+                new DateTime(2015, 01, 01, 00, 00, 00),
+                new DateTime(2015, 01, 02, 00, 00, 00),
+                10.0,
+                100.0);
+            Assert.AreEqual(pushValues[0].UTCTime, 1420092061);
+            Assert.AreEqual(pushValues[0].Value, 1);
+        }
+
+
+
+
+
+    }
+    [TestClass]
+    public class Data_Flow_Analyzer_Tests
     {
         //Overall, this section of unit tests is not that useful, since the testing files had data removed and are generally not complicated.
         [TestMethod]
@@ -410,6 +450,35 @@ namespace Tests
             //Finally, delete the testing file
             File.Delete(outPath);
         }
-
+        //Test7 is where I have corroborating evidence that 3S4SLSST is 2 at 2015/2/3 07:53:19. Tests DNASys.ini time zone settings.
+        [TestMethod]
+        public void CETC_TagPull_PullData7_DNASysTimeZone()
+        {
+            string outDir = Path.GetDirectoryName(new Uri(Assembly.GetExecutingAssembly().CodeBase).LocalPath) + "\\TestData\\";
+            Directory.CreateDirectory(outDir);
+            string outPath = Path.Combine(outDir, "MDSS01.LC03OPC.3S4SLSST_TESTING.csv");
+            //Create a dummy file for testing
+            using (var sw = new StreamWriter(outPath))
+            {
+                TagPull.PullDNAData("MDSS01.LC01OPC.3S4SLSST", sw, new DateTime(2015, 2, 3, 00, 00, 00), new DateTime(2015, 2, 4, 00, 00, 00));
+            }
+            //Read from the file
+            var lineList = new List<string>();
+            using (var sr = new StreamReader(outPath))
+            {
+                while (!sr.EndOfStream) lineList.Add(sr.ReadLine());
+            }
+            //I validated what the first 5 lines should look like by running eDNA Trend and running this program multiple times. Seems consistent. 
+            //If the test fails for some reason, maybe try running it again, because the eDNA API does not always behave consistently.
+            string[] correctOutput = {"1422939600,1,OK",
+                                    "1422947921,1,OK",
+                                    "1422949721,1,OK",
+                                    "1422949999,2,OK",
+                                    "1422950294,1,OK"};
+            string[] testingArray = lineList.Take(5).ToArray();
+            CollectionAssert.AreEqual(correctOutput, testingArray);
+            //Finally, delete the testing file
+            File.Delete(outPath);
+        }
     }
 }
