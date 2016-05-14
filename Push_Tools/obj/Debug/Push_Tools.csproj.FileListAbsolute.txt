@@ -33,3 +33,5 @@ C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\Push_Tools\obj\Debu
 C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\Push_Tools\obj\Debug\Push_Tools.frmSettings.resources
 C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\Push_Tools\obj\Debug\Push_Tools.Properties.Resources.resources
 C:\Users\estrong.THE_DEI_GROUP\Documents\DEI\GitHub\DNASuite\Push_Tools\obj\Debug\Push_Tools.csproj.GenerateResource.Cache
+C:\Users\Eric\Documents\GitHub\DNASuite\Push_Tools\bin\Debug\Push_Tools.exe.config
+C:\Users\Eric\Documents\GitHub\DNASuite\Push_Tools\obj\Debug\Push_Tools.exe
