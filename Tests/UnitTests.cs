@@ -15,39 +15,184 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Convert_eDNA_To_CSV;
 using Data_Flow_Analyzer;
 using Push_Tools;
+using InStep.eDNA.EzDNAApiNet;
 
 namespace Tests
 {
     [TestClass]
     public class PushToolsTests
     {
-        //VERY IMPORTANT NOTE
-        //Due to time zone changes, the dates are off by exactly five hours. For example, when I pull data from this program at midnight (00:00:00),
-        //it will match data pulled from my eDNA Trend at 5 am (05:00:00)
         [TestMethod]
-        public void PT_Simulate_Raw()
+        public void PushT_RealTime()
         {
-            List<PushValue> pushValues = SimulationMethods.SimulateRaw(new DateTime(2015, 01, 01, 01, 01, 01), 1.0);
-            Assert.AreEqual(pushValues[0].UTCTime, 1420092061);
-            Assert.AreEqual(pushValues[0].Value, 1);
+            int curTime = Utility.GetUTCTime(DateTime.Now.AddHours(-5));
+            string eDNATag = "LCS01.LC1TPRMA.AC01001B";
+            var pushService = new PushToDNAService("LCS01.LC1TPRMA");
+            var pushValList = new List<PushValue>();
+            pushValList.Add(new PushValue((curTime - 1), 101.01));
+            pushValList.Add(new PushValue(curTime, 99.9));
+            pushService.AddTagToPush(eDNATag, pushValList);
+            Thread.Sleep(2000);
+            //Now the last of the those two values (99.9) in real-time
+            pushService.PushTagsRealtime();
+            //Now, pull the values to check them
+            Tuple<DateTime, double> rtVal = MiscMethods.PullRealTimeValue(eDNATag);
+            int newTime = Utility.GetUTCTime(rtVal.Item1);
+            Assert.AreEqual(newTime, curTime);
+            Assert.AreEqual(rtVal.Item2, 99.9);
         }
         [TestMethod]
-        public void PT_Simulate_Ramp()
+        public void PushT_Insert()
         {
+            //Append a point first, since the "insert" needs to occur BEFORE a point and not at the end
+            int curTime = Utility.GetUTCTime(DateTime.Now.AddHours(-5));
+            string eDNATag = "LCS01.LC1TPRMA.AC01001A";
+            var pushService = new PushToDNAService("LCS01.LC1TPRMA");
+            var pushValList = new List<PushValue>();
+            pushValList.Add(new PushValue((curTime - 1), 103.2));
+            pushValList.Add(new PushValue(curTime, 104.6));    
+            //Push the values
+            pushService.PushTagAppend(new Tuple<string, List<PushValue>>(eDNATag, pushValList));
+            Thread.Sleep(500);
+            //Now insert a point
+            pushValList.Clear();
+            pushValList.Add(new PushValue((curTime - 10), 50.9));
+            pushService.PushTagInsert(new Tuple<string, List<PushValue>>(eDNATag, pushValList));
+            Thread.Sleep(500);
+            //Now, pull the values to check them
+            uint uiKey = 0;
+            double dValue = 0;
+            int dtTime = 0;
+            string strStatus = "";
+            int result = History.DnaGetHistRawUTC(eDNATag, curTime - 10, curTime, out uiKey);
+            result = History.DnaGetNextHistUTC(uiKey, out dValue, out dtTime, out strStatus);
+            Assert.AreEqual(dValue, 50.9);
+            Assert.AreEqual(dtTime, curTime - 10);
+        }
+        [TestMethod]
+        public void PushT_Append()
+        {
+            //Initialization
+            int curTime = Utility.GetUTCTime(DateTime.Now.AddHours(-5));
+            string eDNATag = "LCS01.LC1TPRMA.AC01001-";
+            var pushService = new PushToDNAService("LCS01.LC1TPRMA");
+            var pushValList = new List<PushValue>();
+            pushValList.Add(new PushValue((curTime - 1), 103.2));
+            pushValList.Add(new PushValue(curTime, 104.6));        
+            //Push the values
+            pushService.PushTagAppend(new Tuple<string, List<PushValue>>(eDNATag, pushValList));
+            //Now, pull the values to check them
+            uint uiKey = 0;
+            double dValue = 0;
+            int dtTime = 0;
+            string strStatus = "";
+            int result = History.DnaGetHistRawUTC(eDNATag, curTime-1, curTime, out uiKey);
+            result = History.DnaGetNextHistUTC(uiKey, out dValue, out dtTime, out strStatus);
+            Assert.AreEqual(dValue, 103.2);
+            Assert.AreEqual(dtTime, curTime - 1);
+            result = History.DnaGetNextHistUTC(uiKey, out dValue, out dtTime, out strStatus);
+            Assert.AreEqual(dValue, 104.6);
+            Assert.AreEqual(dtTime, curTime);
+        }
+        //This test will check to ensure that each method writes the expected number of points. For a rate of 1/min and a duration of 1 day, the total
+        //number of expected points is 1440
+        [TestMethod]
+        public void PushT_SimulateNumberOfPoints()
+        {
+            List<PushValue> pushValues = new List<PushValue>();
+            pushValues = SimulationMethods.SimulateRaw(new DateTime(2015, 01, 01, 01, 01, 01), 1.0);
+            Assert.AreEqual(pushValues.Count, 1);
+            pushValues = SimulationMethods.SimulateRamp(new TimeSpan(0, 0, 60),new DateTime(2015, 01, 01),new DateTime(2015, 01, 02),10.0,100.0);
+            Assert.AreEqual(pushValues.Count, 1440);
+            pushValues = SimulationMethods.SimulateRand(new TimeSpan(0, 0, 60), new DateTime(2015, 01, 01), new DateTime(2015, 01, 02), 10.0, 100.0);
+            Assert.AreEqual(pushValues.Count, 1440);
+            pushValues = SimulationMethods.SimulateRandn(new TimeSpan(0, 0, 60), new DateTime(2015, 01, 01), new DateTime(2015, 01, 02), 10.0, 100.0);
+            Assert.AreEqual(pushValues.Count, 1440);
+            pushValues = SimulationMethods.SimulateRande(new TimeSpan(0, 0, 60), new DateTime(2015, 01, 01), new DateTime(2015, 01, 02), 10.0);
+            Assert.AreEqual(pushValues.Count, 1440);
+            pushValues = SimulationMethods.SimulateSine(new TimeSpan(0, 0, 60), new DateTime(2015, 01, 01), new DateTime(2015, 01, 02), 10.0);
+            Assert.AreEqual(pushValues.Count, 1440);
+            pushValues = SimulationMethods.SimulateImpulse(new TimeSpan(0, 0, 60), new DateTime(2015, 01, 01), new DateTime(2015, 01, 02), 10.0, 100);
+            Assert.AreEqual(pushValues.Count, 1440);
+            pushValues = SimulationMethods.SimulateStep(new TimeSpan(0, 0, 60), new DateTime(2015, 01, 01), new DateTime(2015, 01, 02), 10.0, 100);
+            Assert.AreEqual(pushValues.Count, 1440);
+            pushValues = SimulationMethods.SimulatePeriodic(new TimeSpan(0, 0, 60), new DateTime(2015, 01, 01), new DateTime(2015, 01, 02), 10.0, 100.0,10.0,10);
+            Assert.AreEqual(pushValues.Count, 1440);
+            pushValues = SimulationMethods.SimulatePeriodicImpulse(new TimeSpan(0, 0, 60), new DateTime(2015, 01, 01), new DateTime(2015, 01, 02), 10, 10.0, 10);
+            Assert.AreEqual(pushValues.Count, 1440);
+        }
+        [TestMethod]
+        public void PushT_Simulate_Step()
+        {
+            List<PushValue> pushValues = SimulationMethods.SimulateStep(
+                   new TimeSpan(0, 0, 60),
+                   new DateTime(2015, 01, 01, 00, 00, 00),
+                   new DateTime(2015, 01, 02, 00, 00, 00),
+                   1.0, 10);
+            Assert.AreEqual(pushValues[9].Value, 0);
+            Assert.AreEqual(pushValues[10].Value, 1);
+        }
+        [TestMethod]
+        public void PushT_Simulate_Impulse()
+        {
+            List<PushValue> pushValues = SimulationMethods.SimulateImpulse(
+                   new TimeSpan(0, 0, 60),
+                   new DateTime(2015, 01, 01, 00, 00, 00),
+                   new DateTime(2015, 01, 02, 00, 00, 00),
+                   1.0, 5);
+            Assert.AreEqual(pushValues[4].Value, 0);
+            Assert.AreEqual(pushValues[5].Value, 1);
+        }
+        [TestMethod]
+        public void PushT_Simulate_SineZeroMean()
+        {
+            List<PushValue> pushValues = SimulationMethods.SimulateSine(
+                new TimeSpan(0, 0, 60),
+                new DateTime(2015, 01, 01, 00, 00, 00),
+                new DateTime(2015, 01, 02, 00, 00, 00),
+                1.0, 2.0, 0.0, 0.0);
+            PushValue[] correctValues = {new PushValue(Utility.GetUTCTime(new DateTime(2015, 01, 01, 00, 00, 00).AddHours(-5)),0.0),
+                                         new PushValue(Utility.GetUTCTime(new DateTime(2015, 01, 01, 00, 01, 00).AddHours(-5)),0.20905692653530691),
+                                         new PushValue(Utility.GetUTCTime(new DateTime(2015, 01, 01, 00, 02, 00).AddHours(-5)),0.41582338163551863),
+                                         new PushValue(Utility.GetUTCTime(new DateTime(2015, 01, 01, 00, 03, 00).AddHours(-5)),0.61803398874989479),
+                                         new PushValue(Utility.GetUTCTime(new DateTime(2015, 01, 01, 00, 04, 00).AddHours(-5)),0.81347328615160031)};
+            CollectionAssert.AreEqual(correctValues, pushValues.Take(5).ToArray());
+        }
+        [TestMethod]
+        public void PushT_Simulate_Raw()
+        {
+            List<PushValue> pushValues = SimulationMethods.SimulateRaw(new DateTime(2015, 01, 01, 01, 01, 01), 1.0);
+            Assert.AreEqual(pushValues[0].UTCTime, 1420074061);
+            Assert.AreEqual(pushValues[0].Value, 1.0);
+        }
+        [TestMethod]
+        public void PushT_Simulate_Ramp()
+        {           
             List<PushValue> pushValues = SimulationMethods.SimulateRamp(
                 new TimeSpan(0, 0, 60),
                 new DateTime(2015, 01, 01, 00, 00, 00),
                 new DateTime(2015, 01, 02, 00, 00, 00),
-                10.0,
-                100.0);
-            Assert.AreEqual(pushValues[0].UTCTime, 1420092061);
-            Assert.AreEqual(pushValues[0].Value, 1);
+                10.0, 100.0);
+            PushValue[] correctValues = {new PushValue(Utility.GetUTCTime(new DateTime(2015, 01, 01, 00, 00, 00).AddHours(-5)),10.0),
+                                         new PushValue(Utility.GetUTCTime(new DateTime(2015, 01, 01, 00, 01, 00).AddHours(-5)),10.062543432939542),
+                                         new PushValue(Utility.GetUTCTime(new DateTime(2015, 01, 01, 00, 02, 00).AddHours(-5)),10.125086865879084),
+                                         new PushValue(Utility.GetUTCTime(new DateTime(2015, 01, 01, 00, 03, 00).AddHours(-5)),10.187630298818624),
+                                         new PushValue(Utility.GetUTCTime(new DateTime(2015, 01, 01, 00, 04, 00).AddHours(-5)),10.250173731758165)};
+            CollectionAssert.AreEqual(correctValues, pushValues.Take(5).ToArray());
+            Assert.AreEqual(pushValues[pushValues.Count - 1].UTCTime, 1420156800);
         }
-
-
-
-
-
+        [TestMethod]
+        public void PushT_Simulate_Rand()
+        {
+            List<PushValue> pushValues = SimulationMethods.SimulateRand(
+                new TimeSpan(0, 0, 60),
+                new DateTime(2015, 01, 01, 00, 00, 00),
+                new DateTime(2015, 01, 02, 00, 00, 00),
+                1.0, 2.0);
+            //Check to make sure none of the values are less than the lower bound or greater than the upper bound
+            Assert.IsTrue(pushValues.FindAll(f => f.Value < 1).Count == 0);
+            Assert.IsTrue(pushValues.FindAll(f => f.Value > 2).Count == 0);
+        }
     }
     [TestClass]
     public class Data_Flow_Analyzer_Tests
@@ -275,9 +420,7 @@ namespace Tests
         }
         //These next few methods are the most important unit tests, because they relate to the data pull itself. Validation is difficult with eDNA
         //because of time zone differences and eccentricities with the eDNA API (sometimes points are pulled before the start time)
-        //VERY IMPORTANT NOTE
-        //Due to time zone changes, the dates are off by exactly five hours. For example, when I pull data from this program at midnight (00:00:00),
-        //it will match data pulled from my eDNA Trend at 5 am (05:00:00)
+
         //Test1 is a test of the most basic functionality
         [TestMethod]
         public void CETC_TagPull_PullData1_Basics()
@@ -298,11 +441,11 @@ namespace Tests
             }
             //I validated what the first 5 lines should look like by running eDNA Trend and running this program multiple times. Seems consistent. 
             //If the test fails for some reason, maybe try running it again, because the eDNA API does not always behave consistently.
-            string[] correctOutput = {"1447218000,348.43997,OK",
-                                    "1447218001,350.16998,OK",
-                                    "1447218002,352.78,OK",
-                                    "1447218003,345.66,OK",
-                                    "1447218003,352.78,OK"};
+            string[] correctOutput = {"1447200000,356.07999,OK",
+                                    "1447200001,352.60001,OK",
+                                    "1447200001,354.50998,OK",
+                                    "1447200002,359.03,OK",
+                                    "1447200003,359.54999,OK"};
             string[] testingArray = lineList.Take(5).ToArray();
             CollectionAssert.AreEqual(correctOutput, testingArray);
             //Finally, delete the testing file
@@ -328,17 +471,18 @@ namespace Tests
             }
             //I validated what the first 5 lines should look like by running eDNA Trend and running this program multiple times. Seems consistent. 
             //If the test fails for some reason, maybe try running it again, because the eDNA API does not always behave consistently.
-            string[] correctOutput = {"1418198700,1806,OK",
-                                    "1418198702,1797,OK",
-                                    "1418198704,1800,OK",
-                                    "1418198705,1801,OK",
-                                    "1418198707,1804,OK"};
+            string[] correctOutput = {"1418180700,1798,OK",
+                                    "1418180702,1799,OK",
+                                    "1418180705,1801,OK",
+                                    "1418180706,1804,OK",
+                                    "1418180710,1802,OK"};
             string[] testingArray = lineList.Take(5).ToArray();
             CollectionAssert.AreEqual(correctOutput, testingArray);
             //Finally, delete the testing file
             File.Delete(outPath);
         }
         //Test3 is for a tag that has a signficant number of unreliable points. It's also digital.
+        //**DAYLIGHT SAVINGS TIME
         [TestMethod]
         public void CETC_TagPull_PullData3_UnreliablePoints()
         {
@@ -358,7 +502,7 @@ namespace Tests
             }
             //I validated what the first 10 lines should look like by running eDNA Trend and running this program multiple times. Seems consistent. 
             //If the test fails for some reason, maybe try running it again, because the eDNA API does not always behave consistently.
-            string[] correctOutput = {"1427860800,3,OK",
+            string[] correctOutput = {"1427842800,3,OK",
                                     "1427957402,3,OK",
                                     "1428728170,3,OK",
                                     "1428973644,3,UNRELIABLE",
@@ -416,7 +560,7 @@ namespace Tests
             }
             //I tested this multiple ways, and 263 points should be returned (remember, I'm writing the first value as SNAP, so that adds an extra data
             //point compared to eDNA Trend)
-            Assert.AreEqual(lineList.Count, 263);
+            Assert.AreEqual(lineList.Count, 104);
             //Finally, delete the testing file
             File.Delete(outPath);
         }
@@ -440,11 +584,11 @@ namespace Tests
             }
             //I validated what the first 5 lines should look like by running eDNA Trend and running this program multiple times. Seems consistent. 
             //If the test fails for some reason, maybe try running it again, because the eDNA API does not always behave consistently.
-            string[] correctOutput = {"1447221596,330.56,OK",
-                                    "1447221597,324.83002,OK",
-                                    "1447221598,327.94998,OK",
-                                    "1447221598,324.83002,OK",
-                                    "1447221599,325.34998,OK"};
+            string[] correctOutput = {"1447203597,370.83002,OK",
+                                    "1447203598,364.41,OK",
+                                    "1447203599,372.39999,OK",
+                                    "1447203599,370.66,OK",
+                                    "1447203600,375.87,OK"};
             string[] testingArray = lineList.Skip(Math.Max(0, lineList.Count() - 5)).ToArray();
             CollectionAssert.AreEqual(correctOutput, testingArray);
             //Finally, delete the testing file
@@ -470,11 +614,11 @@ namespace Tests
             }
             //I validated what the first 5 lines should look like by running eDNA Trend and running this program multiple times. Seems consistent. 
             //If the test fails for some reason, maybe try running it again, because the eDNA API does not always behave consistently.
-            string[] correctOutput = {"1422939600,1,OK",
+            string[] correctOutput = {"1422921600,1,OK",
+                                    "1422933521,1,OK",
                                     "1422947921,1,OK",
                                     "1422949721,1,OK",
-                                    "1422949999,2,OK",
-                                    "1422950294,1,OK"};
+                                    "1422949999,2,OK"};
             string[] testingArray = lineList.Take(5).ToArray();
             CollectionAssert.AreEqual(correctOutput, testingArray);
             //Finally, delete the testing file

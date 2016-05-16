@@ -207,6 +207,12 @@ namespace Convert_eDNA_To_CSV
         }
         internal static void PullDNAData(string eDNATag, StreamWriter outfile, DateTime startDate, DateTime endDate)
         {
+            //IMPORTANT- TO CONVERT TO PACIFIC TIME. Our data is all stored in Pacific time. Yes, this should ABSOLUTELY
+            //be a configurable setting. However, it's standard across company projects. I think at this point it will
+            //just add to the confusion if I make it configurable.
+            startDate = startDate.AddHours(-5.0);
+            endDate = endDate.AddHours(-5.0);
+
             //These next few lines are just initialization for the required eDNA "out" parameters
             uint uiKey = 0;
             double dValue = 0;
