@@ -185,7 +185,7 @@ namespace Push_Tools
             this.textBoxOutDir.Enabled = true;
             this.buttonOutDir.Enabled = true;
         }       
-        //This is the first important part of the program- loading a configuration from CSV, which can involve complicated checks
+        //This is the first important part of the program- validation of loading a configuration from CSV, which can involve complicated checks
         internal void LoadFromCSV(string filename)
         {
             string extension = new FileInfo(filename).Extension;
@@ -196,18 +196,17 @@ namespace Push_Tools
                 {
                     using (var reader = new StreamReader(File.OpenRead(filename)))
                     {
-                        int lineNum = 0;
+                        int linenum = 0;
                         while (!reader.EndOfStream)
                         {
-                            lineNum++;
+                            linenum++;
                             var line = reader.ReadLine();
                             if (String.IsNullOrWhiteSpace(line))
                             {
-                                this.WriteToLogger(String.Format("Line {0} is empty", lineNum.ToString()));
+                                this.WriteToLogger(String.Format("Line {0} is empty", linenum.ToString()));
                                 continue;
                             }
-                            string error = this.ValidateCSVLine(line);
-                            if (!String.IsNullOrWhiteSpace(error)) { this.WriteToLogger(String.Format("ERROR on line {0}- {1}", lineNum.ToString(), error)); }
+                            this.ValidateCSVLine(line, linenum);
                         }
                     }
                     this.WriteToLogger("Tags successfully loaded from CSV input file. WARNING- No automatic validation performed on column 7 (parameters).");
@@ -218,87 +217,117 @@ namespace Push_Tools
                 catch (UnauthorizedAccessException) { this.WriteToLogger("ERROR- access to CSV input file is denied. Check that it isn't currently open."); }
                 catch (IOException) { this.WriteToLogger("ERROR- access to CSV input file is denied. Check that it isn't currently open."); }}
             else { this.WriteToLogger("ERROR- Input file is not in CSV format."); }
-        }
-
-        internal string ValidatePushType(string value)
-        {
-            string[] possibleTypes = { "raw", "ramp", "sine", "impulse", "step", "periodic", "periodicimpulse", "rand", "randn", "rande" };
-            return possibleTypes.Contains(typeString.ToLower());
-
-        }
-
-        internal string ValidateCSVLine(string line)
+        }        
+        internal void ValidateCSVLine(string line, int linenum)
         {
             var values = line.Split(',');
-            //Load the parameters (column 7)
             string parameters = String.Empty;
             if (values.Length > 6) { parameters = values[6]; }
-            //Load the specified Type (column 6)
             string pushType = "raw";
-            if (values.Length > 5)
-            {
-                if (!this.ValidateType(values[5]))
-                {
-                    this.WriteToLogger("ERROR on line " + lineNum.ToString() + "- " + values[4] + " unrecognized push type. Reverting to default value of 'raw'");
-                }
-                else { pushType = values[5].ToLower(); }
-            }
-            //Load the specified Update Rate (column 5)
+            if (values.Length > 5) { pushType = ValidatePushType(values[5], linenum); }
             int updateRate = 0;
-            if (values.Length > 4 && pushType != "raw")
-            {
-                try
-                {
-                    int newUpdateRate = Convert.ToInt32(values[4]);
-                    if (newUpdateRate < 1)
-                    {
-                        this.WriteToLogger("ERROR on line " + lineNum.ToString() + "- " + values[4] + " is less than 1. Reverting to default value of 60 s. ");
-                    }
-                    else { updateRate = newUpdateRate; }
-                }
-                catch (FormatException)
-                {
-                    values[4] = String.IsNullOrWhiteSpace(values[4]) ? "Integer.Empty" : values[4];
-                    this.WriteToLogger("ERROR on line " + lineNum.ToString() + "- " + values[4] + " is not a recognized integer. Reverting to default value of 60 s.");
-                }
-            }
-            //Load the specified End Date (column 4)
-            DateTime enddate = DateTime.MinValue;
-            if (values.Length > 3 && pushType != "raw")
-            {
-                try { enddate = Convert.ToDateTime(values[3]); }
-                catch (FormatException)
-                {
-                    values[3] = String.IsNullOrWhiteSpace(values[3]) ? "String.Empty" : values[3];
-                    this.WriteToLogger("ERROR on line " + lineNum.ToString() + "- " + values[3] + " is not a recognized DateTime.");
-                }
-            }
-            //Load the specified Start Date (column 3)
-            DateTime startdate = DateTime.Parse("2001/01/01 00:01");
-            if (values.Length > 2)
-            {
-                try { startdate = Convert.ToDateTime(values[2]); }
-                catch (FormatException)
-                {
-                    values[2] = String.IsNullOrWhiteSpace(values[2]) ? "String.Empty" : values[2];
-                    this.WriteToLogger("ERROR on line " + lineNum.ToString() + "- " + values[2] + " is not a recognized DateTime.");
-                }
-            }
-            //Load the specified Description (column 1)
+            if (values.Length > 4 && pushType != "raw") updateRate = ValidateUpdateRate(values[4],linenum);
+            DateTime endDate = DateTime.MinValue;
+            if (values.Length > 3 && pushType != "raw") endDate = ValidateDateTime(values[3], linenum);
+            DateTime startDate = DateTime.Parse("2001/01/01 00:01");
+            if (values.Length > 2) startDate = ValidateDateTime(values[2], linenum);
             string description = values[0];
             if (values.Length > 1 && !String.IsNullOrWhiteSpace(values[1])) description = values[1];
-            //Load the specified eDNA Tag (column 1)
             string tag = values[0];
             //Check that the eDNA tag exists
             if (Configuration.DoesIdExist(tag) == 0)
             {
-                this.WriteToLogger("ERROR on line " + lineNum.ToString() + "- " + values[0] + " wasn't found in eDNA. Check that it is fully " +
-                    "specified (site.service.pointID) and that an eDNA connection is available.");
+                this.WriteToLogger(String.Format("ERROR on line {0}- {1} wasn't found in eDNA. Check that it is fully " +
+                    "specified (site.service.pointID) and that an eDNA connection is available.",linenum.ToString(),tag);
             }
             //All the error-checking above should not throw an error under any situation. If a tag doesn't exist, the error will be handled again during data pull. 
             //If the startDate or endDate won't convert, or weren't specified, then the data pull reverts from DateTime.Min to DateTime.Now, which is a perfectly 
             //valid data pull.
-            dataSet1.Tables[0].Rows.Add(tag, description, startdate, enddate, updateRate, pushType, parameters);
+            dataSet1.Tables[0].Rows.Add(tag, description, startDate, endDate, updateRate, pushType, parameters);
+        }
+        internal string ValidatePushType(string value, int linenum)
+        {
+            string[] possibleTypes = { "raw", "ramp", "sine", "impulse", "step", "periodic", "periodicimpulse", "rand", "randn", "rande" };
+            if (possibleTypes.Contains(value.ToLower())) return value.ToLower();
+            else
+            {
+                this.WriteToLogger(String.Format("ERROR on line {0}- {1} is an unrecognized push type. Reverting to default value of 'raw'", linenum.ToString(), value));
+                return "raw";
+            }
+        }
+        internal int ValidateUpdateRate(string value, int linenum)
+        {
+            int updateRate = 60;
+            try
+            {
+                int newUpdateRate = Convert.ToInt32(value);
+                if (newUpdateRate < 1)
+                {
+                    newUpdateRate = 60;
+                    this.WriteToLogger(String.Format("ERROR on line {0}- {1} is less than 1. Reverting to default value of 60 s", linenum.ToString(), value));
+                }
+                else { updateRate = newUpdateRate; }
+            }
+            catch (FormatException)
+            {
+                string displayString = String.IsNullOrWhiteSpace(value) ? "Integer.Empty" : value.ToString();
+                this.WriteToLogger(String.Format("ERROR on line {0}- {1} is not a recognized integer. Reverting to default value of 60 s.", linenum.ToString(), value));
+            }
+            return updateRate;
+        }
+        internal DateTime ValidateDateTime(string value, int linenum)
+        {
+            DateTime retDate = DateTime.MinValue;
+            try { retDate = Convert.ToDateTime(value); }
+            catch (FormatException)
+            {
+                string displayString = String.IsNullOrWhiteSpace(value) ? "String.Empty" : value.ToString();
+                this.WriteToLogger(String.Format("ERROR on line {0}- {1} is not a recognized DateTime.", linenum.ToString(), value));
+            }
+            return retDate;
+        }      
+        //Next, we validate 
+        internal bool ValidateNumParameters(string pushType, int dataRowNum, List<double> parameterList)
+        {
+            //Validate number of parameters supplied
+            if (pushType == "raw" || pushType == "rande")
+            {
+                if (Double.IsNaN(parameterList[0]))
+                {
+                    backgroundWorkerRunPush.ReportProgress(0, String.Format("ERROR on row {0}- Not enough parameters supplied. 1 required. Skipping tag.", dataRowNum.ToString()));
+                    return false;
+                }
+            }
+            else if (pushType == "impulse" || pushType == "step" || pushType == "rand" || pushType == "randn" | pushType == "ramp")
+            {
+                if (parameterList.Count < 2)
+                {
+                    backgroundWorkerRunPush.ReportProgress(0, String.Format("ERROR on row {0}- Not enough parameters supplied. 2 required. Skipping tag.", dataRowNum.ToString()));
+                    return false;
+                }
+            }
+            else if (pushType == "periodicimpulse")
+            {
+                if (parameterList.Count < 3)
+                {
+                    backgroundWorkerRunPush.ReportProgress(0, String.Format("ERROR on row {0}- Not enough parameters supplied. 3 required. Skipping tag.", dataRowNum.ToString()));
+                    return false;
+                }
+            }
+            else if (pushType == "sine" || pushType == "periodic")
+            {
+                if (parameterList.Count < 4)
+                {
+                    backgroundWorkerRunPush.ReportProgress(0, String.Format("ERROR on row {0}- Not enough parameters supplied. 4 required. Skipping tag.", dataRowNum.ToString()));
+                    return false;
+                }
+            }
+            else
+            {
+                backgroundWorkerRunPush.ReportProgress(0, String.Format("ERROR on row {0}- Push Type not recognized. Skipping tag.", dataRowNum.ToString()));
+                return false;
+            }
+            return true;
         }
         //Constructing the push     
         private void ConstructHistoryPush(DataTable pushDataTable)
@@ -372,49 +401,7 @@ namespace Push_Tools
             //Save the values
             this.TotalPoints = dataRowNum;
             this.HistoryDataPush = historyDataPush;
-        }
-        private bool ValidateNumParameters(string pushType, int dataRowNum, List<double> parameterList)
-        {
-            //Validate number of parameters supplied
-            if (pushType == "raw" || pushType == "rande")
-            {
-                if (Double.IsNaN(parameterList[0]))
-                {
-                    backgroundWorkerRunPush.ReportProgress(0, "ERROR on row " + dataRowNum.ToString() + "- Not enough parameters supplied. 1 required. Skipping tag.");
-                    return false;
-                }
-            }
-            else if (pushType == "impulse" || pushType == "step" || pushType == "rand" || pushType == "randn" | pushType == "ramp")
-            {
-                if (parameterList.Count < 2)
-                {
-                    backgroundWorkerRunPush.ReportProgress(0, "ERROR on row " + dataRowNum.ToString() + "- Not enough parameters supplied. 2 required. Skipping tag.");
-                    return false;
-                }
-            }
-            else if (pushType == "periodicimpulse")
-            {
-                if (parameterList.Count < 3)
-                {
-                    backgroundWorkerRunPush.ReportProgress(0, "ERROR on row " + dataRowNum.ToString() + "- Not enough parameters supplied. 3 required. Skipping tag.");
-                    return false;
-                }
-            }
-            else if (pushType == "sine" || pushType == "periodic")
-            {
-                if (parameterList.Count < 4)
-                {
-                    backgroundWorkerRunPush.ReportProgress(0, "ERROR on row " + dataRowNum.ToString() + "- Not enough parameters supplied. 4 required. Skipping tag.");
-                    return false;
-                }
-            }
-            else
-            {
-                backgroundWorkerRunPush.ReportProgress(0, "ERROR on row " + dataRowNum.ToString() + "- Push Type not recognized. Skipping tag.");
-                return false;
-            }
-            return true;
-        }
+        }        
         private List<PushValue> ReturnPushValues(string pushType, int updateRate, DateTime startTime, DateTime endTime, List<double> parameterList)
         {
             //Select which type of data pull              
@@ -427,13 +414,13 @@ namespace Push_Tools
                 case ("sine"): return SimulationMethods.SimulateSine(new TimeSpan(0, 0, updateRate), startTime, endTime,
                     parameterList[0], parameterList[1], parameterList[2], parameterList[3]);
                 case ("impulse"): return SimulationMethods.SimulateImpulse(new TimeSpan(0, 0, updateRate), startTime, endTime,
-                    parameterList[0], parameterList[1]);
+                    parameterList[0], Convert.ToInt32(parameterList[1]));
                 case ("step"): return SimulationMethods.SimulateStep(new TimeSpan(0, 0, updateRate), startTime, endTime,
-                    parameterList[0], parameterList[1]);
+                    parameterList[0], Convert.ToInt32(parameterList[1]));
                 case ("periodic"): return SimulationMethods.SimulatePeriodic(new TimeSpan(0, 0, updateRate), startTime, endTime,
-                    parameterList[0], parameterList[1], parameterList[2], parameterList[3]);
+                    parameterList[0], parameterList[1], parameterList[2], Convert.ToInt32(parameterList[3]));
                 case ("periodicimpulse"): return SimulationMethods.SimulatePeriodicImpulse(new TimeSpan(0, 0, updateRate), startTime, endTime,
-                    parameterList[0], parameterList[1], parameterList[2]);
+                    Convert.ToInt32(parameterList[0]), parameterList[1], Convert.ToInt32(parameterList[2]));
                 case ("rand"): return SimulationMethods.SimulateRand(new TimeSpan(0, 0, updateRate), startTime, endTime,
                     parameterList[0], parameterList[1]); 
                 case ("randn"): return SimulationMethods.SimulateRandn(new TimeSpan(0, 0, updateRate), startTime, endTime,
@@ -472,8 +459,7 @@ namespace Push_Tools
             //Return the data push
             this.RealTimeDataPush = realTimeDataPush;
         }
-        //Running the program
-        
+        //Running the program   
         private void PushToHistory(WriteType outType)
         {
             foreach (PushService currentServ in this.HistoryDataPush)
@@ -555,7 +541,6 @@ namespace Push_Tools
             //Update the logger
             string elapsedtime = (DateTime.Now - startPush).TotalSeconds.ToString();
             backgroundWorkerRunPush.ReportProgress(0, "*Data push finished in " + elapsedtime + " seconds.\n");
-        }
-         
+        }       
     }  
 }
