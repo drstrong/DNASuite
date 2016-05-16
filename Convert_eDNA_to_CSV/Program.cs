@@ -18,10 +18,10 @@ namespace Convert_eDNA_To_CSV
         static void Main(string[] args)
         {
             Console.WriteLine(String.Format("Program initialized at {0}", DateTime.Now.ToString()));
-            //These next two settings are hard-coded, but I should add them as additional options. Why do I set the max threads to 75? It has nothing to do with RAM, 
-            //but from personal experience eDNA doesn't handle requests greater than 75 simultaneously very well. Again, should be added as user option.
+            //These next two settings are hard-coded, but I should add them as additional options. Why do I set the max threads to 250? It has nothing to do with RAM, 
+            //but from personal experience eDNA doesn't handle requests greater than 250 simultaneously very well. Again, should be added as user option.
             History.SetHistoryTimeout(2400);
-            ThreadPool.SetMaxThreads(75,75);
+            ThreadPool.SetMaxThreads(250,250);
             //The parameters for the entire data pull are contained in the "DataPullInitialization" class, which also contains a list of tags to pull.
             //See the "ConversionClasses.cs" for more information.
             Console.WriteLine("Validating user-supplied arguments...");
