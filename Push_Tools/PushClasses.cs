@@ -32,7 +32,7 @@ namespace Push_Tools
         public void AddTagToPush(string tag, List<PushValue> values)
         {            
             int index = TagsToPush.FindIndex(f => f.Item1 == tag);
-            if (index<0) TagsToPush.Add(new Tuple<string,List<PushValue>(tag,values));
+            if (index<0) TagsToPush.Add(new Tuple<string,List<PushValue>>(tag,values));
             else
             {
                 TagsToPush[index].Item2.AddRange(values);
@@ -47,9 +47,9 @@ namespace Push_Tools
         {
             return PushToDNAService.PushTagAppend(this.Service, tagAndValues, roundDec, status);
         }
-        public StringBuilder PushTagsRealtime(List<Tuple<string, List<PushValue>>> listTagsAndValues, int roundDec = 6, short status = 3, int sleepmSec = 100)
+        public StringBuilder PushTagsRealtime(int roundDec = 6, short status = 3, int sleepmSec = 100)
         {
-            return PushToDNAService.PushTagsRealtime(this.Service, listTagsAndValues, roundDec, status, sleepmSec);
+            return PushToDNAService.PushTagsRealtime(this.Service, this.TagsToPush, roundDec, status, sleepmSec);
         }
         //Why do I separate out the static methods? It makes it easier to unit test
         public static StringBuilder PushTagInsert(string service, Tuple<string,List<PushValue>> tagAndValues, int roundDec = 6, ushort status = 3)
@@ -99,34 +99,43 @@ namespace Push_Tools
         public static StringBuilder PushTagsRealtime(string service, List<Tuple<string,List<PushValue>>> listTagsAndValues, 
             int roundDec = 6, short status = 3, int sleepmSec = 100)
         {
+            //We are only going to push the last value using "real-time" mode, so we need to find the last value in each Tuple of strings/lists of values
+            List<Tuple<string, PushValue>> lastValList = FindLastValue(listTagsAndValues);
             //Initialization
             int nRet = 0;
             uint uiKey1 = 0;
             var progressString = new StringBuilder();
             string cacheFilename = "cache_" + service;           
-            //Grab the defined "_INPADDR" point
+            //The "_INPADDR" point MUST be defined within eDNA so that the ipAddress and port can be found. This is standard DEI practice.
             string inpAddr = String.Join(".", service, "_INPADDR");
             string description = MiscMethods.GetPointDescription(inpAddr);
             string ipAddress = description.Split(',')[0];
             ushort port = (ushort)Convert.ToInt32(description.Split(',')[1]);
-            //If the "_INPADDR" point doesn't exist, this mode cannot be performed
+            //If the "_INPADDR" point doesn't exist, this mode cannot be performed, so skip it
             if (!String.IsNullOrEmpty(description))
             {
+                //These commands initialize an eDNA connection. The location of the cache is important- these files sometimes build up and don't
+                //get deleted by the eDNA API, although they should.
                 nRet = LinkMX.eDnaMxUniversalInitialize(out uiKey1, true, true, true, (int)50000, cacheFilename, "C:\\ProgramData\\InStep\\");
                 progressString.AppendLine(String.Format("Initializing connection, status= {0}",nRet));
                 nRet = LinkMX.eDnaMxUniversalDataConnect(uiKey1, ipAddress, port, "", (ushort)0);
                 progressString.AppendLine(String.Format("Connecting, results= {0}",nRet));
-                foreach (Tuple<string,List<PushValue>> tagAndValue in listTagsAndValues)
+                //We need to iterate through the list that we constructed in the first line of this method
+                foreach (Tuple<string,PushValue> tagAndValue in lastValList)
                 {
                     DateTime startWrite = DateTime.Now;
+                    //I'm just giving the variables more recognizable names
                     string tag = tagAndValue.Item1;
-                    foreach(PushValue pv in tagAndValue.Item2)
-                    {
-                        string tagSite, tagService, tagID;
-                        Configuration.SplitPointName(tag, out tagSite, out tagService, out tagID);
-                        nRet = LinkMX.eDnaMxAddRec(uiKey1, tagID, pv.UTCTime, (ushort) 0, status, Math.Round(pv.Value, roundDec));
-                        Thread.Sleep(sleepmSec);
-                    }
+                    PushValue value = tagAndValue.Item2;
+                    //This function will split the "point ID" from the fully defined eDNA tagname (site.service.pointID)
+                    string tagSite, tagService, tagID;
+                    Configuration.SplitPointName(tag, out tagSite, out tagService, out tagID);
+                    //Now, we will add the point to the queue
+                    nRet = LinkMX.eDnaMxAddRec(uiKey1, tagID, value.UTCTime, (ushort) 0, status, Math.Round(value.Value, roundDec));
+                    //Why do I make the thread sleep? Through extensive testing, eDNA doesn't like it when points are pushed too quickly. This seems
+                    //to achieve better results
+                    Thread.Sleep(sleepmSec);
+                    //The point is in the queue, but we need to flush it so it actually appears in the CVT.
                     nRet = LinkMX.eDnaMxFlushUniversalRecord(uiKey1, (int)1);
                     Thread.Sleep(sleepmSec);
                     string timeElapsed = (DateTime.Now - startWrite).TotalSeconds.ToString();
@@ -137,6 +146,17 @@ namespace Push_Tools
             }
             else { progressString.AppendLine(String.Format("ERROR- Service {0} does not have an '_INPADDR' point defined.", service)); }
             return progressString;
+        }
+        public static List<Tuple<string,PushValue>> FindLastValue(List<Tuple<string, List<PushValue>>> tagsAndValues)
+        {
+            var retList = new List<Tuple<string,PushValue>>();
+            foreach (Tuple<string, List<PushValue>> tav in tagsAndValues)
+            {
+                string tag = tav.Item1;
+                PushValue lastVal = tav.Item2[tav.Item2.Count-1];
+                retList.Add(new Tuple<string,PushValue>(tag,lastVal));
+            }
+            return retList;
         }
     }
     /// <summary> A list of potential data writing types. Refer to eDNA documentation for more information.</summary>

@@ -25,7 +25,7 @@ namespace Push_Tools
             InitializeComponent();
             Properties.Settings.Default.OutDirectory = Application.StartupPath;
         }
-        internal void WriteToLogger(string log) { this.textBoxLogger.AppendText(DateTime.Now.ToString() + ": " + log + "\n");}
+        internal void WriteToLogger(string log) { this.textBoxLogger.AppendText(DateTime.Now.ToString() + ": " + log + "\n"); }
         internal void frmPushTools_HelpButtonClicked(object sender, CancelEventArgs e)
         {
             MessageBox.Show("eDNA Push Tools Version " + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString() +
@@ -42,7 +42,7 @@ namespace Push_Tools
             //If the user selects "ok" in the dialog, try to load the points from the file
             if (openFileCSVInput.ShowDialog() == DialogResult.OK) this.LoadFromCSV(openFileCSVInput.FileName);
             dataGridView1.AutoResizeColumns();
-        }     
+        }
         internal void toolStripButtonLoadFromDNA_Click(object sender, EventArgs e)
         {
             //Pop up an eDNA dialog to select multiple points
@@ -111,10 +111,7 @@ namespace Push_Tools
             //Update the logger with what you did
             this.WriteToLogger("Config file exported to " + fullFilename);
         }
-        internal void toolStripButtonClearLog_Click(object sender, EventArgs e)
-        {
-            textBoxLogger.Clear();
-        }
+        internal void toolStripButtonClearLog_Click(object sender, EventArgs e) { textBoxLogger.Clear(); }
         internal void toolStripButtonExportLog_Click(object sender, EventArgs e)
         {
             //Build the directory (create if necessary) and file path names
@@ -131,13 +128,13 @@ namespace Push_Tools
         {
             this.DisableButtonsWhileRunning();
             try { backgroundWorkerRunPush.RunWorkerAsync(); }
-            catch
+            catch (Exception ex)
             {
-                this.WriteToLogger("ERROR- unspecified error. Program failed. Please ask Eric Strong for help.");
+                this.WriteToLogger(String.Format("ERROR- ({0}). Program failed. Please ask Eric Strong for help.", ex.Message));
                 this.EnableButtonsWhileNotRunning();
             }
         }
-        internal void toolStripButtonCancel_Click(object sender, EventArgs e){backgroundWorkerRunPush.CancelAsync();}   
+        internal void toolStripButtonCancel_Click(object sender, EventArgs e) { backgroundWorkerRunPush.CancelAsync(); }
         internal void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             this.WriteToLogger("Data push complete.");
@@ -184,8 +181,8 @@ namespace Push_Tools
             this.dataGridView1.Enabled = true;
             this.textBoxOutDir.Enabled = true;
             this.buttonOutDir.Enabled = true;
-        }       
-        //This is the first important part of the program- validation of loading a configuration from CSV, which can involve complicated checks
+        }
+        //This is the first important part of the program- validation of loading a configuration from CSV, with checking of each parameter
         internal void LoadFromCSV(string filename)
         {
             string extension = new FileInfo(filename).Extension;
@@ -215,9 +212,10 @@ namespace Push_Tools
                 //an explanation about what to check/fix.
                 catch (FileNotFoundException) { this.WriteToLogger("ERROR- CSV input file does not exist."); }
                 catch (UnauthorizedAccessException) { this.WriteToLogger("ERROR- access to CSV input file is denied. Check that it isn't currently open."); }
-                catch (IOException) { this.WriteToLogger("ERROR- access to CSV input file is denied. Check that it isn't currently open."); }}
+                catch (IOException) { this.WriteToLogger("ERROR- access to CSV input file is denied. Check that it isn't currently open."); }
+            }
             else { this.WriteToLogger("ERROR- Input file is not in CSV format."); }
-        }        
+        }
         internal void ValidateCSVLine(string line, int linenum)
         {
             var values = line.Split(',');
@@ -238,7 +236,7 @@ namespace Push_Tools
             if (Configuration.DoesIdExist(tag) == 0)
             {
                 this.WriteToLogger(String.Format("ERROR on line {0}- {1} wasn't found in eDNA. Check that it is fully " +
-                    "specified (site.service.pointID) and that an eDNA connection is available.",linenum.ToString(),tag);
+                    "specified (site.service.pointID) and that an eDNA connection is available.", linenum.ToString(), tag));
             }
             //All the error-checking above should not throw an error under any situation. If a tag doesn't exist, the error will be handled again during data pull. 
             //If the startDate or endDate won't convert, or weren't specified, then the data pull reverts from DateTime.Min to DateTime.Now, which is a perfectly 
@@ -285,17 +283,17 @@ namespace Push_Tools
                 this.WriteToLogger(String.Format("ERROR on line {0}- {1} is not a recognized DateTime.", linenum.ToString(), value));
             }
             return retDate;
-        }      
-        //Next, we validate 
-        internal bool ValidateNumParameters(string pushType, int dataRowNum, List<double> parameterList)
+        }
+        internal List<double> ValidateParameters(string pushType, string parameterString, int dataRowNum)
         {
+            List<double> parameterList = parameterString.Split('|').ToList().ConvertAll(x => Convert.ToDouble(x));            
             //Validate number of parameters supplied
             if (pushType == "raw" || pushType == "rande")
             {
                 if (Double.IsNaN(parameterList[0]))
                 {
                     backgroundWorkerRunPush.ReportProgress(0, String.Format("ERROR on row {0}- Not enough parameters supplied. 1 required. Skipping tag.", dataRowNum.ToString()));
-                    return false;
+                    return null;
                 }
             }
             else if (pushType == "impulse" || pushType == "step" || pushType == "rand" || pushType == "randn" | pushType == "ramp")
@@ -303,7 +301,7 @@ namespace Push_Tools
                 if (parameterList.Count < 2)
                 {
                     backgroundWorkerRunPush.ReportProgress(0, String.Format("ERROR on row {0}- Not enough parameters supplied. 2 required. Skipping tag.", dataRowNum.ToString()));
-                    return false;
+                    return null;
                 }
             }
             else if (pushType == "periodicimpulse")
@@ -311,7 +309,7 @@ namespace Push_Tools
                 if (parameterList.Count < 3)
                 {
                     backgroundWorkerRunPush.ReportProgress(0, String.Format("ERROR on row {0}- Not enough parameters supplied. 3 required. Skipping tag.", dataRowNum.ToString()));
-                    return false;
+                    return null;
                 }
             }
             else if (pushType == "sine" || pushType == "periodic")
@@ -319,89 +317,105 @@ namespace Push_Tools
                 if (parameterList.Count < 4)
                 {
                     backgroundWorkerRunPush.ReportProgress(0, String.Format("ERROR on row {0}- Not enough parameters supplied. 4 required. Skipping tag.", dataRowNum.ToString()));
-                    return false;
+                    return null;
                 }
             }
             else
             {
                 backgroundWorkerRunPush.ReportProgress(0, String.Format("ERROR on row {0}- Push Type not recognized. Skipping tag.", dataRowNum.ToString()));
-                return false;
+                return null;
             }
-            return true;
+            //Select the type of data pull, and construct the list of values to push
+            return parameterList;
+        }       
+        //Running the program
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {          
+            //Save user-selected properties
+            backgroundWorkerRunPush.ReportProgress(1, "*Saving user properties...\n");
+            int roundDecimals = (int) Settings.Default.RoundDecimals;
+            bool doublePass = Settings.Default.DoublePass;
+            WriteType outType = (WriteType)Settings.Default.OutputType;
+            int sleepTime = Convert.ToInt32(Settings.Default.SleepTime);
+            //Construct the data push
+            backgroundWorkerRunPush.ReportProgress(0, "*Constructing the data push...\n");
+            List<PushToDNAService> historyPush = this.ConstructHistoryPush(dataSet1.Tables[0]);
+            DateTime startPush = DateTime.Now;
+            backgroundWorkerRunPush.ReportProgress(0, "*Data push initialized at " + startPush.ToString() + ".\n");
+            //Start the history push, if necessary
+            if (outType == WriteType.AppendConnect || outType == WriteType.AppendHistory ||
+                outType == WriteType.InsertConnect || outType == WriteType.InsertHistory)
+            {
+                backgroundWorkerRunPush.ReportProgress(0, "*Pushing values to history...\n");
+                this.PushToHistory(outType, historyPush,roundDecimals,(ushort) 3);
+                if (doublePass)
+                {
+                    backgroundWorkerRunPush.ReportProgress(0, "*Performing second pass...\n");
+                    this.PushToHistory(outType, historyPush, roundDecimals, (ushort)3);
+                }
+            }
+            //Start the real-time push, if necessary
+            if (outType == WriteType.AppendConnect || outType == WriteType.InsertConnect)
+            {
+                backgroundWorkerRunPush.ReportProgress(0, "*Pushing values to CVT...\n");
+                foreach (PushToDNAService currentServ in historyPush)
+                {
+                    if (backgroundWorkerRunPush.CancellationPending) { break; }
+                    StringBuilder progressString = currentServ.PushTagsRealtime(roundDecimals, (short)3, sleepTime);
+                    backgroundWorkerRunPush.ReportProgress(0, progressString.ToString());
+                }
+                if (doublePass)
+                {
+                    backgroundWorkerRunPush.ReportProgress(0, "*Performing second pass...\n");
+                    foreach (PushToDNAService currentServ in historyPush)
+                    {
+                        if (backgroundWorkerRunPush.CancellationPending) { break; }
+                        StringBuilder progressString = currentServ.PushTagsRealtime(roundDecimals, (short)3, sleepTime);
+                        backgroundWorkerRunPush.ReportProgress(0, progressString.ToString());
+                    }
+                }
+            }     
+            //Update the logger
+            string elapsedtime = (DateTime.Now - startPush).TotalSeconds.ToString();
+            backgroundWorkerRunPush.ReportProgress(0, "*Data push finished in " + elapsedtime + " seconds.\n");
         }
         //Constructing the push     
-        private void ConstructHistoryPush(DataTable pushDataTable)
+        private List<PushToDNAService> ConstructHistoryPush(DataTable pushDataTable)
         {
-            //Initialize values
-            var historyDataPush = new List<PushService>();
-            //Iterate over each line in the PointGrid
+            var historyDataPush = new List<PushToDNAService>();
             int dataRowNum = 0;
             foreach (DataRow tempDataRow in pushDataTable.Rows)
             {
-                dataRowNum++;
-                string pushType = tempDataRow.Field<string>(5).ToLower();
-                string pointTag = tempDataRow.Field<string>(0);
-                //Verify the StartingDate
-                DateTime startTime = DateTime.MinValue;
-                try { startTime = Convert.ToDateTime(tempDataRow.ItemArray[2]); }
-                catch 
-                { 
-                    backgroundWorkerRunPush.ReportProgress(0, "ERROR on row " + dataRowNum.ToString() + "- Column 3 could not be converted to a DateTime. Skipping tag.");
-                    continue;
-                }
-                //Verify the EndingDate
-                DateTime endTime = DateTime.MinValue;
-                if (pushType.ToLower() != "raw")
+                //Validate the parameters again. We already performed validation on loading a configuration from CSV, but the user may
+                //have changed things in the data table. The same methods as before can be used.
+                string pointTag = tempDataRow.ItemArray[0].ToString();
+                //PLACEHOLDER for column 2- I don't care about the "description" field
+                DateTime startTime = ValidateDateTime(tempDataRow.ItemArray[2].ToString(),dataRowNum);
+                if (startTime == DateTime.MinValue) continue;
+                DateTime endTime = ValidateDateTime(tempDataRow.ItemArray[3].ToString(), dataRowNum);
+                if (endTime == DateTime.MinValue) continue;
+                int updateRate = ValidateUpdateRate(tempDataRow.ItemArray[4].ToString(), dataRowNum);
+                string pushType = ValidatePushType(tempDataRow.ItemArray[5].ToString(), dataRowNum);
+                List<double> parameterList = this.ValidateParameters(pushType, tempDataRow.ItemArray[6].ToString(), dataRowNum);
+                if (parameterList == null) continue;
+                //Now that all the parameters are validated, the values to push need to be constructed
+                List<PushValue> pvl = ReturnPushValues(pushType, updateRate, startTime, endTime, parameterList);
+                //Determine the history service to write to
+                string service = "";
+                History.DnaHistResolveHistoryName(pointTag, out service);
+                //Check if the HistoryWrite has already been defined
+                int index = historyDataPush.FindIndex(f => f.Service == service);
+                //If the service hasn't been defined yet (index < 0), create it and add it to the service list
+                if (index < 0)
                 {
-                    try { endTime = Convert.ToDateTime(tempDataRow.ItemArray[3]); }
-                    catch
-                    {
-                        backgroundWorkerRunPush.ReportProgress(0, "ERROR on row " + dataRowNum.ToString() + "- Column 4 could not be converted to a DateTime. Skipping tag.");
-                        continue;
-                    }
+                    historyDataPush.Add(new PushToDNAService(service));
+                    index = historyDataPush.Count - 1;
                 }
-                int updateRate = tempDataRow.Field<int>(4);
-                
-                try 
-                { 
-                    List<double> parameterList = tempDataRow.Field<string>(6).Split('|').ToList().ConvertAll(x => Convert.ToDouble(x));
-                    //Validate that the number of supplied parameters are correct, and the push type is recognized
-                    if (!this.ValidateNumParameters(pushType, dataRowNum, parameterList)) continue;
-                    //Select the type of data pull, and construct the list of values to push
-                    var tempPushValueList = this.ReturnPushValues(pushType, updateRate, startTime, endTime, parameterList);
-                    //Determine the history service to write to
-                    string service = "";
-                    History.DnaHistResolveHistoryName(pointTag, out service);
-                    //Check if the HistoryWrite has already been defined
-                    int index = historyDataPush.FindIndex(f => f.Service == service);
-                    //If the service hasn't been defined yet, create it and add it to the service list
-                    if (index < 0)
-                    {
-                        historyDataPush.Add(new PushService(service));
-                        index = historyDataPush.Count - 1;
-                    }
-                    //Now add the PushTag to the correct HistoryDataPush index.
-                    //Note- in the future, I should also check if the same point already exists. If so,
-                    //values should be added to the end of the already-existing PushTag, and then sorted
-                    var tempPushTag = new PushTag(pointTag, service);
-                    tempPushTag.AddTagValues(tempPushValueList);
-                    historyDataPush[index].AddPushTag(tempPushTag);
-                }
-                catch (FormatException)
-                { 
-                    backgroundWorkerRunPush.ReportProgress(0, "ERROR on row " + dataRowNum.ToString() + "- parameters could not be converted to doubles. Skipping tag."); 
-                    continue; 
-                }
-                catch
-                {
-                    backgroundWorkerRunPush.ReportProgress(0, "ERROR on row " + dataRowNum.ToString() + "- Unhandled exception. Skipping tag."); 
-                    continue; 
-                }              
+                //We found the correct index, now add the points to push to the overall list
+                historyDataPush[index].AddTagToPush(pointTag, pvl);
             }
-            //Save the values
-            this.TotalPoints = dataRowNum;
-            this.HistoryDataPush = historyDataPush;
-        }        
+            return historyDataPush;
+        }
         private List<PushValue> ReturnPushValues(string pushType, int updateRate, DateTime startTime, DateTime endTime, List<double> parameterList)
         {
             //Select which type of data pull              
@@ -422,125 +436,34 @@ namespace Push_Tools
                 case ("periodicimpulse"): return SimulationMethods.SimulatePeriodicImpulse(new TimeSpan(0, 0, updateRate), startTime, endTime,
                     Convert.ToInt32(parameterList[0]), parameterList[1], Convert.ToInt32(parameterList[2]));
                 case ("rand"): return SimulationMethods.SimulateRand(new TimeSpan(0, 0, updateRate), startTime, endTime,
-                    parameterList[0], parameterList[1]); 
+                    parameterList[0], parameterList[1]);
                 case ("randn"): return SimulationMethods.SimulateRandn(new TimeSpan(0, 0, updateRate), startTime, endTime,
                     parameterList[0], parameterList[1]);
                 case ("rande"): return SimulationMethods.SimulateRande(new TimeSpan(0, 0, updateRate), startTime, endTime,
-                    parameterList[0]); 
+                    parameterList[0]);
             }
             return null;
         }
-        private void ConstructRealTimePush()
+        private void PushToHistory(WriteType outType, List<PushToDNAService> historyPush, int roundDec, ushort status )
         {
-            //Iterate over all the values necessary
-            var realTimeDataPush = new List<PushService>();
-            foreach (PushService ps in this.HistoryDataPush)
+            foreach (PushToDNAService currentServ in historyPush)
             {
-                foreach (PushTag pt in ps.PushTags)
-                {
-                    //Find the real-time service associated with the point
-                    string service = MiscMethods.FindService(pt.Tag);
-                    //Check if the PushService has already been defined
-                    int index = realTimeDataPush.FindIndex(f => f.Service == service);
-                    //If the service hasn't been defined yet, create it and add it to the service list
-                    if (index < 0)
-                    {
-                        realTimeDataPush.Add(new PushService(service));
-                        index = realTimeDataPush.Count - 1;
-                    }
-                    //Now add the PushTag to the correct RealTimeDataPush index.
-                    //Note- in the future, I should also check if the same point already exists. If so,
-                    //values should be added to the end of the already-existing PushTag, and then sorted
-                    var tempPush = new PushTag(pt.Tag, service);
-                    tempPush.AddTagValues(pt.TagValues[pt.GetTotalValues() - 1]);
-                    realTimeDataPush[index].AddPushTag(tempPush);
-                }
-            }
-            //Return the data push
-            this.RealTimeDataPush = realTimeDataPush;
-        }
-        //Running the program   
-        private void PushToHistory(WriteType outType)
-        {
-            foreach (PushService currentServ in this.HistoryDataPush)
-            {
+                int currentPoint = 0;
                 if (backgroundWorkerRunPush.CancellationPending) { break; }
-                if (outType == WriteType.AppendConnect || outType == WriteType.AppendHistory)
-                {
-                    int currentPoint = 0;
-                    foreach (PushTag currentTag in currentServ.PushTags)
-                    {
-                        if (backgroundWorkerRunPush.CancellationPending) { break; }
-                        StringBuilder progressString = currentTag.PushAppendAllValues((int) Settings.Default.RoundDecimals);
-                        backgroundWorkerRunPush.ReportProgress((int)(((double)currentPoint * 100.0) / (double) this.TotalPoints),
-                                    progressString.ToString());
-                        currentPoint++;
-                    }
-                }
-                else
-                {
-                    int currentPoint = 0;
-                    foreach (PushTag currentTag in currentServ.PushTags)
-                    {
-                        if (backgroundWorkerRunPush.CancellationPending) { break; }
-                        StringBuilder progressString = currentTag.PushInsertAllValues((int)Settings.Default.RoundDecimals);
-                        backgroundWorkerRunPush.ReportProgress((int)(((double)currentPoint * 100.0) / (double) this.TotalPoints),
-                                    progressString.ToString());
-                        currentPoint++;
-                    }
-                }
-            }
-        }
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
-        {          
-            //Save user-selected properties
-            backgroundWorkerRunPush.ReportProgress(1, "*Saving user properties...\n");
-            int roundDecimals = (int) Settings.Default.RoundDecimals;
-            bool doublePass = Settings.Default.DoublePass;
-            WriteType outType = (WriteType)Settings.Default.OutputType;
-            //Construct the data push
-            backgroundWorkerRunPush.ReportProgress(0, "*Constructing the data push...\n");
-            this.ConstructHistoryPush(dataSet1.Tables[0]);
-            this.ConstructRealTimePush();
-            //Start the data push
-            DateTime startPush = DateTime.Now;
-            backgroundWorkerRunPush.ReportProgress(0, "*Data push initialized at " + startPush.ToString() + ".\n");
-            //Start the history push if necessary
-            if (outType == WriteType.AppendConnect || outType == WriteType.AppendHistory ||
-                outType == WriteType.InsertConnect || outType == WriteType.InsertHistory)
-            {
-                backgroundWorkerRunPush.ReportProgress(0, "*Pushing values to history...\n");
-                this.PushToHistory(outType);
-                if (doublePass)
-                {
-                    backgroundWorkerRunPush.ReportProgress(0, "*Performing second pass...\n");
-                    this.PushToHistory(outType);
-                }
-            }
-            //Start the real-time push if necessary
-            if (outType == WriteType.AppendConnect || outType == WriteType.InsertConnect)
-            {
-                backgroundWorkerRunPush.ReportProgress(0, "*Pushing values to CVT...\n");
-                foreach (PushService currentServ in this.RealTimeDataPush)
+                foreach (Tuple<string,List<PushValue>> currentTag in currentServ.TagsToPush)
                 {
                     if (backgroundWorkerRunPush.CancellationPending) { break; }
-                    backgroundWorkerRunPush.ReportProgress(0, currentServ.PushRealTimeAllTags(currentServ.Service,(int)Settings.Default.RoundDecimals,
-                        (int)Settings.Default.SleepTime).ToString());
-                }
-                if (doublePass)
-                {
-                    backgroundWorkerRunPush.ReportProgress(0, "*Performing second pass...\n");
-                    foreach (PushService currentServ in this.RealTimeDataPush)
+                    StringBuilder progressString = new StringBuilder();
+                    if (outType == WriteType.AppendConnect || outType == WriteType.AppendHistory)
                     {
-                        if (backgroundWorkerRunPush.CancellationPending) { break; }
-                        backgroundWorkerRunPush.ReportProgress(0, currentServ.PushRealTimeAllTags(currentServ.Service, (int)Settings.Default.RoundDecimals, 
-                            (int)Settings.Default.SleepTime).ToString());
+                        progressString = currentServ.PushTagAppend(currentTag, roundDec, status);
                     }
+                    else {progressString = currentServ.PushTagInsert(currentTag, roundDec, status);}
+                    backgroundWorkerRunPush.ReportProgress((int)(((double)currentPoint * 100.0) / (double) currentServ.TagsToPush.Count),
+                                progressString.ToString());
+                    currentPoint++;
                 }
-            }     
-            //Update the logger
-            string elapsedtime = (DateTime.Now - startPush).TotalSeconds.ToString();
-            backgroundWorkerRunPush.ReportProgress(0, "*Data push finished in " + elapsedtime + " seconds.\n");
-        }       
-    }  
+            }
+        }
+    }
 }

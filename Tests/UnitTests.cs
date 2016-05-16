@@ -15,14 +15,87 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Convert_eDNA_To_CSV;
 using Data_Flow_Analyzer;
 using Push_Tools;
+using InStep.eDNA.EzDNAApiNet;
 
 namespace Tests
 {
     [TestClass]
     public class PushToolsTests
     {
+        [TestMethod]
+        public void PushT_RealTime()
+        {
+            int curTime = Utility.GetUTCTime(DateTime.Now.AddHours(-5));
+            string eDNATag = "LCS01.LC1TPRMA.AC01001B";
+            var pushService = new PushToDNAService("LCS01.LC1TPRMA");
+            var pushValList = new List<PushValue>();
+            pushValList.Add(new PushValue((curTime - 1), 101.01));
+            pushValList.Add(new PushValue(curTime, 99.9));
+            pushService.AddTagToPush(eDNATag, pushValList);
+            Thread.Sleep(2000);
+            //Now the last of the those two values (99.9) in real-time
+            pushService.PushTagsRealtime();
+            //Now, pull the values to check them
+            Tuple<DateTime, double> rtVal = MiscMethods.PullRealTimeValue(eDNATag);
+            int newTime = Utility.GetUTCTime(rtVal.Item1);
+            Assert.AreEqual(newTime, curTime);
+            Assert.AreEqual(rtVal.Item2, 99.9);
+        }
+        [TestMethod]
+        public void PushT_Insert()
+        {
+            //Append a point first, since the "insert" needs to occur BEFORE a point and not at the end
+            int curTime = Utility.GetUTCTime(DateTime.Now.AddHours(-5));
+            string eDNATag = "LCS01.LC1TPRMA.AC01001A";
+            var pushService = new PushToDNAService("LCS01.LC1TPRMA");
+            var pushValList = new List<PushValue>();
+            pushValList.Add(new PushValue((curTime - 1), 103.2));
+            pushValList.Add(new PushValue(curTime, 104.6));    
+            //Push the values
+            pushService.PushTagAppend(new Tuple<string, List<PushValue>>(eDNATag, pushValList));
+            Thread.Sleep(500);
+            //Now insert a point
+            pushValList.Clear();
+            pushValList.Add(new PushValue((curTime - 10), 50.9));
+            pushService.PushTagInsert(new Tuple<string, List<PushValue>>(eDNATag, pushValList));
+            Thread.Sleep(500);
+            //Now, pull the values to check them
+            uint uiKey = 0;
+            double dValue = 0;
+            int dtTime = 0;
+            string strStatus = "";
+            int result = History.DnaGetHistRawUTC(eDNATag, curTime - 10, curTime, out uiKey);
+            result = History.DnaGetNextHistUTC(uiKey, out dValue, out dtTime, out strStatus);
+            Assert.AreEqual(dValue, 50.9);
+            Assert.AreEqual(dtTime, curTime - 10);
+        }
+        [TestMethod]
+        public void PushT_Append()
+        {
+            //Initialization
+            int curTime = Utility.GetUTCTime(DateTime.Now.AddHours(-5));
+            string eDNATag = "LCS01.LC1TPRMA.AC01001-";
+            var pushService = new PushToDNAService("LCS01.LC1TPRMA");
+            var pushValList = new List<PushValue>();
+            pushValList.Add(new PushValue((curTime - 1), 103.2));
+            pushValList.Add(new PushValue(curTime, 104.6));        
+            //Push the values
+            pushService.PushTagAppend(new Tuple<string, List<PushValue>>(eDNATag, pushValList));
+            //Now, pull the values to check them
+            uint uiKey = 0;
+            double dValue = 0;
+            int dtTime = 0;
+            string strStatus = "";
+            int result = History.DnaGetHistRawUTC(eDNATag, curTime-1, curTime, out uiKey);
+            result = History.DnaGetNextHistUTC(uiKey, out dValue, out dtTime, out strStatus);
+            Assert.AreEqual(dValue, 103.2);
+            Assert.AreEqual(dtTime, curTime - 1);
+            result = History.DnaGetNextHistUTC(uiKey, out dValue, out dtTime, out strStatus);
+            Assert.AreEqual(dValue, 104.6);
+            Assert.AreEqual(dtTime, curTime);
+        }
         //This test will check to ensure that each method writes the expected number of points. For a rate of 1/min and a duration of 1 day, the total
-        //number of expected points is 1441 (remember, both the first and last DateTimes are written, so it's [60*24+1]. The +1 is important)
+        //number of expected points is 1440
         [TestMethod]
         public void PushT_SimulateNumberOfPoints()
         {
@@ -30,23 +103,45 @@ namespace Tests
             pushValues = SimulationMethods.SimulateRaw(new DateTime(2015, 01, 01, 01, 01, 01), 1.0);
             Assert.AreEqual(pushValues.Count, 1);
             pushValues = SimulationMethods.SimulateRamp(new TimeSpan(0, 0, 60),new DateTime(2015, 01, 01),new DateTime(2015, 01, 02),10.0,100.0);
-            Assert.AreEqual(pushValues.Count, 1441);
+            Assert.AreEqual(pushValues.Count, 1440);
             pushValues = SimulationMethods.SimulateRand(new TimeSpan(0, 0, 60), new DateTime(2015, 01, 01), new DateTime(2015, 01, 02), 10.0, 100.0);
-            Assert.AreEqual(pushValues.Count, 1441);
+            Assert.AreEqual(pushValues.Count, 1440);
             pushValues = SimulationMethods.SimulateRandn(new TimeSpan(0, 0, 60), new DateTime(2015, 01, 01), new DateTime(2015, 01, 02), 10.0, 100.0);
-            Assert.AreEqual(pushValues.Count, 1441);
+            Assert.AreEqual(pushValues.Count, 1440);
             pushValues = SimulationMethods.SimulateRande(new TimeSpan(0, 0, 60), new DateTime(2015, 01, 01), new DateTime(2015, 01, 02), 10.0);
-            Assert.AreEqual(pushValues.Count, 1441);
+            Assert.AreEqual(pushValues.Count, 1440);
             pushValues = SimulationMethods.SimulateSine(new TimeSpan(0, 0, 60), new DateTime(2015, 01, 01), new DateTime(2015, 01, 02), 10.0);
-            Assert.AreEqual(pushValues.Count, 1441);
+            Assert.AreEqual(pushValues.Count, 1440);
             pushValues = SimulationMethods.SimulateImpulse(new TimeSpan(0, 0, 60), new DateTime(2015, 01, 01), new DateTime(2015, 01, 02), 10.0, 100);
-            Assert.AreEqual(pushValues.Count, 1441);
+            Assert.AreEqual(pushValues.Count, 1440);
             pushValues = SimulationMethods.SimulateStep(new TimeSpan(0, 0, 60), new DateTime(2015, 01, 01), new DateTime(2015, 01, 02), 10.0, 100);
-            Assert.AreEqual(pushValues.Count, 1441);
+            Assert.AreEqual(pushValues.Count, 1440);
             pushValues = SimulationMethods.SimulatePeriodic(new TimeSpan(0, 0, 60), new DateTime(2015, 01, 01), new DateTime(2015, 01, 02), 10.0, 100.0,10.0,10);
-            Assert.AreEqual(pushValues.Count, 1441);
+            Assert.AreEqual(pushValues.Count, 1440);
             pushValues = SimulationMethods.SimulatePeriodicImpulse(new TimeSpan(0, 0, 60), new DateTime(2015, 01, 01), new DateTime(2015, 01, 02), 10, 10.0, 10);
-            Assert.AreEqual(pushValues.Count, 1441);
+            Assert.AreEqual(pushValues.Count, 1440);
+        }
+        [TestMethod]
+        public void PushT_Simulate_Step()
+        {
+            List<PushValue> pushValues = SimulationMethods.SimulateStep(
+                   new TimeSpan(0, 0, 60),
+                   new DateTime(2015, 01, 01, 00, 00, 00),
+                   new DateTime(2015, 01, 02, 00, 00, 00),
+                   1.0, 10);
+            Assert.AreEqual(pushValues[9].Value, 0);
+            Assert.AreEqual(pushValues[10].Value, 1);
+        }
+        [TestMethod]
+        public void PushT_Simulate_Impulse()
+        {
+            List<PushValue> pushValues = SimulationMethods.SimulateImpulse(
+                   new TimeSpan(0, 0, 60),
+                   new DateTime(2015, 01, 01, 00, 00, 00),
+                   new DateTime(2015, 01, 02, 00, 00, 00),
+                   1.0, 5);
+            Assert.AreEqual(pushValues[4].Value, 0);
+            Assert.AreEqual(pushValues[5].Value, 1);
         }
         [TestMethod]
         public void PushT_Simulate_SineZeroMean()
@@ -55,19 +150,14 @@ namespace Tests
                 new TimeSpan(0, 0, 60),
                 new DateTime(2015, 01, 01, 00, 00, 00),
                 new DateTime(2015, 01, 02, 00, 00, 00),
-                1.0,
-                2.0,
-                0.0,
-                0.0);
-            PushValue[] correctValues = {new PushValue(new DateTime(2015, 01, 01, 00, 00, 00),0.0),
-                                         new PushValue(new DateTime(2015, 01, 01, 00, 01, 00),0.20905692653530691),
-                                         new PushValue(new DateTime(2015, 01, 01, 00, 02, 00),0.41582338163551863),
-                                         new PushValue(new DateTime(2015, 01, 01, 00, 03, 00),0.61803398874989479),
-                                         new PushValue(new DateTime(2015, 01, 01, 00, 04, 00),0.81347328615160031)};
+                1.0, 2.0, 0.0, 0.0);
+            PushValue[] correctValues = {new PushValue(Utility.GetUTCTime(new DateTime(2015, 01, 01, 00, 00, 00).AddHours(-5)),0.0),
+                                         new PushValue(Utility.GetUTCTime(new DateTime(2015, 01, 01, 00, 01, 00).AddHours(-5)),0.20905692653530691),
+                                         new PushValue(Utility.GetUTCTime(new DateTime(2015, 01, 01, 00, 02, 00).AddHours(-5)),0.41582338163551863),
+                                         new PushValue(Utility.GetUTCTime(new DateTime(2015, 01, 01, 00, 03, 00).AddHours(-5)),0.61803398874989479),
+                                         new PushValue(Utility.GetUTCTime(new DateTime(2015, 01, 01, 00, 04, 00).AddHours(-5)),0.81347328615160031)};
             CollectionAssert.AreEqual(correctValues, pushValues.Take(5).ToArray());
         }
-
-
         [TestMethod]
         public void PushT_Simulate_Raw()
         {
@@ -82,13 +172,12 @@ namespace Tests
                 new TimeSpan(0, 0, 60),
                 new DateTime(2015, 01, 01, 00, 00, 00),
                 new DateTime(2015, 01, 02, 00, 00, 00),
-                10.0,
-                100.0);
-            PushValue[] correctValues = {new PushValue(new DateTime(2015, 01, 01, 00, 00, 00),10.0),
-                                         new PushValue(new DateTime(2015, 01, 01, 00, 01, 00),10.0625),
-                                         new PushValue(new DateTime(2015, 01, 01, 00, 02, 00),10.125),
-                                         new PushValue(new DateTime(2015, 01, 01, 00, 03, 00),10.1875),
-                                         new PushValue(new DateTime(2015, 01, 01, 00, 04, 00),10.25)};
+                10.0, 100.0);
+            PushValue[] correctValues = {new PushValue(Utility.GetUTCTime(new DateTime(2015, 01, 01, 00, 00, 00).AddHours(-5)),10.0),
+                                         new PushValue(Utility.GetUTCTime(new DateTime(2015, 01, 01, 00, 01, 00).AddHours(-5)),10.062543432939542),
+                                         new PushValue(Utility.GetUTCTime(new DateTime(2015, 01, 01, 00, 02, 00).AddHours(-5)),10.125086865879084),
+                                         new PushValue(Utility.GetUTCTime(new DateTime(2015, 01, 01, 00, 03, 00).AddHours(-5)),10.187630298818624),
+                                         new PushValue(Utility.GetUTCTime(new DateTime(2015, 01, 01, 00, 04, 00).AddHours(-5)),10.250173731758165)};
             CollectionAssert.AreEqual(correctValues, pushValues.Take(5).ToArray());
             Assert.AreEqual(pushValues[pushValues.Count - 1].UTCTime, 1420156800);
         }
@@ -99,14 +188,11 @@ namespace Tests
                 new TimeSpan(0, 0, 60),
                 new DateTime(2015, 01, 01, 00, 00, 00),
                 new DateTime(2015, 01, 02, 00, 00, 00),
-                1.0,
-                2.0);
+                1.0, 2.0);
             //Check to make sure none of the values are less than the lower bound or greater than the upper bound
             Assert.IsTrue(pushValues.FindAll(f => f.Value < 1).Count == 0);
             Assert.IsTrue(pushValues.FindAll(f => f.Value > 2).Count == 0);
         }
-
-
     }
     [TestClass]
     public class Data_Flow_Analyzer_Tests
