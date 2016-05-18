@@ -17,6 +17,7 @@ namespace Convert_eDNA_To_CSV
     {   
         static void Main(string[] args)
         {
+            DateTime startMain = DateTime.Now;
             Console.WriteLine(String.Format("Program initialized at {0}", DateTime.Now.ToString()));
             //These next two settings are hard-coded, but I should add them as additional options. Why do I set the max threads to 250? It has nothing to do with RAM, 
             //but from personal experience eDNA doesn't handle requests greater than 250 simultaneously very well. Again, should be added as user option.
@@ -34,7 +35,8 @@ namespace Convert_eDNA_To_CSV
                 dpi.DNAService, dpi.StartDate.ToString(), dpi.EndDate.ToString(),dpi.OutputDirectory));
             Parallel.ForEach(dpi.TagPullList, (tp, loopState) => { tp.PullWriteZip(true); });
             //Success!
-            Console.WriteLine("Pull completed successfully. Program will exit after next key press.");
+            double totalHours = (DateTime.Now - startMain).TotalHours;
+            Console.WriteLine(String.Format("Pull completed successfully in {0} hours. Program will exit after next key press.",totalHours));
             Console.ReadKey();
         }
     } 
