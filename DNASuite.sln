@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Convert_eDNA_To_CSV", "Conv
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{366208BD-D57B-433F-AF4F-2C4A4285C835}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data_Relationship_Mapping", "Data_Relationship_Mapping\Data_Relationship_Mapping.csproj", "{E0452827-A249-4F42-B912-FFDB63C089F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,12 @@ Global
 		{366208BD-D57B-433F-AF4F-2C4A4285C835}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{366208BD-D57B-433F-AF4F-2C4A4285C835}.Release|Any CPU.Build.0 = Release|Any CPU
 		{366208BD-D57B-433F-AF4F-2C4A4285C835}.Release|x64.ActiveCfg = Release|Any CPU
+		{E0452827-A249-4F42-B912-FFDB63C089F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0452827-A249-4F42-B912-FFDB63C089F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0452827-A249-4F42-B912-FFDB63C089F5}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E0452827-A249-4F42-B912-FFDB63C089F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0452827-A249-4F42-B912-FFDB63C089F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0452827-A249-4F42-B912-FFDB63C089F5}.Release|x64.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
